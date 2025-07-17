@@ -19,6 +19,15 @@
     {
       "name": "Right Leg",
       "description": "The human leg supports the body’s weight and enables movement such as walking, running, and jumping. It consists of strong bones, muscles, and joints that provide stability, balance, and mobility. The leg also aids in shock absorption and helps maintain posture."
-    }
+    },
+    { "name": "Skull", "description": "description" },
+
+    { "name": "TeethUpper", "description": "description" },
+
+    { "name": "MaleSkeletalAtlasGeo", "description": "description" },
+    { "name": "MaleSkeletalAxisGeo", "description": "description" },
+    { "name": "MaleSkeletalC03Geo", "description": "description" },
+    { "name": "Jaw", "description": "description" },
+    { "name": "TeethLower", "description": "description" }
   ]
 }

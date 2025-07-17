@@ -5,19 +5,21 @@ using UnityEngine;
 
 public class Draggable : MonoBehaviour
 {
-
     // True by default
-
     public bool draggable;
-    
+
     // Offset from mouse
     private Vector3 offset;
 
     // Is dragging is set to true by default to initiate drag as soon as the item is spawned
     public bool isDragging;
 
+    public GameObject globalVariable;
+
     void Start()
     {
+        globalVariable = GameObject.FindGameObjectWithTag("GlobalVariables");
+
         isDragging = true;
         draggable = true;
     }
@@ -28,18 +30,25 @@ public class Draggable : MonoBehaviour
         if (Input.GetMouseButton(0) && draggable)
         {
             StartDragging();
+            globalVariable.GetComponent<IsDragging>().isDragging = true;
 
         }
+
         // No longer dragging
         if (Input.GetMouseButtonUp(0))
         {
             isDragging = false;
+            globalVariable.GetComponent<IsDragging>().isDragging = false;
         }
     }
 
     void OnMouseDown()
     {
         isDragging = true;
+
+        // Calculate offset between object position and mouse position at time of click
+        Vector3 mouseWorldPos = GetMouseWorldPosition();
+        offset = transform.position - mouseWorldPos;
     }
 
     // Initiate drag
@@ -50,11 +59,10 @@ public class Draggable : MonoBehaviour
         {
             // Debug.Log("Dragging");
 
-            Vector3 newPos = GetMouseWorldPosition();
+            Vector3 newPos = GetMouseWorldPosition() + offset; // Apply offset to maintain relative grab position
             newPos.z = transform.position.z; // Lock the Z value to original
             transform.position = newPos;
         }
-
     }
 
     // Get position of mouse in world
@@ -64,5 +72,4 @@ public class Draggable : MonoBehaviour
         screenMousePos.z = Camera.main.WorldToScreenPoint(transform.position).z; // get current object's z-distance from camera
         return Camera.main.ScreenToWorldPoint(screenMousePos);
     }
-
 }
