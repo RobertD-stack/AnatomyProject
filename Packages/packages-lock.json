@@ -326,7 +326,7 @@
       "url": "https://packages.unity.com"
     },
     "com.whisper.unity": {
-      "version": "file:C:/Users/super/Desktop/Coding Projects/whisper.unity-master (1)/whisper.unity-master/Packages/com.whisper.unity",
+      "version": "file:../whisper.unity-master/Packages/com.whisper.unity",
       "depth": 0,
       "source": "local",
       "dependencies": {}
