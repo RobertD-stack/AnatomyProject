@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_GUID: cfc86565a9bb66644b3b99b5d359ae1a
+  m_SerializeEntries:
+  - m_GUID: 7071a746a659c914594987d0940faebf
+    m_Address: Edited Human Parts/List/Hands
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7f1ce8fd16db13c4a84583ec087cf5a5
+    m_Address: Edited Human Parts/List/Head
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 80973a8a8659daa46b3ce3e036468525
+    m_Address: Edited Human Parts/List/Torso
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 884ef56410c94b747ba88dc860afc941
+    m_Address: Edited Human Parts/List/Head 1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a00dc7f7301013342afb16f1be51f8d7
+    m_Address: Edited Human Parts/List/Left Leg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b125c412cd7c18040b32a618161b720d
+    m_Address: Edited Human Parts/List/Right Leg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: c711f22d1581e0f4d8de7ec5f6765ebc, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: adf4ed906e37caa499ef848212e33e1b, type: 2}
+    - {fileID: 11400000, guid: 21835d3057b974c4facca41752066147, type: 2}

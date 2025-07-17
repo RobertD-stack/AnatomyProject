@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Current/1.24.7 Demographic Questionnaire.unity
+    guid: 3092de1abf9bb924283ece634be486e8
+  - enabled: 1
+    path: Assets/Scenes/Current/1.24.7 Layer 1.unity
+    guid: 3eca3079d69e61f46ae11c1bda519a9e
+  - enabled: 1
+    path: Assets/Scenes/Current/1.24.7Layer 1 Quiz.unity
+    guid: a8452d5c7ff369f429af34e33482d9dc
+  - enabled: 1
+    path: Assets/Scenes/Current/1.24.7 Layer 2.unity
+    guid: 57b6a0f4e96d8d54b99926f0185e26f5
+  - enabled: 1
+    path: Assets/Scenes/Current/1.24.7Layer 2 Quiz.unity
+    guid: 7de697eb9a2007a48bda054e3a8e0fed
+  - enabled: 1
+    path: Assets/Scenes/Current/1.24.7 Post Quiz.unity
+    guid: 0f8853f5778f3074988ca0c4e31cdb82
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: 16c6a0e071e6c624d81590f0718d0c94, type: 2}
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 22727d55e238b5447be7a2ef594d4c37, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: aa2108ec0649db1479637b52ae749307, type: 2}
+  m_UseUCBPForAssetBundles: 0

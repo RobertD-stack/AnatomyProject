@@ -1,0 +1,24 @@
+{
+  "bodyParts": [
+    {
+      "name": "Torso",
+      "description": "The human torso houses and protects vital organs including the heart, lungs, and digestive system. It supports breathing, circulation, and digestion, while also serving as the central structure connecting the upper and lower body, allowing for movement and stability."
+    },
+    {
+      "name": "Head",
+      "description": "The human head contains the brain, which controls the body's functions, thoughts, and emotions. It also houses the sensory organs—eyes, ears, nose, and mouth—enabling vision, hearing, smell, taste, and speech. The skull protects the brain and supports facial structure."
+    },
+    {
+      "name": "Hands",
+      "description": "The human hands are versatile tools used for grasping, holding, and manipulating objects. They contain muscles, tendons, and joints that allow for precise movement and coordination. Hands play a key role in touch, communication, and performing everyday tasks."
+    },
+    {
+      "name": "Left Leg",
+      "description": "The human leg supports the body’s weight and enables movement such as walking, running, and jumping. It consists of strong bones, muscles, and joints that provide stability, balance, and mobility. The leg also aids in shock absorption and helps maintain posture."
+    },
+    {
+      "name": "Right Leg",
+      "description": "The human leg supports the body’s weight and enables movement such as walking, running, and jumping. It consists of strong bones, muscles, and joints that provide stability, balance, and mobility. The leg also aids in shock absorption and helps maintain posture."
+    }
+  ]
+}
