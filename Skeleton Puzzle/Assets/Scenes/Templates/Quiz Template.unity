@@ -493,7 +493,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questions: []
   answers: []
-  questionnaireType: 1
+  questionnaireType: 0
+  appendExistingData: 1
 --- !u!95 &885906450 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 6676803291689536443, guid: 2c2a48a186b0444458ce1f12fdee3f99, type: 3}
@@ -564,6 +565,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c2a48a186b0444458ce1f12fdee3f99, type: 3}
+--- !u!1 &1444259930
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1444259931}
+  m_Layer: 0
+  m_Name: Database
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1444259931
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444259930}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 424.2, y: 159.21065, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1567114826 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7253557603201251437, guid: 2c2a48a186b0444458ce1f12fdee3f99, type: 3}
@@ -916,12 +948,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5602495764504273295, guid: 76733451f13d8564cb543fd45d2c9fa9, type: 3}
-      propertyPath: m_text
-      value: 'Layer 2 Quiz
-
-'
-      objectReference: {fileID: 0}
     - target: {fileID: 5804993791010186490, guid: 76733451f13d8564cb543fd45d2c9fa9, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1207,3 +1233,4 @@ SceneRoots:
   - {fileID: 715779766}
   - {fileID: 449155208}
   - {fileID: 1016376849}
+  - {fileID: 1444259931}
