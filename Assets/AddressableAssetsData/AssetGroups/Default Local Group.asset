@@ -15,33 +15,798 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: cfc86565a9bb66644b3b99b5d359ae1a
   m_SerializeEntries:
+  - m_GUID: 028893587ac6b9e479088af9ee65711c
+    m_Address: MaleSkeletalDistalPhalange04RightHandGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0427d2b4016973c4fb7e11c4c2dbf8dd
+    m_Address: MaleSkeletalMiddlePhalange02RightHandGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0577de8f1a1c2734fa96356587e7e402
+    m_Address: MaleSkeletalMetacarpal04LeftHandGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0c5aa7ee3f58a704d8a8157560378e06
+    m_Address: MaleSkeletalProximalPhalanges04RightFootGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0d99d1d3e90f5ee4b9558189a8be08fe
+    m_Address: MaleSkeletalDistalPhalange01RightHandGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0f1264d864177b34aac9fbe5e885ebf4
+    m_Address: MaleSkeletalNavicularRightFootGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0f23bb3e0cd7b72459f14dc1967cf1d8
+    m_Address: MaleSkeletalL02Geo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1114ad6a0764d7d4ebe5732e7607ea5a
+    m_Address: MaleSkeletalDistalPhalange03RightHandGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 13b4046f5a5fa4f469b5b3e7bb1aedef
+    m_Address: TeethUpper
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1612a814514b464459c96730022478c2
+    m_Address: MaleSkeletalC03Geo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 162fde05db703be4fbe007090168e7c7
+    m_Address: MaleSkeletalMetacarpal03RightHandGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1700abd632e06f148b1ae0d20e3b561a
+    m_Address: MaleSkeletalMetacarpal02RightHandGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 17f5f722a1090754392bd849e05fde10
+    m_Address: MaleSkeletalT02Geo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 182f494522e77f14f8376086d2efc6a5
+    m_Address: TeethLower
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1cd4fc887b9500e41ad989c8b08dac52
+    m_Address: MaleSkeletalTalusLeftFootGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1f7d1fd1ae912a24286131d50bcf7998
+    m_Address: MaleSkeletalTibiaLeftGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1fc7e4367ae458d42ab5202a8ab713dc
+    m_Address: MaleSkeletalDistalPhalanges04LeftFootGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2228549460da5094ab6b990275953b23
+    m_Address: MaleSkeletalMedialCuneiformRightFootGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2b13378e806d40b4da40514d5164ee00
+    m_Address: MaleSkeletalRibs11Geo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2bf7647a79ac50b42871778a4b28aa67
+    m_Address: MaleSkeletalDistalPhalanges05RightFootGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2e57b48b27aa5e0499cc3cb48b7072d2
+    m_Address: MaleSkeletalMiddlePhalanges04RightFootGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 323b3da928934e6468a0f63a4e8c1f1a
+    m_Address: MaleSkeletalCarpalsRightHandGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 32536a62ba71cf94ba6beb0837783658
+    m_Address: MaleSkeletalProximalPhalange05RightHandGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 33f58d3bf8a4e37449f1650d2aa946ff
+    m_Address: MaleSkeletalMetacarpal04RightHandGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 34e254d690576e642b550d07a36d06d8
+    m_Address: MaleSkeletalProximalPhalange01LeftHandGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 360bde76283242043bc9388b3c83189c
+    m_Address: MaleSkeletalCarpalsLeftHandGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3620047a2e477044ba6c36af5c2e477e
+    m_Address: MaleSkeletalProximalPhalanges03RightFootGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 393f5a11bb749fb459d5fe46d289560a
+    m_Address: MaleSkeletalFibulaLeftGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3ecf9b3ba4d598a4da12b7f580cdd839
+    m_Address: MaleSkeletalRadiusRightGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3fd30760c8896dd4a8f813cc7d6838db
+    m_Address: MaleSkeletalLateralCuneiformLeftFootGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 413705edf1c3ed64bbf77a5e6ea48797
+    m_Address: MaleSkeletalMiddlePhalanges03LeftFootGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 41c9b093aaf4d5944a8c8dd2ceaaa763
+    m_Address: MaleSkeletalIntermediateCuneiformLeftFootGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 42f2107c74c1d1e469b4474f6e045a0c
+    m_Address: MaleSkeletalMetacarpal02LeftHandGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 444ef2710291b484e8f417fde77f7831
+    m_Address: MaleSkeletalProximalPhalange02LeftHandGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4701db558b3ea2c4f9ded63b872606ca
+    m_Address: MaleSkeletalRibs05Geo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 47f7318aae25d36468d802235a16b9aa
+    m_Address: MaleSkeletalT11Geo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4b115edd1566df649a1f1b49b026b54e
+    m_Address: MaleSkeletalMetarsal01RightFootGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 53d603866f34dd1498c2159fc86b9a10
+    m_Address: MaleSkeletalMiddlePhalanges05RightFootGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 55b0317c8644f66489f1aec2e9d4f017
+    m_Address: MaleSkeletalProximalPhalange03LeftHandGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 57eb785e6a619874496b94e60f71ba40
+    m_Address: MaleSkeletalHumerusLeftGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 588e888d0c6aa314ebd61d232ad06b61
+    m_Address: MaleSkeletalMiddlePhalange04LeftHandGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5a820fdca001d7e4382cdba0206a6548
+    m_Address: MaleSkeletalL04Geo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5adcf8f4efd710a49a6db1aec02c0dca
+    m_Address: MaleSkeletalProximalPhalange02RightHandGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5bd6dd8e389de9a419969e3a1dc24725
+    m_Address: MaleSkeletalPatellaLeftGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5e80b5eba39db5949bee85570a3add0e
+    m_Address: MaleSkeletalDistalPhalanges01RightFootGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 609ffe1571996104aa894cec00124374
+    m_Address: MaleSkeletalClavicalGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 61103f6debca75c409e2738d0587189d
+    m_Address: MaleSkeletalProximalPhalanges05RightFootGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6116dbcfd4f39fd48b6a8393ea0ceb14
+    m_Address: MaleSkeletalMiddlePhalange03LeftHandGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6170271545d27c749b4e905bc42fcdfb
+    m_Address: MaleSkeletalFemurLeftGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 619021a774379864cb100405a10290c1
+    m_Address: MaleSkeletalL05Geo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 623416771ed0850498c46ade06d997a0
+    m_Address: MaleSkeletalRibs07Geo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 62b303e8725cec74183e822c75a1aca2
+    m_Address: MaleSkeletalRibs06Geo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 630ec70ad7108774aab01ac0f0d1db52
+    m_Address: MaleSkeletalScapulaLeftGeoRightGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 64a16aa97f5b01d4884077ad44721198
+    m_Address: MaleSkeletalDistalPhalanges02RightFootGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 64ac3b621e248044688c96d4e9863484
+    m_Address: MaleSkeletalMetarsal04RightFootGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 64b7b32f57488994a8b4c97da94c86d2
+    m_Address: MaleSkeletalProximalPhalanges03LeftFootGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 65f184658d7d50a44930d2f5f6b89280
+    m_Address: MaleSkeletalMedialCuneiformLeftFootGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 68c535e8616f20940a8c1358859953f2
+    m_Address: MaleSkeletalMetarsal02LeftFootGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 68d8fbd1e4bec9c499c1201892b0bc33
+    m_Address: MaleSkeletalRibs01Geo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 69859138899e437488b6162c47cd25dc
+    m_Address: MaleSkeletalT06Geo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6c4e4682c17a3eb4ab2bd6937b9a1a17
+    m_Address: MaleSkeletalT07Geo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6e73325a31f12824796000f0bb91443f
+    m_Address: MaleSkeletalScapulaLeftGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6f5d39ad3b2b48b408d306a587e07124
+    m_Address: MaleSkeletalRibs12Geo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 704aca9da4b89984899f9873d444d5af
+    m_Address: MaleSkeletalNavicularLeftFootGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7071a746a659c914594987d0940faebf
-    m_Address: Edited Human Parts/List/Hands
+    m_Address: Hands
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 724507c482e52a544bd100986caca993
+    m_Address: MaleSkeletalMiddlePhalange04RightHandGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 736954490b90e164aaf037bd982fe2e3
+    m_Address: MaleSkeletalIntervertabralDiscsGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 77f5fa7d4d8178a4385b242206f52ffc
+    m_Address: MaleSkeletalC06Geo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7933c923bd1a3ff4cbd0dd95772b76a1
+    m_Address: MaleSkeletalC05Geo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7a0bde4cef860d542afefb9fe5cece06
+    m_Address: MaleSkeletalDistalPhalanges01LeftFootGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7b2f5f3c2429c73408730dacb3545f55
+    m_Address: MaleSkeletalRibs04Geo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7db7e47f4e3e5c84f9c3b81f79cf1070
+    m_Address: MaleSkeletalMetarsal02RightFootGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7dd2734c5553d4b4ea3b0eb190a32c1d
+    m_Address: MaleSkeletalRibs10Geo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7dd619aecc16c874ebfba4b812de02e5
+    m_Address: MaleSkeletalRibs08Geo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7deba962fd57b244f9809ed56be8494d
+    m_Address: MaleSkeletalMetacarpal05RightHandGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7e1400d105f56104abc46d0809d177f7
+    m_Address: MaleSkeletalMiddlePhalanges03RightFootGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7e5f544388861f24ba3de418d0c5cc0d
+    m_Address: MaleSkeletalProximalPhalange04LeftHandGeo
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7f1ce8fd16db13c4a84583ec087cf5a5
-    m_Address: Edited Human Parts/List/Head
+    m_Address: Head
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 80973a8a8659daa46b3ce3e036468525
-    m_Address: Edited Human Parts/List/Torso
+    m_Address: Torso
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 847a4bdc1647b024e831409f8a6cb7bc
+    m_Address: MaleSkeletalMiddlePhalanges05LeftFootGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 86e5eb91d580c074ca49fc41b0978b4d
+    m_Address: MaleSkeletalDistalPhalanges02LeftFootGeo
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 884ef56410c94b747ba88dc860afc941
-    m_Address: Edited Human Parts/List/Head 1
+    m_Address: Head 1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 89c1c694b174cf744983b17908b69d34
+    m_Address: MaleSkeletalProximalPhalange03RightHandGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8a4f263e31a21fd4ebd082046d246d2b
+    m_Address: MaleSkeletalCostalCartilagesGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8aa5ba805c9eb20479b00287ade86033
+    m_Address: MaleSkeletalAxisGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8bd0775ac6522cd49a5d943d75a45f67
+    m_Address: MaleSkeletalT08Geo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8f9d6b7de44ed0745b0338f3330feb55
+    m_Address: MaleSkeletalProximalPhalanges04LeftFootGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 91da1431117e85f42b6c9cace2bd39d0
+    m_Address: MaleSkeletalCuboidLeftFootGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 924b3540eba880c4aaf0599e6794bed2
+    m_Address: MaleSkeletalProximalPhalanges01RightFootGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 982963e6dc0d4c94f93f45134e6167f5
+    m_Address: MaleSkeletalMetarsal03LeftFootGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9c12ef1fc6770aa4e8da732d1a9904bf
+    m_Address: MaleSkeletalIntermediateCuneiformRightFootGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9c35ca6170f10c24da8983dba52f6653
+    m_Address: MaleSkeletalMiddlePhalanges02LeftFootGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9faa0230b6a178b419b994642395bb2c
+    m_Address: MaleSkeletalRadiusLeftGeo
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a00dc7f7301013342afb16f1be51f8d7
-    m_Address: Edited Human Parts/List/Left Leg
+    m_Address: Left Leg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a0183a209c08c00498b9666b0afc3bdf
+    m_Address: MaleSkeletalDistalPhalanges04RightFootGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a2cd1383357dc844589e8e4af265d68f
+    m_Address: MaleSkeletalProximalPhalanges02RightFootGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a707b9f7671dc4847ae398d8de011c1c
+    m_Address: MaleSkeletalCalcaneusLeftFootGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a91658c1f5dfb5142a613235f0261545
+    m_Address: MaleSkeletalProximalPhalanges02LeftFootGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a9793afb0a0b9bf41b740c529faca00b
+    m_Address: MaleSkeletalMetacarpal03LeftHandGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aa2298417228b0241bc1aca0d0bb3404
+    m_Address: MaleSkeletalUlnaRightGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aabe4de59a5021648848a2b72be9b8eb
+    m_Address: MaleSkeletalT04Geo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ac720291f9ff12e459ff4bc0dc5d453a
+    m_Address: MaleSkeletalMetacarpal05LeftHandGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ad4bbddd538d92a4582d5d3c02f0048b
+    m_Address: MaleSkeletalMiddlePhalange05LeftHandGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: af787eddcb5979146a472a329124bd5a
+    m_Address: Jaw
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b0ff2a7ce8e53d243aabda51d0b9023d
+    m_Address: MaleSkeletalSternumGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b123cf453bcfbaa4da216e00dc6bd262
+    m_Address: MaleSkeletalMetacarpal01RightHandGeo
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b125c412cd7c18040b32a618161b720d
-    m_Address: Edited Human Parts/List/Right Leg
+    m_Address: Right Leg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b49ba36b5eee55540838535ae500d77f
+    m_Address: MaleSkeletalDistalPhalanges03RightFootGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b89d03eec6a814f40a23bc8098a42d6f
+    m_Address: MaleSkeletalT12Geo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bb1e73c8ac6136047b6ffc5b025818bf
+    m_Address: MaleSkeletalTalusRightGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bb317bd32a939ac46a4b852f935d8ba6
+    m_Address: MaleSkeletalMetarsal01LeftFootGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bb897f8575b3de3459bdaef346a6dcab
+    m_Address: MaleSkeletalMetacarpal01LeftHandGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bcc6e489c004a83468231832677ac7d3
+    m_Address: MaleSkeletalT03Geo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: beaa7915d8e160c41906a227b6c06e20
+    m_Address: MaleSkeletalMiddlePhalange02LeftHandGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c0918d62c2e60514b961b68bd020db2b
+    m_Address: MaleSkeletalAtlasGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c12191a8b3cf5684498d29684b7c451f
+    m_Address: MaleSkeletalDistalPhalangeLeftHandGeo03
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c22f2a8e5f471b04baab2421ece8995f
+    m_Address: MaleSkeletalT09Geo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c26e97ee66643804291ad68f4bbe91ee
+    m_Address: MaleSkeletalT01Geo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c3a23eb5448aff54aa16ef93cd52d597
+    m_Address: MaleSkeletalCuboidRightFootGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c3e8946707508ba40a4574661304787d
+    m_Address: MaleSkeletalProximalPhalange01RighttHandGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c4751147a36f17249b090d2a9778cd33
+    m_Address: MaleSkeletalMiddlePhalanges02RightFootGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c52932bc77dc7764a997a4ecdf8dce65
+    m_Address: MaleSkeletalMetarsal05LeftFootGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c682deaeb5d688245bc4dad0f9f64316
+    m_Address: MaleSkeletalPatellaRightGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c8564559bf477c647bd0cb86f57b9aae
+    m_Address: MaleSkeletalFibulaRightGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c8a9458e22b7db24e9d68417bc77c1cf
+    m_Address: MaleSkeletalFemurRightGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c981e12828b9ad847950c0d4166d3856
+    m_Address: MaleSkeletalMetarsal04LeftFootGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cb6cf56474ac05a45a9edc00f8182287
+    m_Address: MaleSkeletalDistalPhalanges05LeftFootGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d0d1eda6d30beb143a859cb73440f098
+    m_Address: MaleSkeletalT10Geo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d1e74f9dab4641b4e8fbf710c31c20e9
+    m_Address: MaleSkeletalRibs03Geo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d1f36fb4fa0ee8e4c8eaebf45a0da7f3
+    m_Address: MaleSkeletalT05Geo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d2b4d1abc0c0d144ba638f2cc8984e24
+    m_Address: MaleSkeletalUlnaLeftGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d4a460748599d414aa2634fb5172f217
+    m_Address: MaleSkeletalHumerusRightGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d516ae409734624449ade3578593c2f5
+    m_Address: MaleSkeletalTibiaRightGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d55ba6ec4a0a852418b8c9eeffb60f20
+    m_Address: MaleSkeletalC07Geo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d5ba244b191ac5c42af4add9ef769982
+    m_Address: MaleSkeletalCalcaneusRightGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d5c9555f92989a242a9a4f9d1db7c26c
+    m_Address: MaleSkeletalRibs09Geo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d67b69d3d6e9c894aac2623b96a0b975
+    m_Address: MaleSkeletalDistalPhalanges03LeftFootGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d8147c971a3c0e649a074a525a775ad5
+    m_Address: MaleSkeletalMetarsal03RightFootGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d8856ce946eb31d44b6c638c8af7d97d
+    m_Address: MaleSkeletalDistalPhalangeLeftHandGeo01
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d9be7150d07c6bc4189a45e5ea252738
+    m_Address: MaleSkeletalMiddlePhalanges04LeftFootGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d9d8c891805ca5c4d927355026b49c42
+    m_Address: MaleSkeletalMiddlePhalange03RightHandGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dce92834679a39742b07920509d83e48
+    m_Address: MaleSkeletalLateralCuneiformRightFootGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e08ada561a174ce4194b119aae27e958
+    m_Address: MaleSkeletalProximalPhalanges01LeftFootGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e25c9489087cdb841a74c28a6d392a69
+    m_Address: MaleSkeletalDistalPhalangeLeftHandGeo02
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e275b73c87f67434399ccf5ad938ac13
+    m_Address: MaleSkeletalL03Geo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e5028f0b50bc6b549b4645644608becc
+    m_Address: MaleSkeletalDistalPhalangeLeftHandGeo05
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e5e1436d363a8da46842f551cdaef22c
+    m_Address: MaleSkeletalProximalPhalange05LeftHandGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ed34bc4a4ff486a4b87455113f628449
+    m_Address: MaleSkeletalDistalPhalange05RightHandGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ef11f0d91579c31428ef0175d75bd06a
+    m_Address: MaleSkeletalProximalPhalanges05LeftFootGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ef51a2403257fa0429c0ef0aadf2aa65
+    m_Address: MaleSkeletalDistalPhalange02RightHandGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f14cd74c738306d40bb5db3381c8ccab
+    m_Address: MaleSkeletalL01Geo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f19374645badb2f4d9cd24c95c8394c4
+    m_Address: MaleSkeletalMetarsal05RightFootGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f33d64339a9ce2243bf4d29dd1b75f12
+    m_Address: MaleSkeletalDistalPhalangeLeftHandGeo04
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f5e9e1f05c20940469c6a6c8421c09c5
+    m_Address: MaleSkeletalC04Geo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f6245be94b261734792e83dc3301353d
+    m_Address: Skull
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f640564a92bb82644a94fc3391ed8930
+    m_Address: MaleSkeletalHipLeftandSacrumGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f85364fb0f724d64e8d1432ad5ee9269
+    m_Address: MaleSkeletalMiddlePhalange05RightHandGeo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f9fcce74a9803f74488dc78f01e1b94f
+    m_Address: MaleSkeletalRibs02Geo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fa50f249bf6fbe548b3900fbbc71461d
+    m_Address: MaleSkeletalProximalPhalange04RightHandGeo
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

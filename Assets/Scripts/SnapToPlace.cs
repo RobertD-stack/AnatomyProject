@@ -22,15 +22,6 @@ public class SnapToPlace : MonoBehaviour
 
         }
 
-        // // VR
-
-        // float triggerValue = triggerAction.action.ReadValue<float>();
-
-        // if (triggerValue < 0.5f) // Example threshold
-        // {
-        //     Debug.Log("Trigger released");
-        //     Snap();
-        // }
     }
 
 

@@ -192,6 +192,7 @@ GameObject:
   - component: {fileID: 8605139064940473342}
   - component: {fileID: 8503015257982676917}
   - component: {fileID: 3567733477631151463}
+  - component: {fileID: -3384366091093954385}
   m_Layer: 0
   m_Name: Right Leg
   m_TagString: Untagged
@@ -482,3 +483,25 @@ MonoBehaviour:
   descriptionText: {fileID: 0}
   descriptionHeader: {fileID: 0}
   hovering: 0
+  descriptionMethod: 0
+--- !u!65 &-3384366091093954385
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4489300711886063403}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.4770978, y: 0.7421958, z: 2.4744608}
+  m_Center: {x: -0.0131911775, y: -0.06459171, z: -0.22570662}
