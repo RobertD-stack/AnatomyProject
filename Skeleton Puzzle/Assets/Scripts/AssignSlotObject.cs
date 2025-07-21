@@ -11,11 +11,13 @@ public class AssignSlotObject : MonoBehaviour
 {
     public List<Transform> slots = new List<Transform>();
     void Awake() {
-        foreach (Transform child in gameObject.transform) {
+        foreach (Transform child in gameObject.transform)
+        {
             child.gameObject.tag = "Slots";
             child.gameObject.AddComponent<Matched>();
 
             slots.Add(child);
+            
         }
 
     }

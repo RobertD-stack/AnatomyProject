@@ -42,13 +42,12 @@ public class Draggable : MonoBehaviour
         }
     }
 
+    // Takes over after the object was already spawned in
     void OnMouseDown()
     {
         isDragging = true;
 
-        // Calculate offset between object position and mouse position at time of click
-        Vector3 mouseWorldPos = GetMouseWorldPosition();
-        offset = transform.position - mouseWorldPos;
+        StartDragging();
     }
 
     // Initiate drag
@@ -59,9 +58,14 @@ public class Draggable : MonoBehaviour
         {
             // Debug.Log("Dragging");
 
-            Vector3 newPos = GetMouseWorldPosition() + offset; // Apply offset to maintain relative grab position
-            newPos.z = transform.position.z; // Lock the Z value to original
-            transform.position = newPos;
+            Vector3 newPos = GetMouseWorldPosition() + offset;
+            newPos.z = transform.position.z;
+
+            // Add the difference between center and pivot
+            Vector3 centerOffset = GetVisualCenterOffset();
+            centerOffset.z = 0f;
+
+            transform.position = newPos - centerOffset;
         }
     }
 
@@ -71,5 +75,19 @@ public class Draggable : MonoBehaviour
         Vector3 screenMousePos = Input.mousePosition;
         screenMousePos.z = Camera.main.WorldToScreenPoint(transform.position).z; // get current object's z-distance from camera
         return Camera.main.ScreenToWorldPoint(screenMousePos);
+    }
+
+
+    // Get the visual center of the object
+    Vector3 GetVisualCenterOffset()
+    {
+        Renderer renderer = GetComponentInChildren<Renderer>();
+        if (renderer != null)
+        {
+            Vector3 center = renderer.bounds.center;
+            Vector3 pivot = transform.position;
+            return center - pivot;
+        }
+        return Vector3.zero;
     }
 }

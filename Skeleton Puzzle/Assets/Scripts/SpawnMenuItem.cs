@@ -78,7 +78,8 @@ public class SpawnMenuItem : MonoBehaviour
         try
         {
             GameObject temp = Instantiate(menuItem, spawnPos, menuItem.transform.rotation);
-            temp.transform.localScale = temp.transform.localScale * globalVariables.GetComponent<itemSize>().objectScale;
+            float objectScale = globalVariables.GetComponent<itemSize>().objectScale;
+            temp.transform.localScale = new Vector3(objectScale, objectScale, objectScale);
             temp.transform.SetParent(spawnParent.transform);
             temp.AddComponent<Draggable>(); // Add Draggable Property
             temp.AddComponent<Matched>(); // Add Matched Property
