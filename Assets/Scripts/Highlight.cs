@@ -199,10 +199,10 @@ public class Highlight : MonoBehaviour
 
     public void UnHighlightObject()
     {
+        Debug.Log("Unhighlighting " + gameObject.name);
         highlighted = false;
         ToggleMaterial(highlighted);
 
-        Debug.Log("No longer hovering");
     }
 
     public void FocusObject()

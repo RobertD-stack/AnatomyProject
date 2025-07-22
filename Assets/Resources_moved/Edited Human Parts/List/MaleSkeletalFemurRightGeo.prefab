@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3283738643316233107}
   - component: {fileID: 4177363729230392708}
   - component: {fileID: 3875921345622649696}
+  - component: {fileID: 9065188098601677077}
   m_Layer: 0
   m_Name: MaleSkeletalFemurRightGeo
   m_TagString: Untagged
@@ -108,3 +109,25 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.06993674, y: 0.41217062, z: 0.0748743}
   m_Center: {x: 0.11402451, y: -0.23390262, z: -0.037271716}
+--- !u!114 &9065188098601677077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8446468036350235503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c9b2b6a4c2e5a4cbcae58d40c0b0cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlighted: 0
+  clicked: 0
+  textLabel: {fileID: 0}
+  label: default
+  highlightMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
+  descriptionText: {fileID: 0}
+  descriptionHeader: {fileID: 0}
+  hovering: 0
+  descriptionMethod: 0

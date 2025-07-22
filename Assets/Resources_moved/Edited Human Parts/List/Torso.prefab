@@ -195,6 +195,7 @@ GameObject:
   - component: {fileID: 2193066481622000962}
   - component: {fileID: 200384976192473347}
   - component: {fileID: -8359943245554444714}
+  - component: {fileID: -8633362719716653140}
   m_Layer: 0
   m_Name: Torso
   m_TagString: Untagged
@@ -595,3 +596,25 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.4703782, y: 0.7786433, z: 1.9699433}
   m_Center: {x: 0.050164275, y: -0.049871262, z: -0.00025375196}
+--- !u!114 &-8633362719716653140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5501294118706492841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c9b2b6a4c2e5a4cbcae58d40c0b0cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlighted: 0
+  clicked: 0
+  textLabel: {fileID: 0}
+  label: default
+  highlightMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
+  descriptionText: {fileID: 0}
+  descriptionHeader: {fileID: 0}
+  hovering: 0
+  descriptionMethod: 0

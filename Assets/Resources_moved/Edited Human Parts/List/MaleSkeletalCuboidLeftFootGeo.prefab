@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3054174727273533350}
   - component: {fileID: 4606835268581284574}
   - component: {fileID: -8067384543436389217}
+  - component: {fileID: -4497486148454990991}
   m_Layer: 0
   m_Name: MaleSkeletalCuboidLeftFootGeo
   m_TagString: Untagged
@@ -108,3 +109,25 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.027804911, y: 0.042271554, z: 0.032795396}
   m_Center: {x: -0.14626092, y: -0.8205173, z: -0.017566653}
+--- !u!114 &-4497486148454990991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3259838096904946128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c9b2b6a4c2e5a4cbcae58d40c0b0cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlighted: 0
+  clicked: 0
+  textLabel: {fileID: 0}
+  label: default
+  highlightMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
+  descriptionText: {fileID: 0}
+  descriptionHeader: {fileID: 0}
+  hovering: 0
+  descriptionMethod: 0

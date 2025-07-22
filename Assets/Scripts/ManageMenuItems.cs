@@ -63,6 +63,7 @@ public class ManageMenuItems : MonoBehaviour
                 string existingJson = System.IO.File.ReadAllText(path);
                 Debug.Log(existingJson);
                 itemList = JsonUtility.FromJson<Items>(existingJson);
+
             }
         }
 
@@ -150,7 +151,7 @@ public class ManageMenuItems : MonoBehaviour
                 if (item == null)
                 {
                     itemName = "No item";
-                    Debug.Log("An entry was not found for " + slot.name);
+                    Debug.LogError("No Item: An entry was not found for " + slot.name);
                 }
                 else
                 {
@@ -179,7 +180,7 @@ public class ManageMenuItems : MonoBehaviour
                     }
                     else
                     {
-                        Debug.LogError("Failed to load" + itemName + " via Addressables.");
+                        Debug.Log("Failed to load" + itemName + " via Addressables.");
                     }
                 };
                 menuItemList.Add(currentMenuItem);

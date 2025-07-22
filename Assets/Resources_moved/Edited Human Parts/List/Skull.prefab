@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6793955601033979864}
   - component: {fileID: -979129739488314869}
   - component: {fileID: -2560890545125792366}
+  - component: {fileID: 5713088115545823919}
   m_Layer: 0
   m_Name: Skull
   m_TagString: Untagged
@@ -110,6 +111,28 @@ BoxCollider:
   m_Size: {x: 0.11404908, y: 0.15126586, z: 0.16092563}
   m_Center: {x: -0.00019139051, y: 0.62132186, z: -0.018370736}
 --- !u!114 &-2560890545125792366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8984521752218402445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c9b2b6a4c2e5a4cbcae58d40c0b0cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlighted: 0
+  clicked: 0
+  textLabel: {fileID: 0}
+  label: default
+  highlightMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
+  descriptionText: {fileID: 0}
+  descriptionHeader: {fileID: 0}
+  hovering: 0
+  descriptionMethod: 0
+--- !u!114 &5713088115545823919
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

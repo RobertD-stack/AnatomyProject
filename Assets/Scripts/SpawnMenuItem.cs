@@ -7,7 +7,7 @@ using UnityEngine.UI;
 using System;
 
 /* *** SUMMARY *** 
-This script is placed on every single UI Menu Item and is used to spawn the corresponding addressable asset
+This script is placed on every single UI Menu Item and is used to spawn the corresponding addressable asset while also placing necessary components
 */
 
 public enum Mode
@@ -50,7 +50,15 @@ public class SpawnMenuItem : MonoBehaviour
             slotDictionary.Add(slotObject.name.ToLower(), slotObject);
         }
 
-        slot = slotDictionary[gameObject.name.ToLower()];
+        try
+        {
+            slot = slotDictionary[gameObject.name.ToLower()];
+        }
+        catch (System.Exception e)
+        {
+            Debug.Log(e.Message); // or just Debug.Log(e) for full exception info
+        }
+
 
 
         gameObject.GetComponent<Button>().onClick.AddListener(spawnItem);

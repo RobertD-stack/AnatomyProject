@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7685849587462992233}
   - component: {fileID: 3339755468141179346}
   - component: {fileID: 4112641823066163863}
+  - component: {fileID: -172940435213724649}
   m_Layer: 0
   m_Name: MaleSkeletalT04Geo
   m_TagString: Untagged
@@ -108,3 +109,25 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.043528523, y: 0.03604746, z: 0.05533193}
   m_Center: {x: -0.00025053695, y: 0.39346078, z: -0.09847928}
+--- !u!114 &-172940435213724649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3063084046904259023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c9b2b6a4c2e5a4cbcae58d40c0b0cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlighted: 0
+  clicked: 0
+  textLabel: {fileID: 0}
+  label: default
+  highlightMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
+  descriptionText: {fileID: 0}
+  descriptionHeader: {fileID: 0}
+  hovering: 0
+  descriptionMethod: 0

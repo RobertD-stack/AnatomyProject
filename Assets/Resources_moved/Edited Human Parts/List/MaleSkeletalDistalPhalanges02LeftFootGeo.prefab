@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2843369528336456680}
   - component: {fileID: 8298029765650631729}
   - component: {fileID: -1178991546923064189}
+  - component: {fileID: 4408355144256616190}
   m_Layer: 0
   m_Name: MaleSkeletalDistalPhalanges02LeftFootGeo
   m_TagString: Untagged
@@ -108,3 +109,25 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.005175397, y: 0.0051497817, z: 0.009013906}
   m_Center: {x: -0.12726656, y: -0.85238945, z: 0.11650737}
+--- !u!114 &4408355144256616190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3084065586891462452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c9b2b6a4c2e5a4cbcae58d40c0b0cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlighted: 0
+  clicked: 0
+  textLabel: {fileID: 0}
+  label: default
+  highlightMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
+  descriptionText: {fileID: 0}
+  descriptionHeader: {fileID: 0}
+  hovering: 0
+  descriptionMethod: 0

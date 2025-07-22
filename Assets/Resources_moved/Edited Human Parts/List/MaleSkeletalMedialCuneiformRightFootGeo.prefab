@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4629756212666349832}
   - component: {fileID: 6933469560959771495}
   - component: {fileID: -1998485638952452688}
+  - component: {fileID: 4140095363608899732}
   m_Layer: 0
   m_Name: MaleSkeletalMedialCuneiformRightFootGeo
   m_TagString: Untagged
@@ -108,3 +109,25 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.01794251, y: 0.036567867, z: 0.036791205}
   m_Center: {x: 0.11527252, y: -0.82362556, z: 0.00044819992}
+--- !u!114 &4140095363608899732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6687386625359318379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c9b2b6a4c2e5a4cbcae58d40c0b0cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlighted: 0
+  clicked: 0
+  textLabel: {fileID: 0}
+  label: default
+  highlightMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
+  descriptionText: {fileID: 0}
+  descriptionHeader: {fileID: 0}
+  hovering: 0
+  descriptionMethod: 0

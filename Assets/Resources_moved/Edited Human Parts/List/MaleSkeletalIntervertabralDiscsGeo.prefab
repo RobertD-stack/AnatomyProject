@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3972770757741251347}
   - component: {fileID: 1257536146944409959}
   - component: {fileID: -8694919575341890960}
+  - component: {fileID: -5552456753651509929}
   m_Layer: 0
   m_Name: MaleSkeletalIntervertabralDiscsGeo
   m_TagString: Untagged
@@ -108,3 +109,25 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.048135314, y: 0.49152443, z: 0.077466905}
   m_Center: {x: -0.00028310157, y: 0.2783669, z: -0.06996935}
+--- !u!114 &-5552456753651509929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6520525590588799537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c9b2b6a4c2e5a4cbcae58d40c0b0cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlighted: 0
+  clicked: 0
+  textLabel: {fileID: 0}
+  label: default
+  highlightMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
+  descriptionText: {fileID: 0}
+  descriptionHeader: {fileID: 0}
+  hovering: 0
+  descriptionMethod: 0
