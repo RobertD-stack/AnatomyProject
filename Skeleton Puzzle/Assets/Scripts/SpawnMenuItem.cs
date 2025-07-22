@@ -92,6 +92,14 @@ public class SpawnMenuItem : MonoBehaviour
             temp.AddComponent<Draggable>(); // Add Draggable Property
             temp.AddComponent<Matched>(); // Add Matched Property
             temp.AddComponent<DeleteItem>(); // Allow item to be deleted
+            if (temp.GetComponent<Highlight>() == null)
+            {
+                temp.AddComponent<Highlight>();
+            }
+            if (temp.GetComponent<BoxCollider>() == null)
+            {
+                temp.AddComponent<BoxCollider>();
+            }
             // Highlight label = temp.AddComponent<Highlight>(); // Add Label
             Highlight label = temp.GetComponent<Highlight>(); // Get Label
             label.label = menuItemName;
