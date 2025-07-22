@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 164780795921539139}
   - component: {fileID: 3685637093815503657}
   - component: {fileID: -8679994714130540477}
+  - component: {fileID: 6196570300518289168}
   m_Layer: 0
   m_Name: MaleSkeletalMetarsal04RightFootGeo
   m_TagString: Untagged
@@ -108,3 +109,25 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.0127529055, y: 0.037515104, z: 0.072664924}
   m_Center: {x: 0.15255281, y: -0.836699, z: 0.027549658}
+--- !u!114 &6196570300518289168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2641577129411689259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c9b2b6a4c2e5a4cbcae58d40c0b0cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlighted: 0
+  clicked: 0
+  textLabel: {fileID: 0}
+  label: default
+  highlightMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
+  descriptionText: {fileID: 0}
+  descriptionHeader: {fileID: 0}
+  hovering: 0
+  descriptionMethod: 0

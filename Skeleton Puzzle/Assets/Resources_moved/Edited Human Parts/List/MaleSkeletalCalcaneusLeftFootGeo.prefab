@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1561143514603249425}
   - component: {fileID: 6536860800209394133}
   - component: {fileID: 5955472937618972876}
+  - component: {fileID: 9188739181289894393}
   m_Layer: 0
   m_Name: MaleSkeletalCalcaneusLeftFootGeo
   m_TagString: Untagged
@@ -108,3 +109,25 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.042591967, y: 0.0566895, z: 0.07293093}
   m_Center: {x: -0.13393128, y: -0.82813936, z: -0.06725238}
+--- !u!114 &9188739181289894393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2257241226135356127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c9b2b6a4c2e5a4cbcae58d40c0b0cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlighted: 0
+  clicked: 0
+  textLabel: {fileID: 0}
+  label: default
+  highlightMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
+  descriptionText: {fileID: 0}
+  descriptionHeader: {fileID: 0}
+  hovering: 0
+  descriptionMethod: 0

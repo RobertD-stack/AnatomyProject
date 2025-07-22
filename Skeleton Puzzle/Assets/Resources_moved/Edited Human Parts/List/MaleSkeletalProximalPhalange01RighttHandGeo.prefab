@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8759032315447669472}
   - component: {fileID: 8927319965733711646}
   - component: {fileID: -4928570160657550228}
+  - component: {fileID: -1801876263671006811}
   m_Layer: 0
   m_Name: MaleSkeletalProximalPhalange01RighttHandGeo
   m_TagString: Untagged
@@ -108,3 +109,25 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.0069574118, y: 0.017731521, z: 0.027091525}
   m_Center: {x: 0.2734624, y: -0.06881231, z: 0.12311001}
+--- !u!114 &-1801876263671006811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2661935455235957075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c9b2b6a4c2e5a4cbcae58d40c0b0cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlighted: 0
+  clicked: 0
+  textLabel: {fileID: 0}
+  label: default
+  highlightMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
+  descriptionText: {fileID: 0}
+  descriptionHeader: {fileID: 0}
+  hovering: 0
+  descriptionMethod: 0

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9132207052400988574}
   - component: {fileID: 3123362640434001700}
   - component: {fileID: -4239830511505039993}
+  - component: {fileID: -2009483243912137040}
   m_Layer: 0
   m_Name: MaleSkeletalRibs12Geo
   m_TagString: Untagged
@@ -108,3 +109,25 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.19270194, y: 0.09979285, z: 0.07951929}
   m_Center: {x: -0.00019651651, y: 0.17526883, z: -0.082843244}
+--- !u!114 &-2009483243912137040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8682162424027003317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c9b2b6a4c2e5a4cbcae58d40c0b0cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlighted: 0
+  clicked: 0
+  textLabel: {fileID: 0}
+  label: default
+  highlightMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
+  descriptionText: {fileID: 0}
+  descriptionHeader: {fileID: 0}
+  hovering: 0
+  descriptionMethod: 0

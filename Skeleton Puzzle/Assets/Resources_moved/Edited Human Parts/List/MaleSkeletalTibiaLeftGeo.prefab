@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7520934138311473584}
   - component: {fileID: 3396955408480874882}
   - component: {fileID: 6865158771763504611}
+  - component: {fileID: 2822970761434198657}
   m_Layer: 0
   m_Name: MaleSkeletalTibiaLeftGeo
   m_TagString: Untagged
@@ -108,3 +109,25 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.068596505, y: 0.3586349, z: 0.059522167}
   m_Center: {x: -0.113047495, y: -0.61565876, z: -0.046147622}
+--- !u!114 &2822970761434198657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3642151046834562805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c9b2b6a4c2e5a4cbcae58d40c0b0cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlighted: 0
+  clicked: 0
+  textLabel: {fileID: 0}
+  label: default
+  highlightMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
+  descriptionText: {fileID: 0}
+  descriptionHeader: {fileID: 0}
+  hovering: 0
+  descriptionMethod: 0

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6622677753899846303}
   - component: {fileID: -3253278728450361107}
   - component: {fileID: -2440119552833564314}
+  - component: {fileID: -3213583679043022368}
   m_Layer: 0
   m_Name: TeethUpper
   m_TagString: Untagged
@@ -110,6 +111,28 @@ BoxCollider:
   m_Size: {x: 0.04491484, y: 0.019536614, z: 0.037962705}
   m_Center: {x: -0.00033414364, y: 0.5509766, z: 0.037407264}
 --- !u!114 &-2440119552833564314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6803134409268467015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c9b2b6a4c2e5a4cbcae58d40c0b0cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlighted: 0
+  clicked: 0
+  textLabel: {fileID: 0}
+  label: default
+  highlightMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
+  descriptionText: {fileID: 0}
+  descriptionHeader: {fileID: 0}
+  hovering: 0
+  descriptionMethod: 0
+--- !u!114 &-3213583679043022368
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

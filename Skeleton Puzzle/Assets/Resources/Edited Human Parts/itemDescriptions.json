@@ -1,33 +1,616 @@
 {
   "bodyParts": [
     {
-      "name": "Torso",
-      "description": "The human torso houses and protects vital organs including the heart, lungs, and digestive system. It supports breathing, circulation, and digestion, while also serving as the central structure connecting the upper and lower body, allowing for movement and stability."
+      "name": "Jaw",
+      "description": "The lower facial bone that supports the lower teeth and aids in chewing."
     },
     {
-      "name": "Head",
-      "description": "The human head contains the brain, which controls the body's functions, thoughts, and emotions. It also houses the sensory organs—eyes, ears, nose, and mouth—enabling vision, hearing, smell, taste, and speech. The skull protects the brain and supports facial structure."
+      "name": "MaleSkeletalAtlasGeo",
+      "description": "The first cervical vertebra, supporting the skull."
     },
     {
-      "name": "Hands",
-      "description": "The human hands are versatile tools used for grasping, holding, and manipulating objects. They contain muscles, tendons, and joints that allow for precise movement and coordination. Hands play a key role in touch, communication, and performing everyday tasks."
+      "name": "MaleSkeletalAxisGeo",
+      "description": "The second cervical vertebra, allowing head rotation."
     },
     {
-      "name": "Left Leg",
-      "description": "The human leg supports the body’s weight and enables movement such as walking, running, and jumping. It consists of strong bones, muscles, and joints that provide stability, balance, and mobility. The leg also aids in shock absorption and helps maintain posture."
+      "name": "MaleSkeletalC03Geo",
+      "description": "One of the bones in the spinal column."
     },
     {
-      "name": "Right Leg",
-      "description": "The human leg supports the body’s weight and enables movement such as walking, running, and jumping. It consists of strong bones, muscles, and joints that provide stability, balance, and mobility. The leg also aids in shock absorption and helps maintain posture."
+      "name": "MaleSkeletalC04Geo",
+      "description": "One of the bones in the spinal column."
     },
-    { "name": "Skull", "description": "description" },
-
-    { "name": "TeethUpper", "description": "description" },
-
-    { "name": "MaleSkeletalAtlasGeo", "description": "description" },
-    { "name": "MaleSkeletalAxisGeo", "description": "description" },
-    { "name": "MaleSkeletalC03Geo", "description": "description" },
-    { "name": "Jaw", "description": "description" },
-    { "name": "TeethLower", "description": "description" }
+    {
+      "name": "MaleSkeletalC05Geo",
+      "description": "One of the bones in the spinal column."
+    },
+    {
+      "name": "MaleSkeletalC06Geo",
+      "description": "One of the bones in the spinal column."
+    },
+    {
+      "name": "MaleSkeletalC07Geo",
+      "description": "One of the bones in the spinal column."
+    },
+    {
+      "name": "MaleSkeletalCalcaneusLeftFootGeo",
+      "description": "The heel bone, the largest bone in the foot."
+    },
+    {
+      "name": "MaleSkeletalCalcaneusRightGeo",
+      "description": "The heel bone, the largest bone in the foot."
+    },
+    {
+      "name": "MaleSkeletalCarpalsLeftHandGeo",
+      "description": "One of the wrist bones connecting the hand to the forearm."
+    },
+    {
+      "name": "MaleSkeletalCarpalsRightHandGeo",
+      "description": "One of the wrist bones connecting the hand to the forearm."
+    },
+    {
+      "name": "MaleSkeletalClavicalGeo",
+      "description": "The collarbone, connecting the sternum to the shoulder."
+    },
+    {
+      "name": "MaleSkeletalCostalCartilagesGeo",
+      "description": "Cartilage that connects the ribs to the sternum."
+    },
+    {
+      "name": "MaleSkeletalCuboidLeftFootGeo",
+      "description": "A cube-shaped bone on the lateral side of the foot."
+    },
+    {
+      "name": "MaleSkeletalCuboidRightFootGeo",
+      "description": "A cube-shaped bone on the lateral side of the foot."
+    },
+    {
+      "name": "MaleSkeletalDistalPhalange01RightHandGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalDistalPhalange02RightHandGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalDistalPhalange03RightHandGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalDistalPhalange04RightHandGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalDistalPhalange05RightHandGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalDistalPhalangeLeftHandGeo01",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalDistalPhalangeLeftHandGeo02",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalDistalPhalangeLeftHandGeo03",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalDistalPhalangeLeftHandGeo04",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalDistalPhalangeLeftHandGeo05",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalDistalPhalanges01LeftFootGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalDistalPhalanges01RightFootGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalDistalPhalanges02LeftFootGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalDistalPhalanges02RightFootGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalDistalPhalanges03LeftFootGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalDistalPhalanges03RightFootGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalDistalPhalanges04LeftFootGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalDistalPhalanges04RightFootGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalDistalPhalanges05LeftFootGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalDistalPhalanges05RightFootGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalFemurLeftGeo",
+      "description": "The thigh bone, the longest and strongest bone in the human body."
+    },
+    {
+      "name": "MaleSkeletalFemurRightGeo",
+      "description": "The thigh bone, the longest and strongest bone in the human body."
+    },
+    {
+      "name": "MaleSkeletalFibulaLeftGeo",
+      "description": "The slender bone located beside the tibia in the lower leg."
+    },
+    {
+      "name": "MaleSkeletalFibulaRightGeo",
+      "description": "The slender bone located beside the tibia in the lower leg."
+    },
+    {
+      "name": "MaleSkeletalHipLeftandSacrumGeo",
+      "description": "The pelvic region including the ilium, ischium, and pubis."
+    },
+    {
+      "name": "MaleSkeletalHumerusLeftGeo",
+      "description": "The long bone in the upper arm between shoulder and elbow."
+    },
+    {
+      "name": "MaleSkeletalHumerusRightGeo",
+      "description": "The long bone in the upper arm between shoulder and elbow."
+    },
+    {
+      "name": "MaleSkeletalIntermediateCuneiformLeftFootGeo",
+      "description": "A bone in the midfoot that helps form the arch of the foot."
+    },
+    {
+      "name": "MaleSkeletalIntermediateCuneiformRightFootGeo",
+      "description": "A bone in the midfoot that helps form the arch of the foot."
+    },
+    {
+      "name": "MaleSkeletalIntervertabralDiscsGeo",
+      "description": "A cartilage disc that cushions between vertebrae."
+    },
+    {
+      "name": "MaleSkeletalL01Geo",
+      "description": "One of the bones in the spinal column."
+    },
+    {
+      "name": "MaleSkeletalL02Geo",
+      "description": "One of the bones in the spinal column."
+    },
+    {
+      "name": "MaleSkeletalL03Geo",
+      "description": "One of the bones in the spinal column."
+    },
+    {
+      "name": "MaleSkeletalL04Geo",
+      "description": "One of the bones in the spinal column."
+    },
+    {
+      "name": "MaleSkeletalL05Geo",
+      "description": "One of the bones in the spinal column."
+    },
+    {
+      "name": "MaleSkeletalLateralCuneiformLeftFootGeo",
+      "description": "A bone in the midfoot that helps form the arch of the foot."
+    },
+    {
+      "name": "MaleSkeletalLateralCuneiformRightFootGeo",
+      "description": "A bone in the midfoot that helps form the arch of the foot."
+    },
+    {
+      "name": "MaleSkeletalMedialCuneiformLeftFootGeo",
+      "description": "A bone in the midfoot that helps form the arch of the foot."
+    },
+    {
+      "name": "MaleSkeletalMedialCuneiformRightFootGeo",
+      "description": "A bone in the midfoot that helps form the arch of the foot."
+    },
+    {
+      "name": "MaleSkeletalMetacarpal01LeftHandGeo",
+      "description": "One of the five bones of the hand between the wrist and fingers."
+    },
+    {
+      "name": "MaleSkeletalMetacarpal01RightHandGeo",
+      "description": "One of the five bones of the hand between the wrist and fingers."
+    },
+    {
+      "name": "MaleSkeletalMetacarpal02LeftHandGeo",
+      "description": "One of the five bones of the hand between the wrist and fingers."
+    },
+    {
+      "name": "MaleSkeletalMetacarpal02RightHandGeo",
+      "description": "One of the five bones of the hand between the wrist and fingers."
+    },
+    {
+      "name": "MaleSkeletalMetacarpal03LeftHandGeo",
+      "description": "One of the five bones of the hand between the wrist and fingers."
+    },
+    {
+      "name": "MaleSkeletalMetacarpal03RightHandGeo",
+      "description": "One of the five bones of the hand between the wrist and fingers."
+    },
+    {
+      "name": "MaleSkeletalMetacarpal04LeftHandGeo",
+      "description": "One of the five bones of the hand between the wrist and fingers."
+    },
+    {
+      "name": "MaleSkeletalMetacarpal04RightHandGeo",
+      "description": "One of the five bones of the hand between the wrist and fingers."
+    },
+    {
+      "name": "MaleSkeletalMetacarpal05LeftHandGeo",
+      "description": "One of the five bones of the hand between the wrist and fingers."
+    },
+    {
+      "name": "MaleSkeletalMetacarpal05RightHandGeo",
+      "description": "One of the five bones of the hand between the wrist and fingers."
+    },
+    {
+      "name": "MaleSkeletalMetarsal01LeftFootGeo",
+      "description": "One of the five bones in the midfoot."
+    },
+    {
+      "name": "MaleSkeletalMetarsal01RightFootGeo",
+      "description": "One of the five bones in the midfoot."
+    },
+    {
+      "name": "MaleSkeletalMetarsal02LeftFootGeo",
+      "description": "One of the five bones in the midfoot."
+    },
+    {
+      "name": "MaleSkeletalMetarsal02RightFootGeo",
+      "description": "One of the five bones in the midfoot."
+    },
+    {
+      "name": "MaleSkeletalMetarsal03LeftFootGeo",
+      "description": "One of the five bones in the midfoot."
+    },
+    {
+      "name": "MaleSkeletalMetarsal03RightFootGeo",
+      "description": "One of the five bones in the midfoot."
+    },
+    {
+      "name": "MaleSkeletalMetarsal04LeftFootGeo",
+      "description": "One of the five bones in the midfoot."
+    },
+    {
+      "name": "MaleSkeletalMetarsal04RightFootGeo",
+      "description": "One of the five bones in the midfoot."
+    },
+    {
+      "name": "MaleSkeletalMetarsal05LeftFootGeo",
+      "description": "One of the five bones in the midfoot."
+    },
+    {
+      "name": "MaleSkeletalMetarsal05RightFootGeo",
+      "description": "One of the five bones in the midfoot."
+    },
+    {
+      "name": "MaleSkeletalMiddlePhalange02LeftHandGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalMiddlePhalange02RightHandGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalMiddlePhalange03LeftHandGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalMiddlePhalange03RightHandGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalMiddlePhalange04LeftHandGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalMiddlePhalange04RightHandGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalMiddlePhalange05LeftHandGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalMiddlePhalange05RightHandGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalMiddlePhalanges02LeftFootGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalMiddlePhalanges02RightFootGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalMiddlePhalanges03LeftFootGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalMiddlePhalanges03RightFootGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalMiddlePhalanges04LeftFootGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalMiddlePhalanges04RightFootGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalMiddlePhalanges05LeftFootGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalMiddlePhalanges05RightFootGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalNavicularLeftFootGeo",
+      "description": "A bone in the midfoot that helps connect the ankle to the foot."
+    },
+    {
+      "name": "MaleSkeletalNavicularRightFootGeo",
+      "description": "A bone in the midfoot that helps connect the ankle to the foot."
+    },
+    {
+      "name": "MaleSkeletalPatellaLeftGeo",
+      "description": "The kneecap, a small bone in front of the knee joint."
+    },
+    {
+      "name": "MaleSkeletalPatellaRightGeo",
+      "description": "The kneecap, a small bone in front of the knee joint."
+    },
+    {
+      "name": "MaleSkeletalProximalPhalange01LeftHandGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalProximalPhalange01RighttHandGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalProximalPhalange02LeftHandGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalProximalPhalange02RightHandGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalProximalPhalange03LeftHandGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalProximalPhalange03RightHandGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalProximalPhalange04LeftHandGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalProximalPhalange04RightHandGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalProximalPhalange05LeftHandGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalProximalPhalange05RightHandGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalProximalPhalanges01LeftFootGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalProximalPhalanges01RightFootGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalProximalPhalanges02LeftFootGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalProximalPhalanges02RightFootGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalProximalPhalanges03LeftFootGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalProximalPhalanges03RightFootGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalProximalPhalanges04LeftFootGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalProximalPhalanges04RightFootGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalProximalPhalanges05LeftFootGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalProximalPhalanges05RightFootGeo",
+      "description": "One of the bones in the fingers or toes."
+    },
+    {
+      "name": "MaleSkeletalRadiusLeftGeo",
+      "description": "One of the two bones in the forearm, located on the thumb side."
+    },
+    {
+      "name": "MaleSkeletalRadiusRightGeo",
+      "description": "One of the two bones in the forearm, located on the thumb side."
+    },
+    {
+      "name": "MaleSkeletalRibs01Geo",
+      "description": "One of the curved bones forming the rib cage, protecting thoracic organs."
+    },
+    {
+      "name": "MaleSkeletalRibs02Geo",
+      "description": "One of the curved bones forming the rib cage, protecting thoracic organs."
+    },
+    {
+      "name": "MaleSkeletalRibs03Geo",
+      "description": "One of the curved bones forming the rib cage, protecting thoracic organs."
+    },
+    {
+      "name": "MaleSkeletalRibs04Geo",
+      "description": "One of the curved bones forming the rib cage, protecting thoracic organs."
+    },
+    {
+      "name": "MaleSkeletalRibs05Geo",
+      "description": "One of the curved bones forming the rib cage, protecting thoracic organs."
+    },
+    {
+      "name": "MaleSkeletalRibs06Geo",
+      "description": "One of the curved bones forming the rib cage, protecting thoracic organs."
+    },
+    {
+      "name": "MaleSkeletalRibs07Geo",
+      "description": "One of the curved bones forming the rib cage, protecting thoracic organs."
+    },
+    {
+      "name": "MaleSkeletalRibs08Geo",
+      "description": "One of the curved bones forming the rib cage, protecting thoracic organs."
+    },
+    {
+      "name": "MaleSkeletalRibs09Geo",
+      "description": "One of the curved bones forming the rib cage, protecting thoracic organs."
+    },
+    {
+      "name": "MaleSkeletalRibs10Geo",
+      "description": "One of the curved bones forming the rib cage, protecting thoracic organs."
+    },
+    {
+      "name": "MaleSkeletalRibs11Geo",
+      "description": "One of the curved bones forming the rib cage, protecting thoracic organs."
+    },
+    {
+      "name": "MaleSkeletalRibs12Geo",
+      "description": "One of the curved bones forming the rib cage, protecting thoracic organs."
+    },
+    {
+      "name": "MaleSkeletalScapulaLeftGeo",
+      "description": "The shoulder blade, a flat bone that connects with the humerus and clavicle."
+    },
+    {
+      "name": "MaleSkeletalScapulaLeftGeoRightGeo",
+      "description": "The shoulder blade, a flat bone that connects with the humerus and clavicle."
+    },
+    {
+      "name": "MaleSkeletalSternumGeo",
+      "description": "The flat bone in the center of the chest connecting the ribs."
+    },
+    {
+      "name": "MaleSkeletalT01Geo",
+      "description": "One of the bones in the spinal column."
+    },
+    {
+      "name": "MaleSkeletalT02Geo",
+      "description": "One of the bones in the spinal column."
+    },
+    {
+      "name": "MaleSkeletalT03Geo",
+      "description": "One of the bones in the spinal column."
+    },
+    {
+      "name": "MaleSkeletalT04Geo",
+      "description": "One of the bones in the spinal column."
+    },
+    {
+      "name": "MaleSkeletalT05Geo",
+      "description": "One of the bones in the spinal column."
+    },
+    {
+      "name": "MaleSkeletalT06Geo",
+      "description": "One of the bones in the spinal column."
+    },
+    {
+      "name": "MaleSkeletalT07Geo",
+      "description": "One of the bones in the spinal column."
+    },
+    {
+      "name": "MaleSkeletalT08Geo",
+      "description": "One of the bones in the spinal column."
+    },
+    {
+      "name": "MaleSkeletalT09Geo",
+      "description": "One of the bones in the spinal column."
+    },
+    {
+      "name": "MaleSkeletalT10Geo",
+      "description": "An anatomical bone model component used for visualization or study."
+    },
+    {
+      "name": "MaleSkeletalT11Geo",
+      "description": "An anatomical bone model component used for visualization or study."
+    },
+    {
+      "name": "MaleSkeletalT12Geo",
+      "description": "An anatomical bone model component used for visualization or study."
+    },
+    {
+      "name": "MaleSkeletalTalusLeftFootGeo",
+      "description": "An ankle bone that connects the leg to the foot."
+    },
+    {
+      "name": "MaleSkeletalTalusRightGeo",
+      "description": "An ankle bone that connects the leg to the foot."
+    },
+    {
+      "name": "MaleSkeletalTibiaLeftGeo",
+      "description": "The shinbone, a large weight-bearing bone in the lower leg."
+    },
+    {
+      "name": "MaleSkeletalTibiaRightGeo",
+      "description": "The shinbone, a large weight-bearing bone in the lower leg."
+    },
+    {
+      "name": "MaleSkeletalUlnaLeftGeo",
+      "description": "One of the two bones in the forearm, located on the pinky side."
+    },
+    {
+      "name": "MaleSkeletalUlnaRightGeo",
+      "description": "One of the two bones in the forearm, located on the pinky side."
+    },
+    {
+      "name": "Skull",
+      "description": "The bony structure of the head that houses and protects the brain."
+    },
+    {
+      "name": "TeethLower",
+      "description": "The set of structures in the mouth used for biting and chewing food."
+    },
+    {
+      "name": "TeethUpper",
+      "description": "The set of structures in the mouth used for biting and chewing food."
+    }
   ]
 }

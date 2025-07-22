@@ -193,6 +193,7 @@ GameObject:
   - component: {fileID: -339719046698795137}
   - component: {fileID: -1841751059982447374}
   - component: {fileID: 32994038193414105}
+  - component: {fileID: 1596172344162949732}
   m_Layer: 0
   m_Name: Hands
   m_TagString: Untagged
@@ -505,3 +506,25 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.736074, y: 0.8359918, z: 2.5405917}
   m_Center: {x: 0.24048221, y: 0.13331413, z: -0.19393913}
+--- !u!114 &1596172344162949732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755698064079571555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c9b2b6a4c2e5a4cbcae58d40c0b0cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlighted: 0
+  clicked: 0
+  textLabel: {fileID: 0}
+  label: default
+  highlightMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
+  descriptionText: {fileID: 0}
+  descriptionHeader: {fileID: 0}
+  hovering: 0
+  descriptionMethod: 0

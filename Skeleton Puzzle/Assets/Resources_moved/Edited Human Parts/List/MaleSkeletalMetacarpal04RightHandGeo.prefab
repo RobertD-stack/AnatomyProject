@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3876978183076873257}
   - component: {fileID: 2801772423629499240}
   - component: {fileID: -6313480030354042592}
+  - component: {fileID: -4009039546493443157}
   m_Layer: 0
   m_Name: MaleSkeletalMetacarpal04RightHandGeo
   m_TagString: Untagged
@@ -108,3 +109,25 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.015023515, y: 0.040856883, z: 0.025996905}
   m_Center: {x: 0.25092083, y: -0.099677555, z: 0.056132413}
+--- !u!114 &-4009039546493443157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6216339366105981388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c9b2b6a4c2e5a4cbcae58d40c0b0cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlighted: 0
+  clicked: 0
+  textLabel: {fileID: 0}
+  label: default
+  highlightMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
+  descriptionText: {fileID: 0}
+  descriptionHeader: {fileID: 0}
+  hovering: 0
+  descriptionMethod: 0
