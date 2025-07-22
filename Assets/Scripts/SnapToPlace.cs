@@ -46,7 +46,6 @@ public class SnapToPlace : MonoBehaviour
             matched = true;
             slotObject.GetComponent<Matched>().setMatched(matched);
             gameObject.GetComponent<Matched>().setMatched(matched);
-            gameObject.GetComponent<Highlight>().ToggleMaterial(false);
         }
     }
 

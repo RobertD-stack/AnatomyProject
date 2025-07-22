@@ -15709,6 +15709,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slots: []
+  createNewDescriptionItems: 0
 --- !u!1 &1091339111
 GameObject:
   m_ObjectHideFlags: 0
