@@ -2602,6 +2602,63 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 188951336}
   m_Mesh: {fileID: 4300006, guid: 789184456d21eef4bafa2e041c67049e, type: 3}
+--- !u!1001 &192530926
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4730569100148028384, guid: c38a8b00df994f340bfb216d443ad032, type: 3}
+      propertyPath: m_Name
+      value: Addressable Asset Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7717677876250096446, guid: c38a8b00df994f340bfb216d443ad032, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -29.94184
+      objectReference: {fileID: 0}
+    - target: {fileID: 7717677876250096446, guid: c38a8b00df994f340bfb216d443ad032, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 24.99173
+      objectReference: {fileID: 0}
+    - target: {fileID: 7717677876250096446, guid: c38a8b00df994f340bfb216d443ad032, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -12.56866
+      objectReference: {fileID: 0}
+    - target: {fileID: 7717677876250096446, guid: c38a8b00df994f340bfb216d443ad032, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7717677876250096446, guid: c38a8b00df994f340bfb216d443ad032, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7717677876250096446, guid: c38a8b00df994f340bfb216d443ad032, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7717677876250096446, guid: c38a8b00df994f340bfb216d443ad032, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7717677876250096446, guid: c38a8b00df994f340bfb216d443ad032, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7717677876250096446, guid: c38a8b00df994f340bfb216d443ad032, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7717677876250096446, guid: c38a8b00df994f340bfb216d443ad032, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c38a8b00df994f340bfb216d443ad032, type: 3}
 --- !u!1 &206811916
 GameObject:
   m_ObjectHideFlags: 0
@@ -29258,18 +29315,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2014108938}
-        m_TargetAssemblyTypeName: UnityEngine.Component, UnityEngine
-        m_MethodName: SendMessage
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: AHHHHHHHHH AHHHHH
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &2014108939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31874,7 +31919,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7253557603201251437, guid: 2c2a48a186b0444458ce1f12fdee3f99, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -34624,3 +34669,4 @@ SceneRoots:
   - {fileID: 1322006303874665283}
   - {fileID: 857193301}
   - {fileID: 1492271241980933612}
+  - {fileID: 192530926}

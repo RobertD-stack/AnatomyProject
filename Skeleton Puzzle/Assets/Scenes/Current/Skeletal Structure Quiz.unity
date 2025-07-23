@@ -493,7 +493,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questions: []
   answers: []
-  questionnaireType: 2
+  questionnaireType: 1
+  appendExistingData: 0
 --- !u!95 &885906450 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 6676803291689536443, guid: 2c2a48a186b0444458ce1f12fdee3f99, type: 3}
@@ -828,13 +829,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3654418277901843388}
     m_Modifications:
+    - target: {fileID: 1565672977666411071, guid: 76733451f13d8564cb543fd45d2c9fa9, type: 3}
+      propertyPath: m_text
+      value: Question 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1770839050960550091, guid: 76733451f13d8564cb543fd45d2c9fa9, type: 3}
       propertyPath: m_TagString
       value: Question
       objectReference: {fileID: 0}
     - target: {fileID: 2471632014742103104, guid: 76733451f13d8564cb543fd45d2c9fa9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2471632014742103104, guid: 76733451f13d8564cb543fd45d2c9fa9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -847,7 +852,7 @@ PrefabInstance:
     - target: {fileID: 2471632014742103104, guid: 76733451f13d8564cb543fd45d2c9fa9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 852618914}
+      objectReference: {fileID: 852618908}
     - target: {fileID: 2471632014742103104, guid: 76733451f13d8564cb543fd45d2c9fa9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -862,7 +867,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2471632014742103104, guid: 76733451f13d8564cb543fd45d2c9fa9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SaveIntoJSON
+      value: OnButtonClicked
       objectReference: {fileID: 0}
     - target: {fileID: 2471632014742103104, guid: 76733451f13d8564cb543fd45d2c9fa9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -870,7 +875,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2471632014742103104, guid: 76733451f13d8564cb543fd45d2c9fa9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: SaveData, Assembly-CSharp
+      value: CompleteScene, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2471632014742103104, guid: 76733451f13d8564cb543fd45d2c9fa9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -883,6 +888,14 @@ PrefabInstance:
     - target: {fileID: 2471632014742103104, guid: 76733451f13d8564cb543fd45d2c9fa9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2741652882692753526, guid: 76733451f13d8564cb543fd45d2c9fa9, type: 3}
+      propertyPath: m_text
+      value: Question 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2741652882692753526, guid: 76733451f13d8564cb543fd45d2c9fa9, type: 3}
+      propertyPath: m_fontSize
+      value: 44.75
       objectReference: {fileID: 0}
     - target: {fileID: 3109002436686871170, guid: 76733451f13d8564cb543fd45d2c9fa9, type: 3}
       propertyPath: m_TagString
@@ -916,9 +929,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4574559773729220651, guid: 76733451f13d8564cb543fd45d2c9fa9, type: 3}
+      propertyPath: m_text
+      value: Question 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4574559773729220651, guid: 76733451f13d8564cb543fd45d2c9fa9, type: 3}
+      propertyPath: m_fontSize
+      value: 44.75
+      objectReference: {fileID: 0}
     - target: {fileID: 5602495764504273295, guid: 76733451f13d8564cb543fd45d2c9fa9, type: 3}
       propertyPath: m_text
-      value: 'Post Quiz
+      value: 'Sample Skeletal Structure Quiz
 
 '
       objectReference: {fileID: 0}
@@ -1121,6 +1142,14 @@ PrefabInstance:
     - target: {fileID: 8260629039755876481, guid: 76733451f13d8564cb543fd45d2c9fa9, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8296521443276374410, guid: 76733451f13d8564cb543fd45d2c9fa9, type: 3}
+      propertyPath: m_text
+      value: Question 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8296521443276374410, guid: 76733451f13d8564cb543fd45d2c9fa9, type: 3}
+      propertyPath: m_fontSize
+      value: 44.75
       objectReference: {fileID: 0}
     - target: {fileID: 9017051690523043405, guid: 76733451f13d8564cb543fd45d2c9fa9, type: 3}
       propertyPath: m_TagString
