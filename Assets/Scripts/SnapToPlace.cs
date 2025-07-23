@@ -39,14 +39,12 @@ public class SnapToPlace : MonoBehaviour
             closestPos = slotObject.transform.position;
             transform.position = closestPos;
 
-            if (matched)
-            {
-                return;
-            }
+
             matched = true;
             slotObject.GetComponent<Matched>().setMatched(matched);
             gameObject.GetComponent<Matched>().setMatched(matched);
         }
+
     }
 
 }

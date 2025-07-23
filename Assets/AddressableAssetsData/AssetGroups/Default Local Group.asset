@@ -15,6 +15,11 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: cfc86565a9bb66644b3b99b5d359ae1a
   m_SerializeEntries:
+  - m_GUID: 001ff51f88017d94090f2b2f8808b0db
+    m_Address: Arteries
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 028893587ac6b9e479088af9ee65711c
     m_Address: MaleSkeletalDistalPhalange04RightHandGeo
     m_ReadOnly: 0
@@ -67,6 +72,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0fa64ec80d984c14db81771f617e8aae
     m_Address: LegMusclesAdductorLongusMuscleLeft
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1034f5bf6ed42ef479567b00b1c5ef3b
+    m_Address: Veins
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -812,6 +822,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 850972d8a35eb6a4b8922a219a6ad314
     m_Address: TorsoMusclesSerratusAnteriorMuscleLeft04
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 861b1fda80f255c438ebcc4783483b05
+    m_Address: Skin
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
