@@ -493,8 +493,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questions: []
   answers: []
-  questionnaireType: 1
-  appendExistingData: 0
+  questionnaireType: 0
+  appendExistingData: 1
 --- !u!95 &885906450 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 6676803291689536443, guid: 2c2a48a186b0444458ce1f12fdee3f99, type: 3}
@@ -558,7 +558,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7253557603201251437, guid: 2c2a48a186b0444458ce1f12fdee3f99, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -939,7 +939,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5602495764504273295, guid: 76733451f13d8564cb543fd45d2c9fa9, type: 3}
       propertyPath: m_text
-      value: Quiz Template
+      value: 'Sample Demographic Quiz
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 5804993791010186490, guid: 76733451f13d8564cb543fd45d2c9fa9, type: 3}
       propertyPath: m_Pivot.x

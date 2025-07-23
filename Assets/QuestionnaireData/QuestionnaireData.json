@@ -1,12 +1,12 @@
 {
-    "userId": 9977,
+    "userId": 8700,
     "demographicEntries": [
         {
             "questions": [
-                "What grade are you in?",
-                "On a scale of 1-10, how interested are you in biology?",
-                "Do you have a STEM background?",
-                "What are you most interested in studying in college?"
+                "Question 1",
+                "Question 2",
+                "Question 3",
+                "Question 4"
             ],
             "answers": [
                 "Option A",
@@ -14,9 +14,40 @@
                 "Option A",
                 "Option A"
             ],
-            "timestamp": "2025-07-15 15:56:29"
+            "timestamp": "2025-07-23 15:03:56"
         }
     ],
-    "knowledgeTests": [],
+    "knowledgeTests": [
+        {
+            "questions": [
+                "Question 1",
+                "Question 2",
+                "Question 3",
+                "Question 4"
+            ],
+            "answers": [
+                "Option A",
+                "Option A",
+                "Option A",
+                "Option B"
+            ],
+            "timestamp": "2025-07-23 15:04:08"
+        },
+        {
+            "questions": [
+                "Question 1",
+                "Question 2",
+                "Question 3",
+                "Question 4"
+            ],
+            "answers": [
+                "Option A",
+                "Option A",
+                "Option A",
+                "Option A"
+            ],
+            "timestamp": "2025-07-23 15:06:51"
+        }
+    ],
     "postSurvey": []
 }
