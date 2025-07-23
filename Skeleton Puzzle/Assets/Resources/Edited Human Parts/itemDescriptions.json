@@ -1335,6 +1335,18 @@
         {
             "name": "TorsoMusclesTrapeziusMuscleRight",
             "description": "The trapezius stabilizes and moves the scapula and neck."
+        },
+        {
+            "name": "Arteries",
+            "description": ""
+        },
+        {
+            "name": "Veins",
+            "description": ""
+        },
+        {
+            "name": "Skin",
+            "description": ""
         }
     ]
 }
