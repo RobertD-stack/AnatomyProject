@@ -169,6 +169,7 @@ public class ManageMenuItems : MonoBehaviour
                 currentMenuItem.name = itemName;
                 BoxCollider itemCollider = currentMenuItem.AddComponent<BoxCollider>(); // Add Box Collider
                 itemCollider.size = new Vector3(100f, 100f, 1f);
+                currentMenuItem.AddComponent<ToggleVRMenuItems>();
                 SpawnMenuItem smi = currentMenuItem.AddComponent<SpawnMenuItem>(); // Script responsible for spawning the menu item
                 smi.menuItemName = currentMenuItem.name; // Set the menu item name 
                 // Load the addressable with the same item name
