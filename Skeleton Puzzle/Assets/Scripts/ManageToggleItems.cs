@@ -36,16 +36,14 @@ public class ManageToggleItems : MonoBehaviour
         int i = 0;
         foreach (GameObject obj in objects)
         {
-            imageDictionary.Add(obj.name, partImages[i]);
 
             GameObject toggleObj = Instantiate(togglePrefab);
             toggleObj.name = obj.name; // We have to do this for when search for the object
             // set the object's parent to list parent so that it gets added to the list
             toggleObj.transform.SetParent(listParent.transform, false);
-            toggleObj.GetComponentInChildren<TextMeshPro>().text = obj.name;
+            toggleObj.GetComponentInChildren<TextMeshProUGUI>().text = obj.name;
             Image img = toggleObj.transform.Find("Icon").GetComponentInChildren<Image>();
 
-            img.sprite = imageDictionary[obj.name];
 
             Toggle m_Toggle = toggleObj.GetComponentInChildren<Toggle>();
             m_Toggle.onValueChanged.AddListener(delegate

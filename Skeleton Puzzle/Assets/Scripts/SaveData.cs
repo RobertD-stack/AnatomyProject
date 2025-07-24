@@ -41,7 +41,7 @@ public class SaveData : MonoBehaviour
         GameObject[] answerArray = GameObject.FindGameObjectsWithTag("Answer");
         AnswerData newEntry = new AnswerData();
 
-        string path = "C:/Users/super/Skeleton Puzzle/Assets/QuestionnaireData/QuestionnaireData.json";
+        string path = "Assets/QuestionnaireData/QuestionnaireData.json";
         // Check if we are editing existing data or overwriting existing data
         if (appendExistingData == AppendExistingData.False)
         {

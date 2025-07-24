@@ -63,6 +63,7 @@ public class ManageMenuItems : MonoBehaviour
                 string existingJson = System.IO.File.ReadAllText(path);
                 Debug.Log(existingJson);
                 itemList = JsonUtility.FromJson<Items>(existingJson);
+
             }
         }
 
@@ -146,8 +147,17 @@ public class ManageMenuItems : MonoBehaviour
             {
                 // Search for the body part with the same slot name 
                 Item item = itemList.bodyParts.FirstOrDefault(x => x.name == slot.name);
+                string itemName;
+                if (item == null)
+                {
+                    itemName = "No item";
+                    Debug.LogError("No Item: An entry was not found for " + slot.name);
+                }
+                else
+                {
+                    itemName = item.name; // Cache the name to avoid closure issues
 
-                string itemName = item.name; // Cache the name to avoid closure issues
+                }
 
 
                 GameObject currentMenuItem = Instantiate(menuItem);
@@ -155,23 +165,22 @@ public class ManageMenuItems : MonoBehaviour
                 currentMenuItem.transform.localScale = new Vector3(0.24f, 0.24f, 0.24f);
                 currentMenuItem.transform.localPosition = Vector3.zero;
 
-                currentMenuItem.GetComponentInChildren<TextMeshProUGUI>().text = item.name;
-                currentMenuItem.name = item.name;
+                currentMenuItem.GetComponentInChildren<TextMeshProUGUI>().text = itemName;
+                currentMenuItem.name = itemName;
                 BoxCollider itemCollider = currentMenuItem.AddComponent<BoxCollider>(); // Add Box Collider
                 itemCollider.size = new Vector3(100f, 100f, 1f);
                 SpawnMenuItem smi = currentMenuItem.AddComponent<SpawnMenuItem>(); // Script responsible for spawning the menu item
                 smi.menuItemName = currentMenuItem.name; // Set the menu item name 
                 // Load the addressable with the same item name
-                Addressables.LoadAssetAsync<GameObject>("Edited Human Parts/List/" + item.name).Completed += handle =>
+                Addressables.LoadAssetAsync<GameObject>(itemName).Completed += handle =>
                 {
-                    
                     if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
                     {
                         smi.menuItem = (handle.Result);
                     }
                     else
                     {
-                        Debug.LogError("Failed to load prefab via Addressables.");
+                        Debug.Log("Failed to load" + itemName + " via Addressables.");
                     }
                 };
                 menuItemList.Add(currentMenuItem);

@@ -1,22 +1,84 @@
 {
-    "userId": 9977,
+    "userId": 8136,
     "demographicEntries": [
         {
             "questions": [
-                "What grade are you in?",
-                "On a scale of 1-10, how interested are you in biology?",
-                "Do you have a STEM background?",
-                "What are you most interested in studying in college?"
+                "Question 1",
+                "Question 2",
+                "Question 3",
+                "Question 4"
+            ],
+            "answers": [
+                "Option B",
+                "Option C",
+                "Option B",
+                "Option A"
+            ],
+            "timestamp": "2025-07-23 22:48:52"
+        }
+    ],
+    "knowledgeTests": [
+        {
+            "questions": [
+                "Question 1",
+                "Question 2",
+                "Question 3",
+                "Question 4"
             ],
             "answers": [
                 "Option A",
                 "Option A",
+                "Option C",
+                "Option B"
+            ],
+            "timestamp": "2025-07-23 22:50:21"
+        },
+        {
+            "questions": [
+                "Question 1",
+                "Question 2",
+                "Question 3",
+                "Question 4"
+            ],
+            "answers": [
+                "Option B",
+                "Option C",
                 "Option A",
                 "Option A"
             ],
-            "timestamp": "2025-07-15 15:56:29"
+            "timestamp": "2025-07-23 22:52:40"
+        },
+        {
+            "questions": [
+                "Question 1",
+                "Question 2",
+                "Question 3",
+                "Question 4"
+            ],
+            "answers": [
+                "Option A",
+                "Option A",
+                "Option C",
+                "Option B"
+            ],
+            "timestamp": "2025-07-23 22:55:45"
         }
     ],
-    "knowledgeTests": [],
-    "postSurvey": []
+    "postSurvey": [
+        {
+            "questions": [
+                "Question 1",
+                "Question 2",
+                "Question 3",
+                "Question 4"
+            ],
+            "answers": [
+                "Option A",
+                "Option C",
+                "Option B",
+                "Option A"
+            ],
+            "timestamp": "2025-07-23 22:56:41"
+        }
+    ]
 }

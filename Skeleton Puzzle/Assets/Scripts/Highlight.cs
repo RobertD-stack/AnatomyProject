@@ -40,8 +40,11 @@ public class Highlight : MonoBehaviour
     public bool hovering;
     public DescriptionMethod descriptionMethod;
 
+
+
     void Start()
     {
+        defaultMaterial = GetComponent<Renderer>().material;
         hovering = false;
         if (descriptionMethod == DescriptionMethod.Dictionary)
         {
@@ -81,7 +84,6 @@ public class Highlight : MonoBehaviour
 
         //Assign materials
         highlightMaterial = Resources.Load<Material>("Highlight");
-        defaultMaterial = Resources.Load<Material>("Default");
 
 
 
@@ -192,6 +194,10 @@ public class Highlight : MonoBehaviour
     public void HighlightObject()
     {
         highlighted = true;
+        Renderer renderer = gameObject.GetComponent<Renderer>();
+        
+        // Cache the current material before changing it
+
         ToggleMaterial(highlighted);
         Debug.Log("Hovering");
     }
@@ -199,10 +205,10 @@ public class Highlight : MonoBehaviour
 
     public void UnHighlightObject()
     {
+        Debug.Log("Unhighlighting " + gameObject.name);
         highlighted = false;
         ToggleMaterial(highlighted);
 
-        Debug.Log("No longer hovering");
     }
 
     public void FocusObject()

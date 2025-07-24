@@ -22,15 +22,6 @@ public class SnapToPlace : MonoBehaviour
 
         }
 
-        // // VR
-
-        // float triggerValue = triggerAction.action.ReadValue<float>();
-
-        // if (triggerValue < 0.5f) // Example threshold
-        // {
-        //     Debug.Log("Trigger released");
-        //     Snap();
-        // }
     }
 
 
@@ -48,15 +39,12 @@ public class SnapToPlace : MonoBehaviour
             closestPos = slotObject.transform.position;
             transform.position = closestPos;
 
-            if (matched)
-            {
-                return;
-            }
+
             matched = true;
             slotObject.GetComponent<Matched>().setMatched(matched);
             gameObject.GetComponent<Matched>().setMatched(matched);
-            gameObject.GetComponent<Highlight>().ToggleMaterial(false);
         }
+
     }
 
 }
