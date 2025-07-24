@@ -1338,15 +1338,15 @@
         },
         {
             "name": "Arteries",
-            "description": ""
+            "description": "Blood vessels that carry oxygen-rich blood away from the heart to the body's tissues."
         },
         {
             "name": "Veins",
-            "description": ""
+            "description": "Blood vessels that return oxygen-depleted blood back to the heart."
         },
         {
             "name": "Skin",
-            "description": ""
+            "description": "The body's largest organ, serving as a protective barrier and involved in temperature regulation and sensation."
         }
     ]
 }
