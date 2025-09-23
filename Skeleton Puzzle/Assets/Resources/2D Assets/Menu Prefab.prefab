@@ -844,7 +844,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &2983564193963150792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -875,7 +875,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuItem: {fileID: 5686883443621773027, guid: 5d962d4348adf0b4abcf6b792e05528e, type: 3}
-  slotObjects: []
   parts:
   - {fileID: 1755698064079571555, guid: 7071a746a659c914594987d0940faebf, type: 3}
   - {fileID: 3929183027035664813, guid: 7f1ce8fd16db13c4a84583ec087cf5a5, type: 3}
@@ -893,10 +892,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e05e97173eb494e4e8a7d5f4c794dd93, type: 3}
   Grid: {fileID: 4753349782743927386}
   spawnParent: {fileID: 0}
-  imageLoadMethod: 0
-  assetLoadMethod: 0
-  itemList:
-    bodyParts: []
 --- !u!1 &8807676026181985375
 GameObject:
   m_ObjectHideFlags: 0

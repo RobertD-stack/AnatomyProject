@@ -83,71 +83,67 @@ public class SpawnMenuItem : MonoBehaviour
     void spawnItem()
     {
         Debug.Log("Spawning " + menuItemName);
-        Vector3 spawnPos = gameObject.transform.position;
-        spawnPos.z = 3.47f;
-
-        ToggleVR toggleVR = globalVariables.GetComponent<ToggleVR>();
-
-        if (toggleVR != null)
+        Vector3 spawnPos;
+        if (globalVariables.GetComponent<ToggleVR>().VRToggle == VR.On)
         {
-            VR VRToggle = toggleVR.VRToggle;
+            Transform cameraTransform = Camera.main.transform; // only if Camera.main is reliable in VR
+            spawnPos = cameraTransform.position + cameraTransform.forward * 1.5f; // 1.5m in front of player
 
-
-            if (VRToggle == VR.On)
-            {
-                Transform cameraTransform = Camera.main.transform; // only if Camera.main is reliable in VR
-                spawnPos = cameraTransform.position + cameraTransform.forward * 1.5f; // 1.5m in front of player
-
-            }
+        }
+        else
+        {
+            // Must zero out z and set to 1.89
+            spawnPos = gameObject.transform.position;
+            spawnPos.z = 3.47f;
         }
 
         try
+        {
+            GameObject temp = Instantiate(menuItem, spawnPos, menuItem.transform.rotation);
+            float objectScale = globalVariables.GetComponent<itemSize>().objectScale;
+            temp.transform.localScale = new Vector3(objectScale, objectScale, objectScale);
+            temp.transform.SetParent(spawnParent.transform);
+            temp.AddComponent<Draggable>(); // Add Draggable Property
+            temp.AddComponent<Matched>(); // Add Matched Property
+            temp.AddComponent<DeleteItem>(); // Allow item to be deleted
+            if (temp.GetComponent<Highlight>() == null)
             {
-                GameObject temp = Instantiate(menuItem, spawnPos, menuItem.transform.rotation);
-                float objectScale = globalVariables.GetComponent<itemSize>().objectScale;
-                temp.transform.localScale = new Vector3(objectScale, objectScale, objectScale);
-                temp.transform.SetParent(spawnParent.transform);
-                temp.AddComponent<Draggable>(); // Add Draggable Property
-                temp.AddComponent<Matched>(); // Add Matched Property
-                temp.AddComponent<DeleteItem>(); // Allow item to be deleted
-                if (temp.GetComponent<Highlight>() == null)
-                {
-                    temp.AddComponent<Highlight>();
-                }
-                if (temp.GetComponent<BoxCollider>() == null)
-                {
-                    temp.AddComponent<BoxCollider>();
-                }
-                if (temp.GetComponent<Rigidbody>() == null)
-                {
-                    Rigidbody rb = temp.AddComponent<Rigidbody>();
-                    rb.constraints = RigidbodyConstraints.FreezePosition;
-                    rb.constraints |= RigidbodyConstraints.FreezeRotation;
-
-                }
-                if (temp.GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>() == null)
-                {
-                    temp.AddComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>();
-                }
-                if (temp.GetComponent<XRGeneralGrabTransformer>() == null)
-                {
-                    temp.AddComponent<XRGeneralGrabTransformer>();
-                }
-
-                // Highlight label = temp.AddComponent<Highlight>(); // Add Label
-                Highlight label = temp.GetComponent<Highlight>(); // Get Label
-                label.label = menuItemName;
-
-                SnapToPlace slotComponent = temp.AddComponent<SnapToPlace>(); // Add Snap to Place Component Onto Spawned Objects
-                slotComponent.slotObject = slot;
-
-                temp.tag = "SpawnedItem";
+                temp.AddComponent<Highlight>();
+            }
+            if (temp.GetComponent<BoxCollider>() == null)
+            {
+                temp.AddComponent<BoxCollider>();
+            }
+            if (temp.GetComponent<Rigidbody>() == null)
+            {
+                Rigidbody rb = temp.AddComponent<Rigidbody>();
+                rb.constraints = RigidbodyConstraints.FreezePosition;
+                rb.constraints |= RigidbodyConstraints.FreezeRotation;
 
             }
-            catch (Exception ex)
+            if (temp.GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>() == null)
             {
-                Debug.Log("The item for this menu item has not been assigned");
+                temp.AddComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>();
             }
+            if (temp.GetComponent<XRGeneralGrabTransformer>() == null)
+            {
+                temp.AddComponent<XRGeneralGrabTransformer>();
+            }
+
+            // Highlight label = temp.AddComponent<Highlight>(); // Add Label
+            Highlight label = temp.GetComponent<Highlight>(); // Get Label
+            label.label = menuItemName;
+
+            SnapToPlace slotComponent = temp.AddComponent<SnapToPlace>(); // Add Snap to Place Component Onto Spawned Objects
+            slotComponent.slotObject = slot;
+
+            temp.tag = "SpawnedItem";
+
+        }
+        catch (Exception ex)
+        {
+            Debug.Log("The item for this menu item has not been assigned");
+        }
 
 
 
