@@ -87,6 +87,7 @@ public class ChatRequest
 public class UnityAndGeminiV3: MonoBehaviour
 {
     private string lastText = "";
+    private const string educationalSuffix = " Explain this in three short sentences in an educational human anatomy context for high school children. Do not acknowledge directly that we are catering our responses to high school anatomy students.";
 
     [Header("JSON API Configuration")]
     public TextAsset jsonApi;
@@ -144,17 +145,17 @@ public class UnityAndGeminiV3: MonoBehaviour
         }
     }
 
-
+    // Send prompt request to Gemini if the prmopt is not null
     void Start()
     {
         UnityAndGeminiKey jsonApiKey = JsonUtility.FromJson<UnityAndGeminiKey>(jsonApi.text);
         apiKey = jsonApiKey.key;
         chatHistory = new TextContent[] { };
-        if (prompt != "") { StartCoroutine(SendPromptRequestToGemini(prompt)); }
+        if (HasUserPrompt(prompt)) { StartCoroutine(SendPromptRequestToGemini(prompt)); }
         ;
-        if (imagePrompt != "") { StartCoroutine(SendPromptRequestToGeminiImageGenerator(imagePrompt)); }
+        if (HasUserPrompt(imagePrompt)) { StartCoroutine(SendPromptRequestToGeminiImageGenerator(imagePrompt)); }
         ;
-        if (mediaPrompt != "" && mediaFilePath != "") { StartCoroutine(SendPromptMediaRequestToGemini(mediaPrompt, mediaFilePath)); }
+        if (HasUserPrompt(mediaPrompt) && mediaFilePath != "") { StartCoroutine(SendPromptMediaRequestToGemini(mediaPrompt, mediaFilePath)); }
         ;
 
         // inputField.onEndEdit.AddListener(OnInputChanged);
@@ -168,15 +169,26 @@ public class UnityAndGeminiV3: MonoBehaviour
         {
             Debug.Log("Input field text updated");
             lastText = inputField.text;
-            StartCoroutine(SendPromptRequestToGemini(inputField.text));
+            if (HasUserPrompt(lastText))
+            {
+                StartCoroutine(SendPromptRequestToGemini(lastText));
+            }
         }
     }
     void OnInputChanged(string newText)
     {
-        StartCoroutine(SendPromptRequestToGemini(newText));
+        if (HasUserPrompt(newText))
+        {
+            StartCoroutine(SendPromptRequestToGemini(newText));
+        }
     }
     public IEnumerator SendPromptRequestToGemini(string promptText)
     {
+        if (!HasUserPrompt(promptText))
+        {
+            yield break;
+        }
+        promptText = WithEducationalContext(promptText);
         string url = $"{apiEndpoint}?key={apiKey}";
      
         string jsonData = "{\"contents\": [{\"parts\": [{\"text\": \"{" + promptText + "}\"}]}]}";
@@ -215,11 +227,19 @@ public class UnityAndGeminiV3: MonoBehaviour
     public void SendChat()
     {
         string userMessage = inputField.text;
-        StartCoroutine(SendChatRequestToGemini(userMessage));
+        if (HasUserPrompt(userMessage))
+        {
+            StartCoroutine(SendChatRequestToGemini(userMessage));
+        }
     }
 
     private IEnumerator SendChatRequestToGemini(string newMessage)
     {
+        if (!HasUserPrompt(newMessage))
+        {
+            yield break;
+        }
+        newMessage = WithEducationalContext(newMessage);
 
         string url = $"{apiEndpoint}?key={apiKey}";
      
@@ -294,6 +314,11 @@ public class UnityAndGeminiV3: MonoBehaviour
 
     private IEnumerator SendPromptRequestToGeminiImageGenerator(string promptText)
     {
+        if (!HasUserPrompt(promptText))
+        {
+            yield break;
+        }
+        promptText = WithEducationalContext(promptText);
         string url = $"{imageEndpoint}?key={apiKey}";
         
         // Create the proper JSON structure with model specification
@@ -430,8 +455,28 @@ public class UnityAndGeminiV3: MonoBehaviour
         return result;
     }
 
+    private string WithEducationalContext(string baseText)
+    {
+        if (string.IsNullOrEmpty(baseText))
+        {
+            return baseText;
+        }
+
+        if (baseText.EndsWith(educationalSuffix))
+        {
+            return baseText;
+        }
+
+        return baseText + educationalSuffix;
+    }
+
     private IEnumerator SendPromptMediaRequestToGemini(string promptText, string mediaPath)
     {
+        if (!HasUserPrompt(promptText))
+        {
+            yield break;
+        }
+        promptText = WithEducationalContext(promptText);
         // Read video file and convert to base64
         byte[] mediaBytes = File.ReadAllBytes(mediaPath);
         string base64Media = System.Convert.ToBase64String(mediaBytes);
@@ -500,6 +545,11 @@ public class UnityAndGeminiV3: MonoBehaviour
                 }
             }
         }
+    }
+
+    private bool HasUserPrompt(string text)
+    {
+        return !string.IsNullOrWhiteSpace(text);
     }
 
 }
