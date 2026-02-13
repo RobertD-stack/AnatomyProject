@@ -191,7 +191,10 @@ public class UnityAndGeminiV3: MonoBehaviour
         promptText = WithEducationalContext(promptText);
         string url = $"{apiEndpoint}?key={apiKey}";
      
-        string jsonData = "{\"contents\": [{\"parts\": [{\"text\": \"{" + promptText + "}\"}]}]}";
+        // Send the prompt as plain text. Escape for JSON so quotes in speech don't break the request.
+        string escapedText = promptText.Replace("\\", "\\\\").Replace("\"", "\\\"").Replace("\n", "\\n").Replace("\r", "\\r");
+        // System instruction tells Gemini not to echo the user - answer the question directly.
+        string jsonData = "{\"systemInstruction\": {\"parts\": [{\"text\": \"You are a helpful anatomy educator. Do not repeat or echo the user's words. Answer the question or request directly with your own explanation. Never start by restating what the user said.\"}]}, \"contents\": [{\"parts\": [{\"text\": \"" + escapedText + "\"}]}]}";
 
         byte[] jsonToSend = new System.Text.UTF8Encoding().GetBytes(jsonData);
 
