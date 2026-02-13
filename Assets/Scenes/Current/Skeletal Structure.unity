@@ -6841,6 +6841,10 @@ PrefabInstance:
       propertyPath: whisper
       value: 
       objectReference: {fileID: 1464982633}
+    - target: {fileID: 4794243391259809166, guid: 4375724494ce38941899bce0d9542d28, type: 3}
+      propertyPath: echo
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4526765881482399879, guid: 4375724494ce38941899bce0d9542d28, type: 3}
     m_RemovedGameObjects: []
