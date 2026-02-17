@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using JetBrains.Annotations;
@@ -38,7 +38,7 @@ namespace Whisper.Utils
         [Tooltip("Length of audio chunks in seconds, useful for streaming")]
         public float chunksLengthSec = 0.5f;
         [Tooltip("Should microphone play echo when recording is complete?")]
-        public bool echo = true;
+        public bool echo = false;
         
         [Header("Voice Activity Detection (VAD)")]
         [Tooltip("Should microphone check if audio input has speech?")]
