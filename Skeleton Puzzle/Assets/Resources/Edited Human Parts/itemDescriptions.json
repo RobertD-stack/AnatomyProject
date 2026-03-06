@@ -1347,6 +1347,66 @@
         {
             "name": "Skin",
             "description": "The body's largest organ, serving as a protective barrier and involved in temperature regulation and sensation."
+        },
+        {
+            "name": "Skeleton Combined",
+            "description": ""
+        },
+        {
+            "name": "Left Foot Cuneiforms",
+            "description": ""
+        },
+        {
+            "name": "Left Foot Metarsals",
+            "description": ""
+        },
+        {
+            "name": "Left Foot Phalanges",
+            "description": ""
+        },
+        {
+            "name": "Left Hand Metacarpals",
+            "description": ""
+        },
+        {
+            "name": "Left Hand Phalanges",
+            "description": ""
+        },
+        {
+            "name": "MaleSkeletalCalcaneusRightFootGeo",
+            "description": ""
+        },
+        {
+            "name": "Right Foot Cuneiforms",
+            "description": ""
+        },
+        {
+            "name": "Right Foot Metarsals",
+            "description": ""
+        },
+        {
+            "name": "Right Foot Phalanges",
+            "description": ""
+        },
+        {
+            "name": "Right Hand Metacarpals",
+            "description": ""
+        },
+        {
+            "name": "Right Hand Phalanges",
+            "description": ""
+        },
+        {
+            "name": "Skull Assets",
+            "description": ""
+        },
+        {
+            "name": "Spine",
+            "description": ""
+        },
+        {
+            "name": "Thoracic Cage",
+            "description": ""
         }
     ]
 }

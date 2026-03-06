@@ -72,9 +72,12 @@ public class ManageMenuItems : MonoBehaviour
     // Start is initial menu population
     void Start()
     {
-        for (int i = 0; i < parts.Count; i++)
+        if (assetLoadMethod == AssetLoadMethod.List)
         {
-            imageDictionary.Add(parts[i].name, partImages[i]);
+            for (int i = 0; i < parts.Count; i++)
+            {
+                imageDictionary.Add(parts[i].name, partImages[i]);
+            }
         }
 
         // Initial list build
