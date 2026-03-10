@@ -53,7 +53,15 @@ public class ManageMenuItems : MonoBehaviour
 
     void Awake()
     {
+
+
+    }
+
+    // Start is initial menu population
+    void Start()
+    {
         slotObjects = GameObject.FindGameObjectsWithTag("Slots");
+        Debug.Log($"ManageMenuItems: Found {slotObjects?.Length ?? 0} objects with tag 'Slots'");
         if (assetLoadMethod == AssetLoadMethod.FilePath)
         {
             // Load itemDescriptions.JSON at the beginning for ease
@@ -66,12 +74,6 @@ public class ManageMenuItems : MonoBehaviour
 
             }
         }
-
-    }
-
-    // Start is initial menu population
-    void Start()
-    {
         if (assetLoadMethod == AssetLoadMethod.List)
         {
             for (int i = 0; i < parts.Count; i++)
@@ -176,7 +178,7 @@ public class ManageMenuItems : MonoBehaviour
                 SpawnMenuItem smi = currentMenuItem.AddComponent<SpawnMenuItem>(); // Script responsible for spawning the menu item
                 smi.menuItemName = currentMenuItem.name; // Set the menu item name 
                 // Load the addressable with the same item name
-                Addressables.LoadAssetAsync<GameObject>(itemName).Completed += handle =>
+                Addressables.LoadAssetAsync<GameObject>("Skeleton Combined[" + itemName + "]").Completed += handle =>
                 {
                     if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
                     {
@@ -204,39 +206,44 @@ public class ManageMenuItems : MonoBehaviour
                 continue;
             }
 
-            if (!imageDictionary.ContainsKey(menuItemList[i].name))
-            {
-                Debug.LogWarning($"imageDictionary missing key: {menuItemList[i].name}");
-                continue;
-            }
-
-            // Old method uses dictionary
-
+            // Dictionary method requires the key to exist
             if (imageLoadMethod == ImageLoadMethod.Dictionary)
             {
-
+                if (!imageDictionary.ContainsKey(menuItemList[i].name))
+                {
+                    Debug.LogWarning($"imageDictionary missing key: {menuItemList[i].name}");
+                    continue;
+                }
                 Debug.Log("Loading " + menuItemList[i] + " from the image dictionary");
                 img.sprite = imageDictionary[menuItemList[i].name];
             }
-
-            // New method uses a filepath to search for the image in a folder
+            // FilePath method loads from disk - no dictionary needed
             else if (imageLoadMethod == ImageLoadMethod.FilePath)
             {
-                string filepath = "C:/Users/super/Skeleton Puzzle/Assets/Resources/ObjectIcons/" + menuItemList[i].name.ToLower() + ".JPG"; // CASE SENSITIVE
+                string filepath = "C:/Users/rgdewitty/Documents/GitHub/AnatomyProject/Skeleton Puzzle/Assets/Resources/ObjectIcons/" + menuItemList[i].name.ToLower() + ".JPG"; // CASE SENSITIVE
 
                 // New way of doing it is loading it from a filepath using the item name
                 if (File.Exists(filepath))
                 {
-
-                    Debug.Log("Loading " + filepath);
                     byte[] fileData = File.ReadAllBytes(filepath);
                     Texture2D tex = new Texture2D(2, 2);
-                    tex.LoadImage(fileData); //..this will auto-resize the texture dimensions.
+                    bool loadSuccess = tex.LoadImage(fileData);
 
-                    Sprite sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0.5f, 0.5f));
+                    bool isValid = loadSuccess && tex.width > 0 && tex.height > 0;
 
-                    img.sprite = sprite;
-
+                    if (isValid)
+                    {
+                        Sprite sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0.5f, 0.5f));
+                        img.sprite = sprite;
+                        Debug.Log($"Valid image loaded: {filepath} ({tex.width}x{tex.height})");
+                    }
+                    else
+                    {
+                        if (!loadSuccess)
+                            Debug.LogWarning($"Invalid image (LoadImage failed): {filepath}");
+                        else
+                            Debug.LogWarning($"Invalid image (bad dimensions {tex.width}x{tex.height}): {filepath}");
+                    }
                 }
                 else
                 {
