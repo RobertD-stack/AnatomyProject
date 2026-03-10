@@ -16,7 +16,7 @@ MonoBehaviour:
   m_GUID: cfc86565a9bb66644b3b99b5d359ae1a
   m_SerializeEntries:
   - m_GUID: e2dddb8445b868b4bba8b47d5b313a62
-    m_Address: Edited Human Parts/Skeleton Combined
+    m_Address: Skeleton Combined
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
