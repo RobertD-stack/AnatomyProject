@@ -6,6 +6,9 @@ using UnityEngine.InputSystem.XR;
 using UnityEngine.UI;
 using System;
 
+using UnityEngine.XR.Interaction.Toolkit.Transformers;
+
+
 /* *** SUMMARY *** 
 This script is placed on every single UI Menu Item and is used to spawn the corresponding addressable asset while also placing necessary components
 */
@@ -80,9 +83,20 @@ public class SpawnMenuItem : MonoBehaviour
     void spawnItem()
     {
         Debug.Log("Spawning " + menuItemName);
-        // Must zero out z and set to 1.89
-        Vector3 spawnPos = gameObject.transform.position;
-        spawnPos.z = 3.47f;
+        Vector3 spawnPos;
+        if (globalVariables.GetComponent<ToggleVR>().VRToggle == VR.On)
+        {
+            Transform cameraTransform = Camera.main.transform; // only if Camera.main is reliable in VR
+            spawnPos = cameraTransform.position + cameraTransform.forward * 1.5f; // 1.5m in front of player
+
+        }
+        else
+        {
+            // Must zero out z and set to 1.89
+            spawnPos = gameObject.transform.position;
+            spawnPos.z = 3.47f;
+        }
+
         try
         {
             GameObject temp = Instantiate(menuItem, spawnPos, menuItem.transform.rotation);
@@ -100,6 +114,22 @@ public class SpawnMenuItem : MonoBehaviour
             {
                 temp.AddComponent<BoxCollider>();
             }
+            if (temp.GetComponent<Rigidbody>() == null)
+            {
+                Rigidbody rb = temp.AddComponent<Rigidbody>();
+                rb.constraints = RigidbodyConstraints.FreezePosition;
+                rb.constraints |= RigidbodyConstraints.FreezeRotation;
+
+            }
+            if (temp.GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>() == null)
+            {
+                temp.AddComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>();
+            }
+            if (temp.GetComponent<XRGeneralGrabTransformer>() == null)
+            {
+                temp.AddComponent<XRGeneralGrabTransformer>();
+            }
+
             // Highlight label = temp.AddComponent<Highlight>(); // Add Label
             Highlight label = temp.GetComponent<Highlight>(); // Get Label
             label.label = menuItemName;
