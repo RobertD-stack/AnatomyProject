@@ -4664,6 +4664,7 @@ GameObject:
   - component: {fileID: 2075088118}
   - component: {fileID: 2075088119}
   - component: {fileID: 2075088120}
+  - component: {fileID: 2075088121}
   m_Layer: 0
   m_Name: Global Variables
   m_TagString: GlobalVariables
@@ -4776,6 +4777,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reassignAddressables: 0
+--- !u!114 &2075088121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075088112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc875ce6c026124a9c68cdca61d090f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VRToggle: 1
 --- !u!1 &2087845477
 GameObject:
   m_ObjectHideFlags: 0
