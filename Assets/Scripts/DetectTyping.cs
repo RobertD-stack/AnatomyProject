@@ -31,13 +31,13 @@ public class DetectTyping : MonoBehaviour
             {
                 if (!hit.collider.CompareTag("SearchBar"))
                 {
-                    Debug.Log("Not a search bar!");
+                    // Debug.Log("Not a search bar!");
                     globalVariables.GetComponent<IsTyping>().setTyping(false);
                 }
             }
             else
             {
-                Debug.Log("Not a search bar!");
+                // Debug.Log("Not a search bar!");
                 globalVariables.GetComponent<IsTyping>().setTyping(false);
 
 

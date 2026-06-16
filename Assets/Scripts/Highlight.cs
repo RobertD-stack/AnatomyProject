@@ -64,12 +64,12 @@ public class Highlight : MonoBehaviour
             if (System.IO.File.Exists(path))
             {
                 string existingJson = System.IO.File.ReadAllText(path);
-                Debug.Log(existingJson);
+                // Debug.Log(existingJson);
                 Items itemList = JsonUtility.FromJson<Items>(existingJson);
 
                 foreach (Item bodyPart in itemList.bodyParts)
                 {
-                    Debug.Log("Found " + bodyPart.name + " in " + path);
+                    // Debug.Log("Found " + bodyPart.name + " in " + path);
                     descriptions.Add(bodyPart.name, bodyPart.description);
                 }
             }

@@ -47,42 +47,29 @@ public class AssignSlotObject : MonoBehaviour
 
             if (createNewDescriptionItems == CreateNewDescriptionItems.True)
             {
-                if (System.IO.File.Exists(path))
+                Item tempItem = new Item
                 {
+                    name = child.name,
+                    description = ""
+                };
 
-                    Item tempItem = new Item
-                    {
-                        name = child.name,
-                        description = ""
-                    };
+                // Only add if an item with the same name doesn't already exist
+                bool alreadyExists = allItems.Exists(item => item.name == tempItem.name);
 
-                    // Only add if an item with the same name doesn't already exist
-                    bool alreadyExists = allItems.Exists(item => item.name == tempItem.name);
-
-                    if (!alreadyExists)
-                    {
-                        allItems.Add(tempItem);
-                    }
-
-
-                }
-                else
+                if (!alreadyExists)
                 {
-                    Debug.Log(path + " is not a valid path!");
+                    allItems.Add(tempItem);
                 }
-                string json = JsonUtility.ToJson(new Items { bodyParts = allItems }, true);
-                System.IO.File.WriteAllText(path, json);
-                Debug.Log($"Saved {allItems.Count} items to {path}");
-
-
-
-
             }
-
-
-
-
         }
+
+        if (createNewDescriptionItems == CreateNewDescriptionItems.True)
+        {
+            string json = JsonUtility.ToJson(new Items { bodyParts = allItems }, true);
+            System.IO.File.WriteAllText(path, json);
+            Debug.Log($"Saved {allItems.Count} items to {path}");
+        }
+
 
     }
 }
