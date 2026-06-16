@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Networking;
 using System.Collections.Generic;
 using TMPro;
@@ -83,11 +84,46 @@ public class ChatRequest
     public TextContent system_instruction;
 }
 
+[System.Serializable]
+public class GeminiStringEvent : UnityEvent<string> { }
+
+public enum LlmBackend
+{
+    Gemini,
+    Ollama
+}
+
+[System.Serializable]
+public class OllamaChatMessage
+{
+    public string role;
+    public string content;
+}
+
+[System.Serializable]
+public class OllamaChatResponse
+{
+    public OllamaChatMessage message;
+}
+
 
 public class UnityAndGeminiV3: MonoBehaviour
 {
-    private string lastText = "";
     private const string educationalSuffix = " Explain this in three short sentences in an educational human anatomy context for high school children. Do not acknowledge directly that we are catering our responses to high school anatomy students.";
+
+    [Header("LLM Backend")]
+    public LlmBackend llmBackend = LlmBackend.Ollama;
+    [Tooltip("Ollama base URL (run: ollama serve).")]
+    public string ollamaBaseUrl = "http://localhost:11434";
+    [Tooltip("Model name pulled locally (run: ollama pull llama3.2).")]
+    // Change llama model
+    public string ollamaModel = "llama3.2";
+
+    [Header("Prompt Mode")]
+    [Tooltip("When enabled, uses the text field (e.g. microphone transcription) with system instructions and educational suffix. When disabled, uses the sample test prompt.")]
+    public bool useMicrophoneInput = false;
+    [Tooltip("Sent to the model when Use Microphone Input is disabled.")]
+    public string sampleTestPrompt = "This is a test prompt. Respond with a short answer to ensure that the model is working correctly.";
 
     [Header("JSON API Configuration")]
     public TextAsset jsonApi;
@@ -100,6 +136,8 @@ public class UnityAndGeminiV3: MonoBehaviour
     [Header("ChatBot Function")]
     public TMP_Text inputField;
     public TMP_Text uiText;
+    [Tooltip("Fires once each time uiText is set from a model reply (wire to TextToSpeech.NotifyModelResponse).")]
+    public GeminiStringEvent onModelResponseText;
     public string botInstructions;
     private TextContent[] chatHistory;
 
@@ -125,6 +163,12 @@ public class UnityAndGeminiV3: MonoBehaviour
     }
     public MediaType mimeType = MediaType.Video_MP4;
     
+    [Header("Debug")]
+    [Tooltip("Logs the exact request format sent to Gemini (API key redacted; large base64 truncated).")]
+    public bool logGeminiRequests = true;
+
+    private const string PromptSystemInstruction =
+        "You are a helpful anatomy educator. Do not repeat or echo the user's words. Answer the question or request directly with your own explanation. Never start by restating what the user said.";
 
     public string GetMimeTypeString()
     {
@@ -161,42 +205,39 @@ public class UnityAndGeminiV3: MonoBehaviour
         // inputField.onEndEdit.AddListener(OnInputChanged);
     }
 
+    public void SubmitPrompt(string promptText)
+    {
+        StartCoroutine(SendPromptRequestToGemini(promptText));
+    }
 
-    // Constantly Check if the textfield is updated
-    void Update()
-    {
-        if (inputField != null && inputField.text != lastText)
-        {
-            Debug.Log("Input field text updated");
-            lastText = inputField.text;
-            if (HasUserPrompt(lastText))
-            {
-                StartCoroutine(SendPromptRequestToGemini(lastText));
-            }
-        }
-    }
-    void OnInputChanged(string newText)
-    {
-        if (HasUserPrompt(newText))
-        {
-            StartCoroutine(SendPromptRequestToGemini(newText));
-        }
-    }
     public IEnumerator SendPromptRequestToGemini(string promptText)
     {
+        promptText = ResolvePromptForRequest(promptText);
         if (!HasUserPrompt(promptText))
         {
             yield break;
         }
-        promptText = WithEducationalContext(promptText);
+
+        if (llmBackend == LlmBackend.Ollama)
+        {
+            yield return SendPromptRequestToOllama(promptText);
+            yield break;
+        }
+
+        Debug.Log("Sending to Gemini: " + promptText);
         string url = $"{apiEndpoint}?key={apiKey}";
      
-        // Send the prompt as plain text. Escape for JSON so quotes in speech don't break the request.
-        string escapedText = promptText.Replace("\\", "\\\\").Replace("\"", "\\\"").Replace("\n", "\\n").Replace("\r", "\\r");
-        // System instruction tells Gemini not to echo the user - answer the question directly.
-        string jsonData = "{\"systemInstruction\": {\"parts\": [{\"text\": \"You are a helpful anatomy educator. Do not repeat or echo the user's words. Answer the question or request directly with your own explanation. Never start by restating what the user said.\"}]}, \"contents\": [{\"parts\": [{\"text\": \"" + escapedText + "\"}]}]}";
-
+        string escapedText = EscapeJsonString(promptText);
+        string jsonData = useMicrophoneInput
+            ? "{\"systemInstruction\": {\"parts\": [{\"text\": \"" + EscapeJsonString(PromptSystemInstruction) + "\"}]}, \"contents\": [{\"parts\": [{\"text\": \"" + escapedText + "\"}]}]}"
+            : "{\"contents\": [{\"parts\": [{\"text\": \"" + escapedText + "\"}]}]}";
         byte[] jsonToSend = new System.Text.UTF8Encoding().GetBytes(jsonData);
+
+        LogGeminiRequest(
+            "Prompt",
+            url,
+            jsonData,
+            $"Mode: {(useMicrophoneInput ? "Microphone" : "Sample test")}\nPrompt: {promptText}\nSystem instruction: {(useMicrophoneInput ? PromptSystemInstruction : "(none)")}");
 
         // Create a UnityWebRequest with the JSON data
         using (UnityWebRequest www = new UnityWebRequest(url, "POST")){
@@ -208,6 +249,8 @@ public class UnityAndGeminiV3: MonoBehaviour
 
             if (www.result != UnityWebRequest.Result.Success) {
                 Debug.LogError(www.error);
+                if (!string.IsNullOrEmpty(www.downloadHandler.text))
+                    Debug.LogError("Response: " + www.downloadHandler.text);
             } else {
                 Debug.Log("Request complete!");
                 TextResponse response = JsonUtility.FromJson<TextResponse>(www.downloadHandler.text);
@@ -218,6 +261,7 @@ public class UnityAndGeminiV3: MonoBehaviour
                         Debug.Log(text);
                         // Update my UI text with my response
                         uiText.text = text;
+                        onModelResponseText?.Invoke(text);
                     }
                 else
                 {
@@ -225,6 +269,72 @@ public class UnityAndGeminiV3: MonoBehaviour
                 }
             }
         }
+    }
+
+    private IEnumerator SendPromptRequestToOllama(string promptText)
+    {
+        string url = ollamaBaseUrl.TrimEnd('/') + "/api/chat";
+        string jsonData = useMicrophoneInput
+            ? "{\"model\":\"" + ollamaModel + "\",\"stream\":false,\"messages\":[" +
+              "{\"role\":\"system\",\"content\":\"" + EscapeJsonString(PromptSystemInstruction) + "\"}," +
+              "{\"role\":\"user\",\"content\":\"" + EscapeJsonString(promptText) + "\"}" +
+              "]}"
+            : "{\"model\":\"" + ollamaModel + "\",\"stream\":false,\"messages\":[" +
+              "{\"role\":\"user\",\"content\":\"" + EscapeJsonString(promptText) + "\"}" +
+              "]}";
+
+        byte[] jsonToSend = new System.Text.UTF8Encoding().GetBytes(jsonData);
+
+        Debug.Log("Sending to Ollama: " + promptText);
+        LogGeminiRequest(
+            "Ollama",
+            url,
+            jsonData,
+            $"Mode: {(useMicrophoneInput ? "Microphone" : "Sample test")}\nModel: {ollamaModel}\nPrompt: {promptText}");
+
+        using (UnityWebRequest www = new UnityWebRequest(url, "POST"))
+        {
+            www.uploadHandler = new UploadHandlerRaw(jsonToSend);
+            www.downloadHandler = new DownloadHandlerBuffer();
+            www.SetRequestHeader("Content-Type", "application/json");
+
+            yield return www.SendWebRequest();
+
+            if (www.result != UnityWebRequest.Result.Success)
+            {
+                Debug.LogError(www.error);
+                if (!string.IsNullOrEmpty(www.downloadHandler.text))
+                    Debug.LogError("Response: " + www.downloadHandler.text);
+            }
+            else
+            {
+                Debug.Log("Ollama request complete!");
+                Debug.Log("Raw response: " + www.downloadHandler.text);
+                OllamaChatResponse response = JsonUtility.FromJson<OllamaChatResponse>(www.downloadHandler.text);
+                if (response.message != null && !string.IsNullOrEmpty(response.message.content))
+                {
+                    string text = response.message.content;
+                    Debug.Log(text);
+                    uiText.text = text;
+                    onModelResponseText?.Invoke(text);
+                }
+                else
+                {
+                    Debug.Log("No text found in Ollama response.");
+                }
+            }
+        }
+    }
+
+    private static string EscapeJsonString(string value)
+    {
+        if (value == null) return "";
+        return value
+            .Replace("\\", "\\\\")
+            .Replace("\"", "\\\"")
+            .Replace("\n", "\\n")
+            .Replace("\r", "\\r")
+            .Replace("\t", "\\t");
     }
 
     public void SendChat()
@@ -273,6 +383,12 @@ public class UnityAndGeminiV3: MonoBehaviour
 
         byte[] jsonToSend = new System.Text.UTF8Encoding().GetBytes(jsonData);
 
+        LogGeminiRequest(
+            "Chat",
+            url,
+            jsonData,
+            $"User message: {newMessage}\nBot instructions: {botInstructions}\nHistory turns: {chatHistory.Length}");
+
         // Create a UnityWebRequest with the JSON data
         using (UnityWebRequest www = new UnityWebRequest(url, "POST")){
             www.uploadHandler = new UploadHandlerRaw(jsonToSend);
@@ -302,6 +418,7 @@ public class UnityAndGeminiV3: MonoBehaviour
                         Debug.Log(reply);
                         //This part shows the text in the Canvas
                         uiText.text = reply;
+                        onModelResponseText?.Invoke(reply);
                         //This part adds the response to the chat history, for your next message
                         contentsList.Add(botContent);
                         chatHistory = contentsList.ToArray();
@@ -337,6 +454,8 @@ public class UnityAndGeminiV3: MonoBehaviour
         }}";
 
         byte[] jsonToSend = new System.Text.UTF8Encoding().GetBytes(jsonData);
+
+        LogGeminiRequest("Image", url, jsonData, $"Image prompt: {promptText}");
 
         // Create a UnityWebRequest with the JSON data
         using (UnityWebRequest www = new UnityWebRequest(url, "POST"))
@@ -473,13 +592,30 @@ public class UnityAndGeminiV3: MonoBehaviour
         return baseText + educationalSuffix;
     }
 
+    private string ResolvePromptForRequest(string promptText)
+    {
+        if (!useMicrophoneInput)
+        {
+            return sampleTestPrompt;
+        }
+
+        if (inputField != null && !string.IsNullOrWhiteSpace(inputField.text))
+        {
+            promptText = inputField.text;
+        }
+
+        return WithEducationalContext(promptText);
+    }
+
     private IEnumerator SendPromptMediaRequestToGemini(string promptText, string mediaPath)
     {
         if (!HasUserPrompt(promptText))
         {
             yield break;
         }
-        promptText = WithEducationalContext(promptText);
+        // promptText = WithEducationalContext(promptText);
+        promptText = "This is a test prompt. Respond with a short answer to ensure that the model is working correctly.";
+        Debug.Log("Prompt text: " + promptText);
         // Read video file and convert to base64
         byte[] mediaBytes = File.ReadAllBytes(mediaPath);
         string base64Media = System.Convert.ToBase64String(mediaBytes);
@@ -512,12 +648,14 @@ public class UnityAndGeminiV3: MonoBehaviour
 
         // Serialize the request into JSON
         // string jsonData = JsonUtility.ToJson(jsonBody);
-        Debug.Log("Sending JSON: " + jsonBody); // For debugging
-
-        // byte[] jsonToSend = new System.Text.UTF8Encoding().GetBytes(jsonData);
 
         byte[] jsonToSend = new System.Text.UTF8Encoding().GetBytes(jsonBody);
 
+        LogGeminiRequest(
+            "Media",
+            url,
+            jsonBody,
+            $"Prompt: {promptText}\nMedia path: {mediaPath}\nMIME type: {mimeTypeMedia}\nMedia bytes: {mediaBytes.Length}");
 
         // Create and send the request
         using (UnityWebRequest www = new UnityWebRequest(url, "POST"))
@@ -553,6 +691,75 @@ public class UnityAndGeminiV3: MonoBehaviour
     private bool HasUserPrompt(string text)
     {
         return !string.IsNullOrWhiteSpace(text);
+    }
+
+    private void LogGeminiRequest(string requestKind, string url, string jsonBody, string notes = null)
+    {
+        if (!logGeminiRequests)
+        {
+            return;
+        }
+
+        string message =
+            $"[Gemini Request: {requestKind}]\n" +
+            "  Method: POST\n" +
+            "  Content-Type: application/json\n" +
+            $"  URL: {RedactApiKeyFromUrl(url)}\n" +
+            $"  Payload size: {jsonBody.Length} characters\n";
+
+        if (!string.IsNullOrEmpty(notes))
+        {
+            message += "  Notes:\n";
+            foreach (string line in notes.Split('\n'))
+            {
+                message += $"    {line}\n";
+            }
+        }
+
+        message += "  JSON body:\n" + SanitizeRequestBodyForLog(jsonBody);
+        Debug.Log(message);
+    }
+
+    private string RedactApiKeyFromUrl(string url)
+    {
+        return string.IsNullOrEmpty(apiKey) ? url : url.Replace(apiKey, "***REDACTED***");
+    }
+
+    private static string SanitizeRequestBodyForLog(string jsonBody)
+    {
+        const string dataMarker = "\"data\":\"";
+        int searchFrom = 0;
+
+        while (searchFrom < jsonBody.Length)
+        {
+            int markerIndex = jsonBody.IndexOf(dataMarker, searchFrom, StringComparison.Ordinal);
+            if (markerIndex < 0)
+            {
+                break;
+            }
+
+            int valueStart = markerIndex + dataMarker.Length;
+            int valueEnd = jsonBody.IndexOf('"', valueStart);
+            if (valueEnd < 0)
+            {
+                break;
+            }
+
+            int valueLength = valueEnd - valueStart;
+            if (valueLength > 120)
+            {
+                string preview = jsonBody.Substring(valueStart, 80);
+                string replacement = dataMarker + preview + $"...[base64 truncated, {valueLength} chars total]\"";
+                jsonBody = jsonBody.Substring(0, markerIndex) + replacement + jsonBody.Substring(valueEnd + 1);
+                searchFrom = markerIndex + replacement.Length;
+            }
+            else
+            {
+                searchFrom = valueEnd + 1;
+            }
+        }
+
+        return jsonBody;
     }
 
 }
