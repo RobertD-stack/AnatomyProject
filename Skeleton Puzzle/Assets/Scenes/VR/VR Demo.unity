@@ -724,6 +724,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textField: {fileID: 157189505}
+  animator: {fileID: 0}
+  animationDuration: 15
 --- !u!1001 &169412606
 PrefabInstance:
   m_ObjectHideFlags: 0

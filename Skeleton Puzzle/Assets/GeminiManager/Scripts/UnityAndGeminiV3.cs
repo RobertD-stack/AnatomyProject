@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Networking;
 using System.Collections.Generic;
 using TMPro;
@@ -83,6 +84,9 @@ public class ChatRequest
     public TextContent system_instruction;
 }
 
+[System.Serializable]
+public class GeminiStringEvent : UnityEvent<string> { }
+
 
 public class UnityAndGeminiV3: MonoBehaviour
 {
@@ -100,6 +104,8 @@ public class UnityAndGeminiV3: MonoBehaviour
     [Header("ChatBot Function")]
     public TMP_Text inputField;
     public TMP_Text uiText;
+    [Tooltip("Fires once each time uiText is set from a model reply (wire to TextToSpeech.NotifyModelResponse).")]
+    public GeminiStringEvent onModelResponseText;
     public string botInstructions;
     private TextContent[] chatHistory;
 
@@ -218,6 +224,7 @@ public class UnityAndGeminiV3: MonoBehaviour
                         Debug.Log(text);
                         // Update my UI text with my response
                         uiText.text = text;
+                        onModelResponseText?.Invoke(text);
                     }
                 else
                 {
@@ -302,6 +309,7 @@ public class UnityAndGeminiV3: MonoBehaviour
                         Debug.Log(reply);
                         //This part shows the text in the Canvas
                         uiText.text = reply;
+                        onModelResponseText?.Invoke(reply);
                         //This part adds the response to the chat history, for your next message
                         contentsList.Add(botContent);
                         chatHistory = contentsList.ToArray();
