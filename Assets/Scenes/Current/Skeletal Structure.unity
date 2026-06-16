@@ -2064,6 +2064,7 @@ MonoBehaviour:
   button: {fileID: 770842824}
   buttonText: {fileID: 1102841208}
   outputText: {fileID: 715909926}
+  gemini: {fileID: 0}
 --- !u!114 &461245167 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4794243391259809166, guid: 4375724494ce38941899bce0d9542d28, type: 3}
@@ -6101,7 +6102,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2226882521313964509, guid: a66bfde88dbe0e846b45bc643b3e6124, type: 3}
       propertyPath: m_Name
-      value: GeminiManager
+      value: AI Manager
       objectReference: {fileID: 0}
     - target: {fileID: 6015506993103287062, guid: a66bfde88dbe0e846b45bc643b3e6124, type: 3}
       propertyPath: prompt
@@ -6116,8 +6117,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 715909926}
     - target: {fileID: 6015506993103287062, guid: a66bfde88dbe0e846b45bc643b3e6124, type: 3}
+      propertyPath: llmBackend
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6015506993103287062, guid: a66bfde88dbe0e846b45bc643b3e6124, type: 3}
+      propertyPath: ollamaModel
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6015506993103287062, guid: a66bfde88dbe0e846b45bc643b3e6124, type: 3}
       propertyPath: botInstructions
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6015506993103287062, guid: a66bfde88dbe0e846b45bc643b3e6124, type: 3}
+      propertyPath: useMicrophoneInput
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6015506993103287062, guid: a66bfde88dbe0e846b45bc643b3e6124, type: 3}
       propertyPath: onModelResponseText.m_PersistentCalls.m_Calls.Array.size

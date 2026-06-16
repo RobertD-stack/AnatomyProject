@@ -93,6 +93,32 @@ public enum LlmBackend
     Ollama
 }
 
+public enum OllamaModel
+{
+    [InspectorName("Llama 3.2 (Default)")]
+    Llama3_2,
+    [InspectorName("Llama 3.2 1B (Lightweight)")]
+    Llama3_2_1B,
+    [InspectorName("Llama 3.2 3B (Lightweight)")]
+    Llama3_2_3B,
+    [InspectorName("Llama 3.1 8B (Rule Adhering)")]
+    Llama3_1_8B,
+    [InspectorName("MedLlama2 (Medically Factual)")]
+    MedLlama2,
+    [InspectorName("Meditron (Medically Factual)")]
+    Meditron,
+    [InspectorName("BioMistral (Medically Factual)")]
+    BioMistral,
+    [InspectorName("Qwen 2.5 7B (Rule Adhering)")]
+    Qwen2_5_7B,
+    [InspectorName("Qwen 2.5 3B (Rule Adhering)")]
+    Qwen2_5_3B,
+    [InspectorName("Gemma 2 2B (Lightweight)")]
+    Gemma2_2B,
+    [InspectorName("Custom (Modelfile / other)")]
+    Custom
+}
+
 [System.Serializable]
 public class OllamaChatMessage
 {
@@ -115,9 +141,10 @@ public class UnityAndGeminiV3: MonoBehaviour
     public LlmBackend llmBackend = LlmBackend.Ollama;
     [Tooltip("Ollama base URL (run: ollama serve).")]
     public string ollamaBaseUrl = "http://localhost:11434";
-    [Tooltip("Model name pulled locally (run: ollama pull llama3.2).")]
-    // Change llama model
-    public string ollamaModel = "llama3.2";
+    [Tooltip("Local Ollama model to use (run: ollama pull <model>).")]
+    public OllamaModel ollamaModel = OllamaModel.Llama3_2;
+    [Tooltip("Used when Ollama Model is set to Custom.")]
+    public string customOllamaModel = "anatomy-tutor";
 
     [Header("Prompt Mode")]
     [Tooltip("When enabled, uses the text field (e.g. microphone transcription) with system instructions and educational suffix. When disabled, uses the sample test prompt.")]
@@ -273,13 +300,14 @@ public class UnityAndGeminiV3: MonoBehaviour
 
     private IEnumerator SendPromptRequestToOllama(string promptText)
     {
+        string modelName = GetOllamaModelName();
         string url = ollamaBaseUrl.TrimEnd('/') + "/api/chat";
         string jsonData = useMicrophoneInput
-            ? "{\"model\":\"" + ollamaModel + "\",\"stream\":false,\"messages\":[" +
+            ? "{\"model\":\"" + modelName + "\",\"stream\":false,\"messages\":[" +
               "{\"role\":\"system\",\"content\":\"" + EscapeJsonString(PromptSystemInstruction) + "\"}," +
               "{\"role\":\"user\",\"content\":\"" + EscapeJsonString(promptText) + "\"}" +
               "]}"
-            : "{\"model\":\"" + ollamaModel + "\",\"stream\":false,\"messages\":[" +
+            : "{\"model\":\"" + modelName + "\",\"stream\":false,\"messages\":[" +
               "{\"role\":\"user\",\"content\":\"" + EscapeJsonString(promptText) + "\"}" +
               "]}";
 
@@ -290,7 +318,7 @@ public class UnityAndGeminiV3: MonoBehaviour
             "Ollama",
             url,
             jsonData,
-            $"Mode: {(useMicrophoneInput ? "Microphone" : "Sample test")}\nModel: {ollamaModel}\nPrompt: {promptText}");
+            $"Mode: {(useMicrophoneInput ? "Microphone" : "Sample test")}\nModel: {modelName}\nPrompt: {promptText}");
 
         using (UnityWebRequest www = new UnityWebRequest(url, "POST"))
         {
@@ -605,6 +633,25 @@ public class UnityAndGeminiV3: MonoBehaviour
         }
 
         return WithEducationalContext(promptText);
+    }
+
+    private string GetOllamaModelName()
+    {
+        switch (ollamaModel)
+        {
+            case OllamaModel.Llama3_2: return "llama3.2";
+            case OllamaModel.Llama3_2_1B: return "llama3.2:1b";
+            case OllamaModel.Llama3_2_3B: return "llama3.2:3b";
+            case OllamaModel.Llama3_1_8B: return "llama3.1:8b";
+            case OllamaModel.MedLlama2: return "medllama2";
+            case OllamaModel.Meditron: return "meditron";
+            case OllamaModel.BioMistral: return "biomistral";
+            case OllamaModel.Qwen2_5_7B: return "qwen2.5:7b";
+            case OllamaModel.Qwen2_5_3B: return "qwen2.5:3b";
+            case OllamaModel.Gemma2_2B: return "gemma2:2b";
+            case OllamaModel.Custom: return customOllamaModel;
+            default: return "llama3.2";
+        }
     }
 
     private IEnumerator SendPromptMediaRequestToGemini(string promptText, string mediaPath)
