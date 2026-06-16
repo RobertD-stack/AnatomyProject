@@ -214,7 +214,7 @@ public class ManageMenuItems : MonoBehaviour
                     Debug.LogWarning($"imageDictionary missing key: {menuItemList[i].name}");
                     continue;
                 }
-                Debug.Log("Loading " + menuItemList[i] + " from the image dictionary");
+                // Debug.Log("Loading " + menuItemList[i] + " from the image dictionary");
                 img.sprite = imageDictionary[menuItemList[i].name];
             }
             // FilePath method loads from disk - no dictionary needed
@@ -235,7 +235,7 @@ public class ManageMenuItems : MonoBehaviour
                     {
                         Sprite sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0.5f, 0.5f));
                         img.sprite = sprite;
-                        Debug.Log($"Valid image loaded: {filepath} ({tex.width}x{tex.height})");
+                        // Debug.Log($"Valid image loaded: {filepath} ({tex.width}x{tex.height})");
                     }
                     else
                     {

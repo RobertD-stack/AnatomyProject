@@ -13,11 +13,9 @@ public class ToggleVRMenuItems : MonoBehaviour
     {
         if (globalGameObject.GetComponent<ToggleVR>() != null)
         {
-            Debug.Log("toggle vr found");
             if (globalGameObject.GetComponent<ToggleVR>().VRToggle == VR.On)
             {
 
-                Debug.Log("VR is on");
                 gameObject.GetComponent<Button>().enabled = true;
 
             }
@@ -28,7 +26,7 @@ public class ToggleVRMenuItems : MonoBehaviour
         }
         else
         {
-            Debug.Log("toggle vr not found");
+            Debug.LogWarning("toggle vr not found");
         }
 
     }

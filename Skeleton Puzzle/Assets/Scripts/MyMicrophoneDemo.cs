@@ -25,11 +25,14 @@ namespace Whisper.Samples
         public Button button;
         public TextMeshProUGUI buttonText;
         public TMP_Text outputText;
+        public UnityAndGeminiV3 gemini;
         
         private string _buffer;
 
         private void Awake()
         {
+            if (gemini == null)
+                gemini = FindObjectOfType<UnityAndGeminiV3>();
             whisper.OnNewSegment += OnNewSegment;
 
             microphoneRecord.OnRecordStop += OnRecordStop;
@@ -75,6 +78,8 @@ namespace Whisper.Samples
 
             
             outputText.text = text;
+            if (gemini != null)
+                gemini.SubmitPrompt(text);
         }
         
 
