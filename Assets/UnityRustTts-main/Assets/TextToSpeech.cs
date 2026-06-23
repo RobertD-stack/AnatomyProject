@@ -10,11 +10,15 @@ public sealed class TextToSpeech : MonoBehaviour
     [Tooltip("How long the speaking animation runs (seconds).")]
     public float animationDuration = 15f;
     private float animationEndTime;
+    public ToggleIcon toggleIcon;
 
     void Awake()
     {
         if (animator == null) animator = GetComponent<Animator>();
-        if (animator != null) animator.speed=0;
+        if (animator != null) {
+            animator.speed=0;
+            toggleIcon.SetSpriteOff();
+        }
     }
 
     void Update()
@@ -22,6 +26,7 @@ public sealed class TextToSpeech : MonoBehaviour
         if (animator != null && animator.speed > 0f && Time.time >= animationEndTime)
         {
             animator.speed = 0f;
+            toggleIcon.SetSpriteOff();
         }
     }
 
@@ -36,6 +41,7 @@ public sealed class TextToSpeech : MonoBehaviour
         }
 
         ttsrust_say(newText);
+        toggleIcon.ToggleSprite();
         Debug.Log("Animation started");
 
         // Animator might be on a child depending on the rig setup.

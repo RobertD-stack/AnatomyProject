@@ -129,7 +129,67 @@ public class OllamaChatMessage
 [System.Serializable]
 public class OllamaChatResponse
 {
+    public string model;
     public OllamaChatMessage message;
+    public bool done;
+
+    // Timing fields returned by Ollama (nanoseconds unless noted).
+    public long total_duration;
+    public long load_duration;
+    public long prompt_eval_count;
+    public long prompt_eval_duration;
+    public long eval_count;
+    public long eval_duration;
+}
+
+[System.Serializable]
+public class OllamaDiagnostics
+{
+    public string model;
+    public float totalSeconds;
+    public float loadSeconds;
+    public int promptEvalCount;
+    public int evalCount;
+    public float evalTokensPerSecond;
+    public string responsePreview;
+    public string capturedAtUtc;
+
+    public static OllamaDiagnostics FromResponse(OllamaChatResponse response)
+    {
+        if (response == null)
+            return null;
+
+        string preview = response.message != null ? response.message.content : "";
+        if (!string.IsNullOrEmpty(preview))
+        {
+            preview = preview.Replace("\n", " ").Trim();
+            if (preview.Length > 120)
+                preview = preview.Substring(0, 117) + "...";
+        }
+
+        float evalSeconds = response.eval_duration > 0 ? response.eval_duration / 1_000_000_000f : 0f;
+        float tokensPerSecond = evalSeconds > 0f && response.eval_count > 0
+            ? response.eval_count / evalSeconds
+            : 0f;
+
+        return new OllamaDiagnostics
+        {
+            model = response.model,
+            totalSeconds = response.total_duration / 1_000_000_000f,
+            loadSeconds = response.load_duration / 1_000_000_000f,
+            promptEvalCount = (int)response.prompt_eval_count,
+            evalCount = (int)response.eval_count,
+            evalTokensPerSecond = tokensPerSecond,
+            responsePreview = preview,
+            capturedAtUtc = DateTime.UtcNow.ToString("o"),
+        };
+    }
+
+    public override string ToString()
+    {
+        return $"model={model} total={totalSeconds:F2}s load={loadSeconds:F2}s " +
+               $"promptTokens={promptEvalCount} evalTokens={evalCount} tok/s={evalTokensPerSecond:F2}";
+    }
 }
 
 
@@ -193,6 +253,12 @@ public class UnityAndGeminiV3: MonoBehaviour
     [Header("Debug")]
     [Tooltip("Logs the exact request format sent to Gemini (API key redacted; large base64 truncated).")]
     public bool logGeminiRequests = true;
+    [Tooltip("Logs Ollama timing/token diagnostics from the latest response.")]
+    public bool logOllamaDiagnostics = true;
+
+    [Header("Ollama Diagnostics")]
+    [Tooltip("Populated after each successful Ollama /api/chat response.")]
+    public OllamaDiagnostics lastOllamaDiagnostics;
 
     private const string PromptSystemInstruction =
         "You are a helpful anatomy educator. Do not repeat or echo the user's words. Answer the question or request directly with your own explanation. Never start by restating what the user said.";
@@ -234,7 +300,13 @@ public class UnityAndGeminiV3: MonoBehaviour
 
     public void SubmitPrompt(string promptText)
     {
-        StartCoroutine(SendPromptRequestToGemini(promptText));
+        Debug.Log("[UnityAndGeminiV3] Microphone Input: " + promptText);
+        if (!HasUserPrompt(promptText))
+        {
+            return;
+        } else {
+            StartCoroutine(SendPromptRequestToOllama(promptText));
+        }
     }
 
     public IEnumerator SendPromptRequestToGemini(string promptText)
@@ -300,6 +372,13 @@ public class UnityAndGeminiV3: MonoBehaviour
 
     private IEnumerator SendPromptRequestToOllama(string promptText)
     {
+        // Determine whether we are using the microphone input or the sample test prompt
+        promptText = ResolvePromptForRequest(promptText);
+        if (!HasUserPrompt(promptText))
+        {
+            yield break;
+        }
+
         string modelName = GetOllamaModelName();
         string url = ollamaBaseUrl.TrimEnd('/') + "/api/chat";
         string jsonData = useMicrophoneInput
@@ -313,7 +392,7 @@ public class UnityAndGeminiV3: MonoBehaviour
 
         byte[] jsonToSend = new System.Text.UTF8Encoding().GetBytes(jsonData);
 
-        Debug.Log("Sending to Ollama: " + promptText);
+        Debug.Log("[UnityAndGeminiV3] Sending to Ollama: " + promptText);
         LogGeminiRequest(
             "Ollama",
             url,
@@ -339,6 +418,10 @@ public class UnityAndGeminiV3: MonoBehaviour
                 Debug.Log("Ollama request complete!");
                 Debug.Log("Raw response: " + www.downloadHandler.text);
                 OllamaChatResponse response = JsonUtility.FromJson<OllamaChatResponse>(www.downloadHandler.text);
+                lastOllamaDiagnostics = OllamaDiagnostics.FromResponse(response);
+                if (logOllamaDiagnostics && lastOllamaDiagnostics != null)
+                    Debug.Log("Ollama diagnostics: " + lastOllamaDiagnostics);
+
                 if (response.message != null && !string.IsNullOrEmpty(response.message.content))
                 {
                     string text = response.message.content;

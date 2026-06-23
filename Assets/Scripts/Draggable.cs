@@ -16,26 +16,35 @@ public class Draggable : MonoBehaviour
 
     public GameObject globalVariable;
 
+    public Camera mainCamera;
+
+    public float distanceFromCamera = 5f;
+    public float scrollSpeed = 2f;
+    public float minDistance = 2f;
+    public float maxDistance = 20f;
+
     void Start()
     {
+        mainCamera = Camera.main;
         globalVariable = GameObject.FindGameObjectWithTag("GlobalVariables");
 
-        isDragging = true;
+        isDragging = false;
         draggable = true;
     }
 
-    // When the object is spawned in, it should be already dragged as long as isDragging is true by default
+    // Update only continues an active drag started via OnMouseDown on this object.
     void Update()
     {
-        if (Input.GetMouseButton(0) && draggable)
+
+        if (!isDragging || !draggable)
+            return;
+
+        if (Input.GetMouseButton(0))
         {
             StartDragging();
             globalVariable.GetComponent<IsDragging>().isDragging = true;
-
         }
-
-        // No longer dragging
-        if (Input.GetMouseButtonUp(0))
+        else
         {
             isDragging = false;
             globalVariable.GetComponent<IsDragging>().isDragging = false;
@@ -47,6 +56,10 @@ public class Draggable : MonoBehaviour
     {
         isDragging = true;
 
+        Vector3 toObject = transform.position - mainCamera.transform.position;
+        distanceFromCamera = Vector3.Dot(toObject, mainCamera.transform.forward);
+        distanceFromCamera = Mathf.Clamp(distanceFromCamera, minDistance, maxDistance);
+
         StartDragging();
     }
 
@@ -56,11 +69,14 @@ public class Draggable : MonoBehaviour
         // Check if we're supposed to be dragging
         if (isDragging)
         {
-            // Debug.Log("Dragging");
+            float scroll = Input.mouseScrollDelta.y;
+            if (Mathf.Abs(scroll) > 0.01f)
+            {
+                distanceFromCamera += scroll * scrollSpeed;
+                distanceFromCamera = Mathf.Clamp(distanceFromCamera, minDistance, maxDistance);
+            }
 
-            Vector3 newPos = GetMouseWorldPosition() + offset;
-            newPos.z = transform.position.z;
-
+            Vector3 newPos = mainCamera.transform.position + mainCamera.transform.forward * distanceFromCamera;
             // Add the difference between center and pivot
             Vector3 centerOffset = GetVisualCenterOffset();
             centerOffset.z = 0f;

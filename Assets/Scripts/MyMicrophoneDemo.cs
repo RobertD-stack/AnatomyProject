@@ -29,6 +29,9 @@ namespace Whisper.Samples
         
         private string _buffer;
 
+        public ToggleIcon toggleIcon;
+
+
         private void Awake()
         {
             if (gemini == null)
@@ -39,6 +42,12 @@ namespace Whisper.Samples
 
             button.onClick.AddListener(OnButtonPressed);
 
+            if (button.GetComponent<RecordButton>() == null)
+            {
+                RecordButton recordButton = button.gameObject.AddComponent<RecordButton>();
+                recordButton.microphoneDemo = this;
+            }
+
             whisper.language = "eng";
 
         }
@@ -48,17 +57,17 @@ namespace Whisper.Samples
             microphoneRecord.vadStop = vadStop;
         }
 
-        private void OnButtonPressed()
+        public void OnButtonPressed()
         {
             if (!microphoneRecord.IsRecording)
             {
                 microphoneRecord.StartRecord();
-                buttonText.text = "Recording...";
+                toggleIcon.ToggleSprite();
             }
             else
             {
                 microphoneRecord.StopRecord();
-                buttonText.text = "Record";
+                toggleIcon.ToggleSprite();
             }
         }
         
@@ -70,14 +79,15 @@ namespace Whisper.Samples
             sw.Start();
             
             var res = await whisper.GetTextAsync(recordedAudio.Data, recordedAudio.Frequency, recordedAudio.Channels);
-            if (res == null || !outputText) 
+            if (res == null) 
                 return;
 
 
             var text = res.Result;
 
-            
+            if (outputText) {
             outputText.text = text;
+            }
             if (gemini != null)
                 gemini.SubmitPrompt(text);
         }
@@ -90,7 +100,9 @@ namespace Whisper.Samples
                 return;
 
             _buffer += segment.Text;
-            outputText.text = _buffer + "...";
+            if (outputText) {
+                outputText.text = _buffer + "...";
+            }
         }
     }
 }

@@ -13,7 +13,9 @@ public class SceneLoader : MonoBehaviour
 
     public bool changeScene;
 
-
+    void Awake() {
+        gameObject.SetActive(true);
+    }
     void Start()
     {
         changeScene = false;
