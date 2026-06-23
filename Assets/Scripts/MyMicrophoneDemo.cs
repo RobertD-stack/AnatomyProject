@@ -32,6 +32,7 @@ namespace Whisper.Samples
         public ToggleIcon toggleIcon;
 
 
+
         private void Awake()
         {
             if (gemini == null)

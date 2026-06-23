@@ -63,7 +63,7 @@ MonoBehaviour:
   m_SmoothMotionEnabled: 1
   m_SmoothTurnEnabled: 0
   m_NearFarEnableTeleportDuringNearInteraction: 1
-  m_UIScrollingEnabled: 1
+  m_UIScrollingEnabled: 0
   m_RayInteractorChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -246,7 +246,7 @@ MonoBehaviour:
   m_SmoothMotionEnabled: 0
   m_SmoothTurnEnabled: 0
   m_NearFarEnableTeleportDuringNearInteraction: 1
-  m_UIScrollingEnabled: 1
+  m_UIScrollingEnabled: 0
   m_RayInteractorChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -664,7 +664,7 @@ MonoBehaviour:
     m_ObjectReferenceObject: {fileID: 0}
     m_ManualValue: {x: 0, y: 0}
   m_RightHandMoveInput:
-    m_InputSourceMode: 2
+    m_InputSourceMode: 0
     m_InputAction:
       m_Name: Right Hand Move
       m_Type: 0
