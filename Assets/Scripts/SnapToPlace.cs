@@ -37,8 +37,16 @@ public class SnapToPlace : MonoBehaviour
         {
             minDistance = distance;
             closestPos = slotObject.transform.position;
-            transform.position = closestPos;
+            Quaternion slotRotation = slotObject.transform.rotation;
 
+            transform.SetPositionAndRotation(closestPos, slotRotation);
+
+            Rigidbody rb = GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                rb.position = closestPos;
+                rb.rotation = slotRotation;
+            }
 
             matched = true;
             slotObject.GetComponent<Matched>().setMatched(matched);
