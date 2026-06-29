@@ -7,7 +7,7 @@
 #   Change the FROM line below to: FROM llama3.2:1b
 #   Then run: ollama create anatomy-tutor-fast -f Modelfile
 #
-# In Unity: set Ollama Model = Custom, Custom Ollama Model = anatomy-tutor (or anatomy-tutor-fast)
+# In Unity: pick a model from Ollama Model, or Custom for a name not in the list.
 
 FROM medllama2
 

@@ -69,5 +69,9 @@
     "dotnet.defaultSolution": "Skeleton Puzzle.sln",
     "dotnet.preferCSharpExtension": true,
     "dotnet.backgroundAnalysis.analyzerDiagnosticsScope": "fullSolution",
-    "dotnet.backgroundAnalysis.compilerDiagnosticsScope": "fullSolution"
+    "dotnet.backgroundAnalysis.compilerDiagnosticsScope": "fullSolution",
+    "csharp.showCompilerWarnings": true,
+    "csharp.suppressDotnetInstallWarning": true,
+    "editor.showUnused": true,
+    "problems.showCurrentInStatus": true
 }

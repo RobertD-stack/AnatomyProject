@@ -1,0 +1,36 @@
+﻿pmid,gold,raw_prediction,parsed_prediction,correct,ollama_model,model,total_seconds,timestamp,accuracy_percent
+12377809,yes,"yes
+The analysis suggests that anorectal endosonography can help identify dysfunction of the anal sphincter and musculus puborectalis in patients with dyschesia by measuring changes in their dimensions during voluntary movements.",yes,1,AnatomyTutorFast,anatomy-tutor-fast,11.89659,2026-06-26 20:35:34,100.0
+26163474,yes,"yes
+The presence of sublingual varices can be associated with an increased risk of developing hypertension due to their connection with cardiovascular disease, which is linked to high blood pressure. 
+This association was found through the analysis of tongue photographs and measurements of blood pressure in patients with sublingual varices.
+Sublingual varices may serve as a marker for underlying cardiovascular conditions that can lead to hypertension.",yes,1,AnatomyTutorFast,anatomy-tutor-fast,6.055904,2026-06-26 20:35:40,100.0
+19100463,yes,"yes
+The affinity column-mediated immunoassay method is more accurate than the microparticle enzyme immunoassay method for measuring tacrolimus concentrations, especially in patients with low hematocrit levels. 
+This is because the affinity column-mediated immunoassay method measures the binding of tacrolimus to antibodies on a solid support, whereas the microparticle enzyme immunoassay method uses tiny particles that are coated with enzymes and antibodies. The affinity column approach can be more precise in measuring low concentrations of drugs like tacrolimus.
+In patients with low hematocrit levels, the Bland-Altman plot showed that the difference between the two methods was larger, indicating a greater variability in measurements due to the limited amount of antibody binding available.",yes,1,AnatomyTutorFast,anatomy-tutor-fast,9.53431,2026-06-26 20:35:50,100.0
+18537964,yes,"yes
+The abstract presents a study that investigated how physicians' specialties affect the recording of medication history in patients' case notes, finding significant differences in depth and frequency of documentation by specialty.",yes,1,AnatomyTutorFast,anatomy-tutor-fast,3.39562,2026-06-26 20:35:54,100.0
+12913878,yes,"yes
+The femur is a long bone in the human body that provides structural support for the hip joint and helps to transfer forces from the leg to the pelvis.
+In the context of medical treatment, the femur serves as a site for surgical implantation of prosthetic devices such as hip replacements or knee replacements.
+The shape and strength of the femur also make it an ideal location for certain types of implants that are designed to withstand high stresses and strains.",yes,1,AnatomyTutorFast,anatomy-tutor-fast,5.992445,2026-06-26 20:36:00,100.0
+12377809,yes,The study suggests that anorectal endosonography can be useful to diagnose dyschesia by measuring changes in the anal sphincter and m. puborectalis dimensions during resting and straining phases.,,0,AnatomyTutor,anatomy-tutor,30.60059,2026-06-26 20:36:31,0.0
+26163474,yes,The study found an association between sublingual varices and hypertension.,,0,AnatomyTutor,anatomy-tutor,9.353763,2026-06-26 20:36:40,0.0
+19100463,yes,"The affinity column-mediated immunoassay method can be used as an alternative to the microparticle enzyme immunoassay method for measuring blood tacrolimus levels. However, there may be some differences in the results of the two methods depending on the individual's hematocrit level.",,0,AnatomyTutor,anatomy-tutor,16.8866,2026-06-26 20:36:57,0.0
+18537964,yes,"The abstract suggests that a physician's specialty can influence how much information is documented in a patient's medical record regarding their medications, including adverse drug reactions and adherence to medicines. However, the study did not directly address whether this difference in documentation impacts clinical decision-making or patient outcomes.",,0,AnatomyTutor,anatomy-tutor,16.90167,2026-06-26 20:37:15,0.0
+12913878,yes,Yes.,yes,1,AnatomyTutor,anatomy-tutor,5.455089,2026-06-26 20:37:20,20.0
+12377809,yes,"Yes, anorectal endosonography can be valuable for identifying abnormalities in the anal sphincter and/or m. puborectalis in patients with dyschesia.",yes,1,NcatMedLlama,ncatmedllama,25.37441,2026-06-26 20:37:46,100.0
+26163474,yes,"The study found an association between sublingual varices and hypertension (OR = 2.25, p<0.002). This suggests that patients with sublingual varices are more likely to have high blood pressure. However, it's important to note that not everyone with sublingual varices will have hypertension, and not everyone with hypertension will have sublingual varices.",,0,NcatMedLlama,ncatmedllama,21.99598,2026-06-26 20:38:08,50.0
+19100463,yes,"The affinity column-mediated immunoassay method can be used as an alternative to the microparticle enzyme immunoassay method for blood tacrolimus assays, but it may not be suitable in cases with low hematocrit levels.",,0,NcatMedLlama,ncatmedllama,16.24783,2026-06-26 20:38:25,33.3
+18537964,yes,The study suggests that a physician's specialty can influence how much information is documented about a patient's medications in their medical records.,,0,NcatMedLlama,ncatmedllama,11.50493,2026-06-26 20:38:36,25.0
+12913878,yes,"Yes, LITT can cause opening of the blood-brain barrier for chemotherapeutic agents like paclitaxel to pass through.",yes,1,NcatMedLlama,ncatmedllama,10.78111,2026-06-26 20:38:47,40.0
+12377809,yes,"Answer the biomedical research question using only the abstract below.
+Reply with exactly one word: yes, no, or maybe.
+
+Question: Are preoperative clinical parameters predictive of post-operative recurrence in patients undergoing surgery for pituitary adenoma?
+
+Abstract:
+The aim of this study was to determine the prognostic value of different parameters in patients with pituitary adenomas who had undergone transsphenoidal microsurgical tumour resection. We prospectively evaluated preoperative hormonal status, endocrine panels, and radiological findings in 104 consecutive cases and analyzed these data according to the post-operative recurrence rates for each tumor. In addition, we analyzed the relationship between the clinical factors of the patients with or without pituitary adenoma recurrences during a five year follow-up period. We found that there was no statistical difference in the clinical parameters of the patients with and those without post-operative recurrence except for pre-treatment tumour size (p=0.013). We conclude that preoperative tumor volume may predict recurrence rates following pituitary adenoma resection.
+
+Answer:",no,0,Meditron,meditron,56.92016,2026-06-26 20:39:44,0.0

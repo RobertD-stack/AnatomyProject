@@ -48,7 +48,7 @@ public class SpawnMenuItem : MonoBehaviour
 
     public GameObject menuItem;
 
-
+    public GameObject helperPrefab;
 
     // From the slots object
 
@@ -85,7 +85,7 @@ public class SpawnMenuItem : MonoBehaviour
     void Start()
 
     {
-
+        // If the mode is Mouse and Keyboard, we don't need the button
         if (mode == Mode.MouseAndKeyboard)
 
         {
@@ -142,6 +142,12 @@ public class SpawnMenuItem : MonoBehaviour
 
     {
 
+        ToggleVR toggleVR = globalVariables.GetComponent<ToggleVR>();
+
+        if (toggleVR != null && toggleVR.VRToggle == VR.On)
+
+            return;
+
 
 
         if (globalVariables.GetComponent<IsDragging>().isDragging == false)
@@ -192,6 +198,11 @@ public class SpawnMenuItem : MonoBehaviour
 
             GameObject temp = Instantiate(menuItem);
 
+            // GameObject helper = Instantiate(helperPrefab);  // Helper is a small cube that helps with the interacting
+            // helper.transform.SetParent(temp.transform, false);
+            // helper.transform.localPosition = Vector3.zero;
+            // helper.transform.localRotation = Quaternion.identity;
+            // helper.transform.localScale = Vector3.one;
             float objectScale = globalVariables.GetComponent<itemSize>().objectScale;
 
             temp.transform.localScale = Vector3.one * objectScale;
@@ -232,7 +243,9 @@ public class SpawnMenuItem : MonoBehaviour
 
                 temp.AddComponent<XRGeneralGrabTransformer>();
 
+            // Allow the item to be grabbed and dropped dynamically
 
+            temp.GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>().useDynamicAttach = true;
 
             Highlight label = temp.GetComponent<Highlight>();
 
@@ -254,7 +267,6 @@ public class SpawnMenuItem : MonoBehaviour
 
             temp.transform.SetParent(spawnTransform, true);
 
-            PlaceAtSpawnParent(temp.transform, spawnTransform);
 
 
 
@@ -286,8 +298,8 @@ public class SpawnMenuItem : MonoBehaviour
 
     {
 
-        spawned.SetPositionAndRotation(spawnParentTransform.position, spawnParentTransform.rotation);
-
+        // spawned.SetPositionAndRotation(spawnParentTransform.position, spawnParentTransform.rotation);
+        spawned.position = spawnParentTransform.position;
 
 
         // Many skeleton addressables have their mesh offset from the root pivot.

@@ -1,0 +1,39 @@
+﻿accuracy_summary,ollama_model,correct,total,accuracy_percent
+accuracy_summary,AnatomyTutorFast,14,14,100.0
+pmid,gold,raw_prediction,parsed_prediction,correct,ollama_model,model,total_seconds,timestamp
+12377809,yes,"yes
+The analysis showed a significant difference between patients with dyschesia and healthy individuals in terms of the anal sphincter's dimensions during straining. 
+Changes in the m. puborectalis were also found to be statistically significantly different between the two groups. 
+Both findings suggest that anorectal endosonography may be useful in diagnosing dysfunction of the anal sphincter and/or the musculus (m.) puborectalis in patients with dyschesia.",yes,1,AnatomyTutorFast,anatomy-tutor-fast,4.633285,2026-06-26 17:23:32
+26163474,yes,"yes
+The presence of sublingual varices is associated with an increased risk of developing hypertension due to the abnormal blood vessel formation that can lead to elevated blood pressure.",yes,1,AnatomyTutorFast,anatomy-tutor-fast,2.009111,2026-06-26 17:23:34
+19100463,yes,"yes
+The affinity column-mediated immunoassay method is more accurate than the microparticle enzyme immunoassay method for measuring tacrolimus concentrations, especially in patients with low hematocrit levels.
+In this study, the Bland-Altman plot showed no specific trends between the two methods, suggesting that they are comparable.
+The difference between the two methods was larger in low hematocrit samples, indicating potential variability in performance.",yes,1,AnatomyTutorFast,anatomy-tutor-fast,4.716267,2026-06-26 17:23:39
+18537964,yes,"yes
+The abstract presents a study that investigated whether a physician's specialty affects the recording of medication history in patient case notes, with findings showing significant differences in depth and frequency of documentation among various medical specialties.",yes,1,AnatomyTutorFast,anatomy-tutor-fast,2.222886,2026-06-26 17:23:41
+12913878,yes,"yes
+The Nd:YAG laser-induced thermo therapy disrupts the blood-brain barrier (BBB) in rats, allowing chemotherapeutic agents like paclitaxel to pass through and potentially treat glioma.",yes,1,AnatomyTutorFast,anatomy-tutor-fast,2.406011,2026-06-26 17:23:44
+12765819,yes,"yes
+The femur is composed of three main parts: the head, neck, and shaft. Its head articulates with the pelvis to form the hip joint, while its neck connects to the lumbar vertebrae, forming the knee joint. The femur's shape and size help distribute weight evenly during movement.",yes,1,AnatomyTutorFast,anatomy-tutor-fast,3.314427,2026-06-26 17:23:48
+25475395,yes,"yes
+The study found a correlation between circulating testosterone levels and sexual desire in healthy women, which suggests that higher testosterone levels may be associated with increased sexual desire. 
+When analyzing the data from the Female Sexual Function Index, the researchers also found correlations between certain hormones and sexual desire. 
+In younger women (25-44 years), the level of androstenedione was strongly correlated with sexual desire, suggesting a possible link between this hormone and female libido.",yes,1,AnatomyTutorFast,anatomy-tutor-fast,4.352253,2026-06-26 17:23:52
+19130332,yes,"yes
+Maybe",yes,1,AnatomyTutorFast,anatomy-tutor-fast,1.472399,2026-06-26 17:23:54
+9427037,yes,"yes
+The abstract describes how different grades of astrocytomas are identified based on their vascular patterns.",yes,1,AnatomyTutorFast,anatomy-tutor-fast,1.176268,2026-06-26 17:23:55
+24481006,yes,"yes
+Maybe",yes,1,AnatomyTutorFast,anatomy-tutor-fast,0.4875888,2026-06-26 17:23:56
+8165771,yes,"yes
+maybe
+no",yes,1,AnatomyTutorFast,anatomy-tutor-fast,0.5358873,2026-06-26 17:23:57
+22680064,yes,"yes
+maybe",yes,1,AnatomyTutorFast,anatomy-tutor-fast,1.201333,2026-06-26 17:23:58
+22540518,yes,"yes
+The micro-computed tomography (micro-CT) is reliable for determining the microstructure of the maxillary alveolar bone, as it accurately measures bone density and provides detailed images of its microstructure. 
+Micro-CT scans allow for precise analysis of bone tissue at a microscopic level, revealing details such as trabecular thickness and separation. 
+This technology enables researchers to compare the results obtained from micro-CT with those from conventional methods like histomorphometry, providing valuable insights into the bone's structure.",yes,1,AnatomyTutorFast,anatomy-tutor-fast,5.753238,2026-06-26 17:24:04
+20629769,yes,yes,yes,1,AnatomyTutorFast,anatomy-tutor-fast,1.354887,2026-06-26 17:24:06

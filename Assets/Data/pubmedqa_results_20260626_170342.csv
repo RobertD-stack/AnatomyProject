@@ -1,0 +1,16 @@
+﻿pmid,gold,raw_prediction,parsed_prediction,correct,model,total_seconds,timestamp
+12377809,yes,"yes
+The analysis found that anorectal endosonography can help identify dysfunction of the anal sphincter and/or the musculus puborectalis in patients with dyschesia by measuring changes in their dimensions during straining.",yes,1,anatomy-tutor-fast,2.399882,2026-06-26 17:03:45
+26163474,yes,"yes
+The study found an association between the presence of sublingual varices and hypertension, suggesting that patients with these conditions may be at increased risk for developing high blood pressure. 
+This relationship is likely due to the underlying vascular changes associated with both conditions, including inflammation and fibrosis in the blood vessels. 
+The presence of sublingual varices can also indicate a more severe form of hypertension, as they are often seen in patients with more advanced cardiovascular disease.",yes,1,anatomy-tutor-fast,4.332691,2026-06-26 17:03:50
+19100463,yes,"yes
+The affinity column-mediated immunoassay method is more accurate than the microparticle enzyme immunoassay method for measuring tacrolimus concentrations due to its ability to detect smaller differences between the two methods.
+The ACMIA method's accuracy can be attributed to its use of an affinity column, which allows for a more precise binding of the tacrolimus molecule to the antibody.
+The results suggest that the ACMIA method may be a suitable alternative to the MEIA method in some cases, but it is not universally applicable due to variations in hematocrit levels.",yes,1,anatomy-tutor-fast,6.429711,2026-06-26 17:03:56
+18537964,yes,"yes
+The abstract suggests that a physician's specialty can influence the depth and frequency of medication history recording in patient case notes, with some specialties documenting more information than others.",yes,1,anatomy-tutor-fast,1.770045,2026-06-26 17:03:58
+12913878,yes,"yes
+maybe
+no",yes,1,anatomy-tutor-fast,0.5777027,2026-06-26 17:03:59

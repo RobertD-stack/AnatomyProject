@@ -12,8 +12,27 @@ public sealed class TextToSpeech : MonoBehaviour
     private float animationEndTime;
     public ToggleIcon toggleIcon;
 
+    public RunAutomaticPrompts runAutomaticPrompts;
+
+    public enum TextToSpeechMode
+    {
+        On,
+        Off
+    }
+
+    public TextToSpeechMode textToSpeechMode = TextToSpeechMode.On;
+
     void Awake()
     {
+        if (runAutomaticPrompts != null && runAutomaticPrompts.trainingMode == TrainingMode.On)
+        {
+            textToSpeechMode = TextToSpeechMode.Off;
+        }
+        else
+        {
+            textToSpeechMode = TextToSpeechMode.On;
+        }
+
         if (animator == null) animator = GetComponent<Animator>();
         if (animator != null) {
             animator.speed=0;
@@ -64,7 +83,14 @@ public sealed class TextToSpeech : MonoBehaviour
     {
         Debug.Log($"NotifyModelResponse called. textNull={(text == null)}, textLen={(text == null ? -1 : text.Length)}");
         lastText = text ?? "";
-        StartSpeech();
+        if (textToSpeechMode == TextToSpeechMode.On)
+        {
+            StartSpeech();
+        }
+        else
+        {
+            Debug.Log("TextToSpeechMode is Off, skipping speech.");
+        }
     }
 
 

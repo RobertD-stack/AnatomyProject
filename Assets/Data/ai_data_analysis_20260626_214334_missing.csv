@@ -1,0 +1,8 @@
+model,pubmedqa_results_rows,ai_data_rows,missing_ai_data_rows,skipped_requests
+anatomy-tutor,100,100,0,0
+anatomy-tutor-fast,100,100,0,0
+llama3.2,100,100,0,0
+llama3.2:1b,100,100,0,0
+medllama2,100,100,0,0
+ncatmedllama,100,100,0,0
+qwen2.5:3b,100,100,0,0

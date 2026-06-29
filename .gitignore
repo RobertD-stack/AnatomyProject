@@ -97,3 +97,14 @@ InitTestScene*.unity*
 
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
+
+# Legacy nested copies (left on disk from older folder layout)
+/[Aa]ssets/AnatomyProject/
+/[Aa]ssets/Materials/
+/[Aa]ssets/Script/
+/[Aa]ssets/Skeleton Puzzle/
+/[Ss]keleton Puzzle/
+
+# Vendored sample projects (not the game)
+whisper.unity-master/
+whisper.unity-master*.zip

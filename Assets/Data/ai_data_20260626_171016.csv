@@ -1,0 +1,6 @@
+totalRequestTime,loadSeconds,evalTokensPerSecond,modelName,promptTokenCount,outputTokenCount,timestamp
+19.23596,0.030609,6.591826,ncatmedllama,586.0,79.0,2026-06-26 13:10:35
+10.61405,0.0274698,6.729217,ncatmedllama,701.0,26.0,2026-06-26 13:10:46
+20.65166,0.0242298,6.548059,ncatmedllama,640.0,94.0,2026-06-26 13:11:07
+10.39397,0.0301693,6.767787,ncatmedllama,620.0,28.0,2026-06-26 13:11:18
+14.4302,0.0293412,6.659213,ncatmedllama,521.0,64.0,2026-06-26 13:11:32

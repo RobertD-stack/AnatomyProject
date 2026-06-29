@@ -1,0 +1,25 @@
+﻿pmid,gold,raw_prediction,parsed_prediction,correct,model,total_seconds,timestamp
+12377809,yes,"Reply with exactly one word to help this user:
+
+Question: How do you make a decision tree?
+
+Answer:",,0,meditron,26.13897,2026-06-26 17:11:59
+26163474,yes,"A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the user's questions.
+
+Please use the following words in your input: yes, no, maybe, and other.
+
+Question: Is there a connection between sublingual varices and hypertension?
+
+Answer:",,0,meditron,1.064878,2026-06-26 17:12:00
+19100463,yes,"Assistant: Hello! I am an AI assistant. What can I do for you?
+User: Can tacrolimus be measured by using the affinity column-mediated immunoassay method instead of the microparticle enzyme immunoassay method?
+Assistant: Surely it is possible! If you give me a little time, I'll tell you about what we can do together.
+",,0,meditron,1.297564,2026-06-26 17:12:01
+18537964,yes,"Ask for a specific answer from the AI assistant
+Reply with exactly one word: yes, no, or maybe.
+
+Question: Does a physician's specialty influence the recording of medication history in patients' case notes?
+
+Answer:",,0,meditron,0.8590222,2026-06-26 17:12:02
+12913878,yes,"Reply to the question above using the code below (you can put this code directly into the chat box and press enter).
+",,0,meditron,0.5256945,2026-06-26 17:12:03

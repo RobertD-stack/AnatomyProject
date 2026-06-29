@@ -1,0 +1,6 @@
+﻿pmid,gold,raw_prediction,parsed_prediction,correct,model,total_seconds,timestamp
+12377809,yes,Yes.,yes,1,medllama2,5.762217,2026-06-26 17:12:09
+26163474,yes,"According to this study, yes, there is an association between sublingual varices and hypertension.",,0,medllama2,9.080562,2026-06-26 17:12:18
+19100463,yes,"Yes. The study found that the affinity column-mediated immunoassay method could be used as an alternative to the microparticle enzyme immunoassay method for measuring blood tacrolimus concentrations, with similar results.",yes,1,medllama2,13.44612,2026-06-26 17:12:32
+18537964,yes,"Yes. The research suggests that a physician's specialty does influence how well their patients' medical histories are documented, including information about medications and adverse reactions.",yes,1,medllama2,10.86823,2026-06-26 17:12:43
+12913878,yes,"The research question is answered in the abstract. Yes, LITT-induced disruption of the blood-brain barrier may allow the locoregional passage of chemotherapeutic agents such as paclitaxel into brain tissue to treat malignant glioma, providing a new concept for adjuvant therapy.",,0,medllama2,14.80228,2026-06-26 17:12:58

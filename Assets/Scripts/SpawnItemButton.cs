@@ -16,29 +16,28 @@ public class SpawnItemButton : MonoBehaviour
             SpawnMenuItem = FindFirstObjectByType<SpawnMenuItem>();
 
         globalVariables = GameObject.FindGameObjectWithTag("GlobalVariables");
-        EnsureButtonComponents();
     }
 
-    void EnsureButtonComponents()
-    {
-        if (GetComponent<BoxCollider>() == null)
-        {
-            BoxCollider collider = gameObject.AddComponent<BoxCollider>();
-            collider.size = new Vector3(100f, 100f, 1f);
-        }
-    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
      void Start()
     {
-        Button button = GetComponent<Button>();
-        button.onClick.AddListener(OnButtonPressed);
+        // SpawnMenuItem onSameObject = GetComponent<SpawnMenuItem>();
+        // if (onSameObject != null)
+        // {
+        //     SpawnMenuItem = onSameObject;
+        //     return;
+        // }
 
-        if (globalVariables != null)
-        {
-            ToggleVR toggleVR = globalVariables.GetComponent<ToggleVR>();
-            if (toggleVR != null && toggleVR.VRToggle != VR.On)
-                button.enabled = false;
-        }
+        // Button button = GetComponent<Button>();
+        // button.onClick.AddListener(OnButtonPressed);
+
+        // if (globalVariables != null)
+        // {
+        //     ToggleVR toggleVR = globalVariables.GetComponent<ToggleVR>();
+        //     if (toggleVR != null && toggleVR.VRToggle != VR.On)
+        //         button.enabled = false;
+        // }
     }
 
     public void OnButtonPressed()

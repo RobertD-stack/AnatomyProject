@@ -1,0 +1,21 @@
+﻿pmid,gold,raw_prediction,parsed_prediction,correct,ollama_model,model,total_seconds,timestamp
+12377809,yes,"yes
+The anorectal endosonography revealed significant differences between patients with dyschesia and healthy controls in terms of anal sphincter length and thickness during straining, suggesting dysfunction of the anal sphincter. The changes observed were statistically significant, indicating a link between dyschesia and altered muscle function.",yes,1,AnatomyTutorFast,anatomy-tutor-fast,2.950073,2026-06-26 17:17:46
+12377809,yes,The study suggests that anorectal endosonography can be a valuable tool for identifying dysfunction of the anal sphincter and/or m. puborectalis in patients with dyschesia.,,0,AnatomyTutor,anatomy-tutor,9.643589,2026-06-26 17:17:56
+12377809,yes,"Yes, anorectal endosonography can be valuable in dyschesia. The study showed that patients with dyschesia have changes in the length and thickness of the anal sphincter and m. puborectalis compared to healthy controls. This suggests that these muscles are involved in the development of dyschesia, which could lead to further research into potential treatments.",yes,1,NcatMedLlama,ncatmedllama,15.93696,2026-06-26 17:18:12
+12377809,yes,"What can we learn about your question?
+
+Question: Is anorectal endosonography valuable in dyschesia?
+
+Abstract:
+Dyschesia can be provoked by inappropriate defecation movements. The aim of this prospective study was to demonstrate dysfunction of the anal sphincter and/or the musculus (m.) puborectalis in patients with dyschesia using anorectal endosonography.
+
+Twenty consecutive patients with a medical history of dyschesia and a control group of 20 healthy subjects underwent linear anorectal endosonography (Toshiba models IUV 5060 and PVL-625 RT). In both groups, the dimensions of the anal sphincter and the m. puborectalis were measured at rest, and during voluntary squeezing and straining. Statistical analysis was performed within and between the two groups.
+
+The anal sphincter became paradoxically shorter and/or thicker during straining (versus the resting state) in 85% of patients but in only 35% of control subjects. Changes in sphincter length were statistically significantly different (p<0.01, chi(2) test) in patients compared with control subjects. The m. puborectalis became paradoxically shorter and/or thicker during straining in 80% of patients but in only 30% of controls. Both the changes in length and thickness of the m. puborectalis were significantly different (p<0.01, chi(2) test) in patients versus control subjects.
+
+Answer:",,0,Meditron,meditron,7.467274,2026-06-26 17:18:20
+12377809,yes,Yes. The study suggests that anorectal endosonography can be valuable in diagnosing dyschesia by revealing abnormalities in the anal sphincter and/or m. puborectalis.,yes,1,MedLlama2,medllama2,9.677052,2026-06-26 17:18:30
+12377809,yes,Yes.,yes,1,Llama3_2,llama3.2,6.607969,2026-06-26 17:18:36
+12377809,yes,Maybe,maybe,0,Llama3_2_1B,llama3.2:1b,0.353705,2026-06-26 17:18:37
+12377809,yes,yes,yes,1,Qwen2_5_3B,qwen2.5:3b,3.429206,2026-06-26 17:18:41

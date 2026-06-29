@@ -28,21 +28,20 @@ public class ManageItemShown : MonoBehaviour
     public Material defaultSlotMaterial;
     public Material highlightedSlotMaterial;
 
-    // void Awake()
-    // {
-    //     if (menuItem == null)
-    //         menuItem = gameObject;
-    // }
+    public TextMeshProUGUI itemNameText;
+    public Sprite defaultSprite;
+    
+    
 
-    void Start()
+
+    void Awake()
     {
         smi = menuItem.AddComponent<SpawnMenuItem>();
         tvmi = menuItem.AddComponent<ToggleVRMenuItems>();
+    }
 
-        BoxCollider itemCollider = menuItem.AddComponent<BoxCollider>();
-        itemCollider.size = new Vector3(100f, 100f, 1f);
-
-
+    void Start()
+    {
         slotObjects = GameObject.FindGameObjectsWithTag("Slots");
         Debug.Log($"ManageItemShown: Found {slotObjects?.Length ?? 0} objects with tag 'Slots'");
 
@@ -114,6 +113,8 @@ public class ManageItemShown : MonoBehaviour
 
 
         smi.menuItemName = menuItem.name;
+
+        itemNameText.text = itemName;
         smi.slot = slot;
         smi.spawnParent = spawnParent;
 
@@ -141,6 +142,7 @@ public class ManageItemShown : MonoBehaviour
         if (!File.Exists(filepath))
         {
             Debug.Log("The image at " + filepath + " does not exist!");
+            menuIcon.GetComponentInChildren<Image>().sprite = defaultSprite;
             return;
         }
 

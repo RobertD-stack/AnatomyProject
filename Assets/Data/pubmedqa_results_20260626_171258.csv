@@ -1,0 +1,6 @@
+﻿pmid,gold,raw_prediction,parsed_prediction,correct,model,total_seconds,timestamp
+12377809,yes,Yes,yes,1,llama3.2,14.71206,2026-06-26 17:13:13
+26163474,yes,Yes,yes,1,llama3.2,2.236713,2026-06-26 17:13:16
+19100463,yes,Yes.,yes,1,llama3.2,2.083577,2026-06-26 17:13:18
+18537964,yes,Yes.,yes,1,llama3.2,1.808513,2026-06-26 17:13:20
+12913878,yes,Yes.,yes,1,llama3.2,1.533919,2026-06-26 17:13:22

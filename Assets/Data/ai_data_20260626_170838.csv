@@ -1,0 +1,6 @@
+totalRequestTime,loadSeconds,evalTokensPerSecond,modelName,promptTokenCount,outputTokenCount,timestamp
+2.214105,0.1591075,24.05264,anatomy-tutor-fast,526.0,46.0,2026-06-26 13:08:41
+3.032934,0.160338,23.60213,anatomy-tutor-fast,619.0,63.0,2026-06-26 13:08:44
+6.456764,0.1717283,23.65816,anatomy-tutor-fast,549.0,144.0,2026-06-26 13:08:51
+1.961602,0.1687623,24.19491,anatomy-tutor-fast,526.0,39.0,2026-06-26 13:08:53
+2.378121,0.1646187,24.17978,anatomy-tutor-fast,465.0,50.0,2026-06-26 13:08:55
