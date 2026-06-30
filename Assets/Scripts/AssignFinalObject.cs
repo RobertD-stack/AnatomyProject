@@ -11,10 +11,14 @@ public class AssignFinalObject : MonoBehaviour
     public List<Transform> final = new List<Transform>();
     void Awake() {
         foreach (Transform child in gameObject.transform) {
-            child.gameObject.tag = "Final";
-            child.gameObject.AddComponent<Highlight>();
-            child.gameObject.AddComponent<Matched>();
-            final.Add(child);
+            foreach (Transform grandchild in child) {
+                grandchild.gameObject.GetComponent<MeshRenderer>().enabled = false;
+                child.gameObject.tag = "Final";
+                child.gameObject.AddComponent<Highlight>();
+                child.gameObject.AddComponent<Matched>();
+                final.Add(child);
+            }
+
         }
     }
 }

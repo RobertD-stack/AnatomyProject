@@ -95,6 +95,8 @@ public class SnapToPlace : MonoBehaviour
 
         // Disable the slot object renderer
         slotObject.GetComponent<MeshRenderer>().enabled = false;
+
+        GetComponent<XRGrabInteractable>().enabled = false;
     }
 
     float GetSnapDistance(Renderer itemRenderer, Renderer slotRenderer)
