@@ -6,6 +6,7 @@ using System.IO;
 using UnityEngine.AddressableAssets;
 using System.Linq;
 
+
 public class ManageItemShown : MonoBehaviour
 {
     public GameObject menuIcon;
@@ -15,6 +16,9 @@ public class ManageItemShown : MonoBehaviour
 
     public AssetLoadMethod assetLoadMethod;
     public Items itemList;
+
+    public GameObject globalVariables;
+
 
     public int currentIndex = 0;
 
@@ -42,6 +46,7 @@ public class ManageItemShown : MonoBehaviour
 
     void Start()
     {
+
         slotObjects = GameObject.FindGameObjectsWithTag("Slots");
         Debug.Log($"ManageItemShown: Found {slotObjects?.Length ?? 0} objects with tag 'Slots'");
 
@@ -117,8 +122,10 @@ public class ManageItemShown : MonoBehaviour
         itemNameText.text = itemName;
         smi.slot = slot;
         smi.spawnParent = spawnParent;
+        BodyPartGroupType group = globalVariables.GetComponent<BodyGroup>().selectedGroup;
+        string prefix = group == BodyPartGroupType.Skeleton ? "Skeleton Combined" : group == BodyPartGroupType.Muscles ? "Muscles Combined" : "Veins";
 
-        Addressables.LoadAssetAsync<GameObject>("Skeleton Combined[" + itemName + "]").Completed += handle =>
+        Addressables.LoadAssetAsync<GameObject>(prefix + "[" + itemName + "]").Completed += handle =>
         {
             if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
                 smi.menuItem = handle.Result;

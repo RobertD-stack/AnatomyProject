@@ -12,7 +12,6 @@ public class AssignFinalObject : MonoBehaviour
     void Awake() {
         foreach (Transform child in gameObject.transform) {
             child.gameObject.tag = "Final";
-            child.gameObject.GetComponent<MeshRenderer>().enabled=false;
             child.gameObject.AddComponent<Highlight>();
             child.gameObject.AddComponent<Matched>();
             final.Add(child);

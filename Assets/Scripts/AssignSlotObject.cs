@@ -15,8 +15,11 @@ public enum CreateNewDescriptionItems
 }
 
 
+
 public class AssignSlotObject : MonoBehaviour
 {
+    public GameObject globalVariables;
+    public BodyPartGroupType groupType = BodyPartGroupType.Skeleton;
     public List<Transform> slots = new List<Transform>();
     public CreateNewDescriptionItems createNewDescriptionItems;
     void Awake() {
@@ -38,28 +41,16 @@ public class AssignSlotObject : MonoBehaviour
 
 
 
-        foreach (Transform child in gameObject.transform)
+        foreach (Transform child in transform)
         {
-            child.gameObject.tag = "Slots";
-            child.gameObject.AddComponent<Matched>();
-
-            slots.Add(child);
-
-            if (createNewDescriptionItems == CreateNewDescriptionItems.True)
+            if (child.childCount > 0)
             {
-                Item tempItem = new Item
-                {
-                    name = child.name,
-                    description = ""
-                };
-
-                // Only add if an item with the same name doesn't already exist
-                bool alreadyExists = allItems.Exists(item => item.name == tempItem.name);
-
-                if (!alreadyExists)
-                {
-                    allItems.Add(tempItem);
-                }
+                foreach (Transform part in child)
+                    RegisterSlot(part, allItems);
+            }
+            else
+            {
+                RegisterSlot(child, allItems);
             }
         }
 
@@ -72,5 +63,20 @@ public class AssignSlotObject : MonoBehaviour
 
 
     }
-}
 
+    void RegisterSlot(Transform part, List<Item> allItems)
+    {
+        part.gameObject.tag = "Slots";
+        if (part.GetComponent<Matched>() == null)
+            part.gameObject.AddComponent<Matched>();
+
+        slots.Add(part);
+
+        if (createNewDescriptionItems != CreateNewDescriptionItems.True)
+            return;
+
+        Item tempItem = new Item { name = part.name, description = "" };
+        if (!allItems.Exists(item => item.name == tempItem.name))
+            allItems.Add(tempItem);
+    }
+}

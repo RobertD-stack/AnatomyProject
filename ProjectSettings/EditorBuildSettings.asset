@@ -9,13 +9,13 @@ EditorBuildSettings:
     path: Assets/Scenes/Current/Demographic Quiz.unity
     guid: 95db36c7fe080a947b6e3f6396f99c68
   - enabled: 1
-    path: Assets/Scenes/Current/Vein Structure.unity
+    path: Assets/Scenes/Old/Vein Structure.unity
     guid: 3193b17876344fb40abdb28463f942b2
   - enabled: 1
     path: Assets/Scenes/Current/Vein Structure Quiz.unity
     guid: 31bdb78c9898a1340816daf8f44d6548
   - enabled: 1
-    path: Assets/Scenes/Current/Skeletal Structure.unity
+    path: Assets/Scenes/Old/Skeletal Structure.unity
     guid: a0c850f6ba49d6d43b312b9f754ac2e4
   - enabled: 1
     path: Assets/Scenes/Current/Skeletal Structure Quiz.unity

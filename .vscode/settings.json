@@ -73,5 +73,6 @@
     "csharp.showCompilerWarnings": true,
     "csharp.suppressDotnetInstallWarning": true,
     "editor.showUnused": true,
-    "problems.showCurrentInStatus": true
+    "problems.showCurrentInStatus": true,
+    "dotrush.roslyn.projectOrSolutionFiles": []
 }

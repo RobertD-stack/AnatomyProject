@@ -15,8 +15,18 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: cfc86565a9bb66644b3b99b5d359ae1a
   m_SerializeEntries:
-  - m_GUID: e2dddb8445b868b4bba8b47d5b313a62
+  - m_GUID: 05ff3bdfad212774cbea7acc37e4e948
+    m_Address: Muscles Combined
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ada5fc553cfd0f94ba21b7862118ccde
     m_Address: Skeleton Combined
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c2bd7f0380edce649b689e29f3089adf
+    m_Address: Veins
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
