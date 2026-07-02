@@ -10,11 +10,34 @@ public sealed class TextToSpeech : MonoBehaviour
     [Tooltip("How long the speaking animation runs (seconds).")]
     public float animationDuration = 15f;
     private float animationEndTime;
+    public ToggleIcon toggleIcon;
+
+    public RunAutomaticPrompts runAutomaticPrompts;
+
+    public enum TextToSpeechMode
+    {
+        On,
+        Off
+    }
+
+    public TextToSpeechMode textToSpeechMode = TextToSpeechMode.On;
 
     void Awake()
     {
+        if (runAutomaticPrompts != null && runAutomaticPrompts.trainingMode == TrainingMode.On)
+        {
+            textToSpeechMode = TextToSpeechMode.Off;
+        }
+        else
+        {
+            textToSpeechMode = TextToSpeechMode.On;
+        }
+
         if (animator == null) animator = GetComponent<Animator>();
-        if (animator != null) animator.speed=0;
+        if (animator != null) {
+            animator.speed=0;
+            toggleIcon.SetSpriteOff();
+        }
     }
 
     void Update()
@@ -22,6 +45,7 @@ public sealed class TextToSpeech : MonoBehaviour
         if (animator != null && animator.speed > 0f && Time.time >= animationEndTime)
         {
             animator.speed = 0f;
+            toggleIcon.SetSpriteOff();
         }
     }
 
@@ -36,6 +60,7 @@ public sealed class TextToSpeech : MonoBehaviour
         }
 
         ttsrust_say(newText);
+        toggleIcon.ToggleSprite();
         Debug.Log("Animation started");
 
         // Animator might be on a child depending on the rig setup.
@@ -58,7 +83,14 @@ public sealed class TextToSpeech : MonoBehaviour
     {
         Debug.Log($"NotifyModelResponse called. textNull={(text == null)}, textLen={(text == null ? -1 : text.Length)}");
         lastText = text ?? "";
-        StartSpeech();
+        if (textToSpeechMode == TextToSpeechMode.On)
+        {
+            StartSpeech();
+        }
+        else
+        {
+            Debug.Log("TextToSpeechMode is Off, skipping speech.");
+        }
     }
 
 

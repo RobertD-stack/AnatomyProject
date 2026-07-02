@@ -1,0 +1,13 @@
+﻿pmid,gold,raw_prediction,parsed_prediction,correct,model,total_seconds,timestamp
+12377809,yes,"yes
+The anorectal endosonography revealed that dyschesia can cause abnormal muscle contractions in the anal sphincter and musculus puborectalis, leading to changes in their dimensions during voluntary movements.",yes,1,anatomy-tutor-fast,2.214105,2026-06-26 17:08:41
+26163474,yes,"yes
+The study found an association between sublingual varices and hypertension, suggesting that those with sublingual varices are more likely to have high blood pressure. This is because the presence of sublingual varices can indicate underlying cardiovascular issues. The researchers used a statistical analysis to determine this connection.",yes,1,anatomy-tutor-fast,3.032934,2026-06-26 17:08:44
+19100463,yes,"yes
+The affinity column-mediated immunoassay method is more accurate than the microparticle enzyme immunoassay method for measuring tacrolimus concentrations, especially in low hematocrit samples.
+This is because the affinity column-mediated immunoassay method measures the binding of tacrolimus to antibodies, which provides a more precise and reliable measurement of drug levels. In contrast, the microparticle enzyme immunoassay method uses particles that are coated with antibodies, but may not accurately reflect the actual concentration of tacrolimus in the blood.
+The results suggest that the affinity column-mediated immunoassay method is a better choice for measuring tacrolimus concentrations in patients with low hematocrit levels.",yes,1,anatomy-tutor-fast,6.456764,2026-06-26 17:08:51
+18537964,yes,"yes
+The abstract discusses a study that investigated how physicians' specializations affect the recording of medication histories in patient medical records, finding significant differences in depth and frequency of documentation across various specialties.",yes,1,anatomy-tutor-fast,1.961602,2026-06-26 17:08:53
+12913878,yes,"yes
+The femur is a weight-bearing bone in the human body that provides structural support for joints and facilitates movement. Its unique shape and composition enable it to withstand significant stress and pressure, while also allowing for smooth movement through the knee joint.",yes,1,anatomy-tutor-fast,2.378121,2026-06-26 17:08:55

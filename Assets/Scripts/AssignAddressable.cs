@@ -26,7 +26,7 @@ public class AddressableAssignmentClass: MonoBehaviour
 
     public static void MarkAssetsInFolderAddressable()
     {
-        string folderPath = "Assets/Resources_moved/Edited Human Parts/Skeleton Combined"; // Change this to your folder
+        string folderPath = "Assets/Resources_moved/Edited Human Parts/Skeleton Combined/List"; // Change this to your folder
         string groupName = "Default Local Group";    // Optional: Group name
 
         AddressableAssetSettings settings = AddressableAssetSettingsDefaultObject.Settings;

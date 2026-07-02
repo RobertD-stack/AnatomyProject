@@ -1,5 +1,7 @@
 {
     "recommendations": [
-      "visualstudiotoolsforunity.vstuc"
+      "anysphere.csharp",
+      "ms-dotnettools.vscode-dotnet-runtime",
+      "nromanov.dotrush"
     ]
 }

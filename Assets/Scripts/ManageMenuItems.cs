@@ -25,6 +25,7 @@ public enum AssetLoadMethod
     List
 }
 
+
 public class ManageMenuItems : MonoBehaviour
 {
     public GameObject menuItem;
@@ -50,6 +51,8 @@ public class ManageMenuItems : MonoBehaviour
     public AssetLoadMethod assetLoadMethod;
 
     public Items itemList;
+
+    public BodyPartGroupType selectedGroup = BodyPartGroupType.Skeleton;
 
     void Awake()
     {
@@ -139,10 +142,13 @@ public class ManageMenuItems : MonoBehaviour
                 BoxCollider itemCollider = currentMenuItem.AddComponent<BoxCollider>(); // Add Box Collider
                 itemCollider.size = new Vector3(100f, 100f, 1f);
                 SpawnMenuItem smi = currentMenuItem.AddComponent<SpawnMenuItem>(); // Script responsible for spawning the menu item
+                // This is the designated spawn item button that will be used to spawn the item
                 smi.menuItemName = currentMenuItem.name; // Set the menu item name 
                 smi.menuItem = part; // Set the menu item to be spawned
                 menuItemList.Add(currentMenuItem);
                 smi.spawnParent = spawnParent;
+
+
             }
         }
         else if (assetLoadMethod == AssetLoadMethod.FilePath)
@@ -177,8 +183,7 @@ public class ManageMenuItems : MonoBehaviour
                 currentMenuItem.AddComponent<ToggleVRMenuItems>();
                 SpawnMenuItem smi = currentMenuItem.AddComponent<SpawnMenuItem>(); // Script responsible for spawning the menu item
                 smi.menuItemName = currentMenuItem.name; // Set the menu item name 
-                // Load the addressable with the same item name
-                Addressables.LoadAssetAsync<GameObject>("Skeleton Combined[" + itemName + "]").Completed += handle =>
+                Addressables.LoadAssetAsync<GameObject>((selectedGroup == BodyPartGroupType.Skeleton ? "Skeleton Combined" : "Muscles Combined") + "[" + itemName + "]").Completed += handle =>
                 {
                     if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
                     {

@@ -7,6 +7,7 @@ using TMPro;
 using System.IO; 
 using System;
 
+
 [System.Serializable]
 public class UnityAndGeminiKey
 {
@@ -93,6 +94,29 @@ public enum LlmBackend
     Ollama
 }
 
+
+public enum OllamaModel
+{
+    [InspectorName("Anatomy Tutor Fast (1.3 GB)")]
+    AnatomyTutorFast,
+    [InspectorName("Anatomy Tutor (3.8 GB)")]
+    AnatomyTutor,
+    [InspectorName("NCat Med Llama (3.8 GB)")]
+    NcatMedLlama,
+    [InspectorName("Meditron (3.8 GB)")]
+    Meditron,
+    [InspectorName("MedLlama2 (3.8 GB)")]
+    MedLlama2,
+    [InspectorName("Llama 3.2 (2.0 GB)")]
+    Llama3_2,
+    [InspectorName("Llama 3.2 1B (1.3 GB)")]
+    Llama3_2_1B,
+    [InspectorName("Qwen 2.5 3B (1.9 GB)")]
+    Qwen2_5_3B,
+    [InspectorName("Custom (other)")]
+    Custom
+}
+
 [System.Serializable]
 public class OllamaChatMessage
 {
@@ -103,7 +127,67 @@ public class OllamaChatMessage
 [System.Serializable]
 public class OllamaChatResponse
 {
+    public string model;
     public OllamaChatMessage message;
+    public bool done;
+
+    // Timing fields returned by Ollama (nanoseconds unless noted).
+    public long total_duration;
+    public long load_duration;
+    public long prompt_eval_count;
+    public long prompt_eval_duration;
+    public long eval_count;
+    public long eval_duration;
+}
+
+[System.Serializable]
+public class OllamaDiagnostics
+{
+    public string model;
+    public float totalSeconds;
+    public float loadSeconds;
+    public int promptEvalCount;
+    public int evalCount;
+    public float evalTokensPerSecond;
+    public string responsePreview;
+    public string capturedAtUtc;
+
+    public static OllamaDiagnostics FromResponse(OllamaChatResponse response)
+    {
+        if (response == null)
+            return null;
+
+        string preview = response.message != null ? response.message.content : "";
+        if (!string.IsNullOrEmpty(preview))
+        {
+            preview = preview.Replace("\n", " ").Trim();
+            if (preview.Length > 120)
+                preview = preview.Substring(0, 117) + "...";
+        }
+
+        float evalSeconds = response.eval_duration > 0 ? response.eval_duration / 1_000_000_000f : 0f;
+        float tokensPerSecond = evalSeconds > 0f && response.eval_count > 0
+            ? response.eval_count / evalSeconds
+            : 0f;
+
+        return new OllamaDiagnostics
+        {
+            model = response.model,
+            totalSeconds = response.total_duration / 1_000_000_000f,
+            loadSeconds = response.load_duration / 1_000_000_000f,
+            promptEvalCount = (int)response.prompt_eval_count,
+            evalCount = (int)response.eval_count,
+            evalTokensPerSecond = tokensPerSecond,
+            responsePreview = preview,
+            capturedAtUtc = DateTime.UtcNow.ToString("o"),
+        };
+    }
+
+    public override string ToString()
+    {
+        return $"model={model} total={totalSeconds:F2}s load={loadSeconds:F2}s " +
+               $"promptTokens={promptEvalCount} evalTokens={evalCount} tok/s={evalTokensPerSecond:F2}";
+    }
 }
 
 
@@ -115,9 +199,12 @@ public class UnityAndGeminiV3: MonoBehaviour
     public LlmBackend llmBackend = LlmBackend.Ollama;
     [Tooltip("Ollama base URL (run: ollama serve).")]
     public string ollamaBaseUrl = "http://localhost:11434";
-    [Tooltip("Model name pulled locally (run: ollama pull llama3.2).")]
-    // Change llama model
-    public string ollamaModel = "llama3.2";
+    [Tooltip("Local Ollama model to use (run: ollama pull <model>).")]
+    public OllamaModel ollamaModel = OllamaModel.AnatomyTutorFast;
+    [Tooltip("Used when Ollama Model is set to Custom.")]
+    public string customOllamaModel = "anatomy-tutor";
+    [Tooltip("Seconds before an Ollama /api/chat request is aborted (0 = no limit).")]
+    public int ollamaRequestTimeoutSeconds = 300;
 
     [Header("Prompt Mode")]
     [Tooltip("When enabled, uses the text field (e.g. microphone transcription) with system instructions and educational suffix. When disabled, uses the sample test prompt.")]
@@ -166,6 +253,18 @@ public class UnityAndGeminiV3: MonoBehaviour
     [Header("Debug")]
     [Tooltip("Logs the exact request format sent to Gemini (API key redacted; large base64 truncated).")]
     public bool logGeminiRequests = true;
+    [Tooltip("Logs Ollama timing/token diagnostics from the latest response.")]
+    public bool logOllamaDiagnostics = true;
+
+    [Header("Ollama Diagnostics")]
+    [Tooltip("Populated after each successful Ollama /api/chat response.")]
+    public OllamaDiagnostics lastOllamaDiagnostics;
+    [Tooltip("Full text from the latest Ollama reply (used by batch eval runners).")]
+    public string lastModelResponse;
+    [HideInInspector]
+    public bool lastOllamaRequestSucceeded;
+    [HideInInspector]
+    public bool suppressModelResponseEvents;
 
     private const string PromptSystemInstruction =
         "You are a helpful anatomy educator. Do not repeat or echo the user's words. Answer the question or request directly with your own explanation. Never start by restating what the user said.";
@@ -192,6 +291,7 @@ public class UnityAndGeminiV3: MonoBehaviour
     // Send prompt request to Gemini if the prmopt is not null
     void Start()
     {
+        EnsureOllamaLogCsvFileName();
         UnityAndGeminiKey jsonApiKey = JsonUtility.FromJson<UnityAndGeminiKey>(jsonApi.text);
         apiKey = jsonApiKey.key;
         chatHistory = new TextContent[] { };
@@ -207,8 +307,16 @@ public class UnityAndGeminiV3: MonoBehaviour
 
     public void SubmitPrompt(string promptText)
     {
-        StartCoroutine(SendPromptRequestToGemini(promptText));
+        Debug.Log("[UnityAndGeminiV3] Microphone Input: " + promptText);
+        if (!HasUserPrompt(promptText))
+        {
+            return;
+        } else {
+            StartCoroutine(SendPromptRequestToOllama(promptText));
+        }
     }
+
+
 
     public IEnumerator SendPromptRequestToGemini(string promptText)
     {
@@ -241,6 +349,8 @@ public class UnityAndGeminiV3: MonoBehaviour
 
         // Create a UnityWebRequest with the JSON data
         using (UnityWebRequest www = new UnityWebRequest(url, "POST")){
+
+            www.timeout = 20;
             www.uploadHandler = new UploadHandlerRaw(jsonToSend);
             www.downloadHandler = new DownloadHandlerBuffer();
             www.SetRequestHeader("Content-Type", "application/json");
@@ -271,55 +381,83 @@ public class UnityAndGeminiV3: MonoBehaviour
         }
     }
 
-    private IEnumerator SendPromptRequestToOllama(string promptText)
+    public IEnumerator SendPromptRequestToOllama(string promptText)
     {
+        // Determine whether we are using the microphone input or the sample test prompt
+        promptText = ResolvePromptForRequest(promptText);
+        if (!HasUserPrompt(promptText))
+        {
+            lastOllamaRequestSucceeded = false;
+            yield break;
+        }
+
+        lastOllamaRequestSucceeded = false;
+
+        string modelName = GetOllamaModelName();
         string url = ollamaBaseUrl.TrimEnd('/') + "/api/chat";
         string jsonData = useMicrophoneInput
-            ? "{\"model\":\"" + ollamaModel + "\",\"stream\":false,\"messages\":[" +
+            ? "{\"model\":\"" + modelName + "\",\"stream\":false,\"messages\":[" +
               "{\"role\":\"system\",\"content\":\"" + EscapeJsonString(PromptSystemInstruction) + "\"}," +
               "{\"role\":\"user\",\"content\":\"" + EscapeJsonString(promptText) + "\"}" +
               "]}"
-            : "{\"model\":\"" + ollamaModel + "\",\"stream\":false,\"messages\":[" +
+            : "{\"model\":\"" + modelName + "\",\"stream\":false,\"messages\":[" +
               "{\"role\":\"user\",\"content\":\"" + EscapeJsonString(promptText) + "\"}" +
               "]}";
 
         byte[] jsonToSend = new System.Text.UTF8Encoding().GetBytes(jsonData);
 
-        Debug.Log("Sending to Ollama: " + promptText);
+        Debug.Log("[UnityAndGeminiV3] Sending to Ollama: " + promptText);
         LogGeminiRequest(
             "Ollama",
             url,
             jsonData,
-            $"Mode: {(useMicrophoneInput ? "Microphone" : "Sample test")}\nModel: {ollamaModel}\nPrompt: {promptText}");
+            $"Mode: {(useMicrophoneInput ? "Microphone" : "Sample test")}\nModel: {modelName}\nPrompt: {promptText}");
 
         using (UnityWebRequest www = new UnityWebRequest(url, "POST"))
         {
             www.uploadHandler = new UploadHandlerRaw(jsonToSend);
             www.downloadHandler = new DownloadHandlerBuffer();
             www.SetRequestHeader("Content-Type", "application/json");
+            if (ollamaRequestTimeoutSeconds > 0)
+                www.timeout = ollamaRequestTimeoutSeconds;
 
             yield return www.SendWebRequest();
 
             if (www.result != UnityWebRequest.Result.Success)
             {
+                lastModelResponse = "";
+                lastOllamaDiagnostics = null;
+                lastOllamaRequestSucceeded = false;
                 Debug.LogError(www.error);
                 if (!string.IsNullOrEmpty(www.downloadHandler.text))
                     Debug.LogError("Response: " + www.downloadHandler.text);
             }
             else
             {
+                lastOllamaRequestSucceeded = true;
                 Debug.Log("Ollama request complete!");
                 Debug.Log("Raw response: " + www.downloadHandler.text);
                 OllamaChatResponse response = JsonUtility.FromJson<OllamaChatResponse>(www.downloadHandler.text);
+                lastOllamaDiagnostics = OllamaDiagnostics.FromResponse(response);
+                if (logOllamaDiagnostics && lastOllamaDiagnostics != null)
+                    Debug.Log("Ollama diagnostics: " + lastOllamaDiagnostics);
+                LogOllamaDiagnosticsToCsv(lastOllamaDiagnostics);
+
                 if (response.message != null && !string.IsNullOrEmpty(response.message.content))
                 {
                     string text = response.message.content;
                     Debug.Log(text);
-                    uiText.text = text;
-                    onModelResponseText?.Invoke(text);
+                    lastModelResponse = text;
+                    if (!suppressModelResponseEvents)
+                    {
+                        if (uiText != null)
+                            uiText.text = text;
+                        onModelResponseText?.Invoke(text);
+                    }
                 }
                 else
                 {
+                    lastModelResponse = "";
                     Debug.Log("No text found in Ollama response.");
                 }
             }
@@ -607,6 +745,23 @@ public class UnityAndGeminiV3: MonoBehaviour
         return WithEducationalContext(promptText);
     }
 
+    private string GetOllamaModelName()
+    {
+        switch (ollamaModel)
+        {
+            case OllamaModel.AnatomyTutorFast: return "anatomy-tutor-fast";
+            case OllamaModel.AnatomyTutor: return "anatomy-tutor";
+            case OllamaModel.NcatMedLlama: return "ncatmedllama";
+            case OllamaModel.Meditron: return "meditron";
+            case OllamaModel.MedLlama2: return "medllama2";
+            case OllamaModel.Llama3_2: return "llama3.2";
+            case OllamaModel.Llama3_2_1B: return "llama3.2:1b";
+            case OllamaModel.Qwen2_5_3B: return "qwen2.5:3b";
+            case OllamaModel.Custom: return customOllamaModel;
+            default: return "anatomy-tutor-fast";
+        }
+    }
+
     private IEnumerator SendPromptMediaRequestToGemini(string promptText, string mediaPath)
     {
         if (!HasUserPrompt(promptText))
@@ -761,6 +916,112 @@ public class UnityAndGeminiV3: MonoBehaviour
 
         return jsonBody;
     }
+
+    // Log diagnotics to CSV
+
+    [Header("AI Data Logging")]
+    [Tooltip("Full path to python.exe, or \"python\" if it is on PATH when Unity starts.")]
+    public string pythonExecutable = "python";
+    [Tooltip("CSV filename under Assets/Data/. Set automatically on Start if empty.")]
+    public string ollamaLogCsvFileName = "";
+
+    private static string DataDirectory =>
+        Path.Combine(Application.dataPath, "Data");
+
+    private static void EnsureDataDirectory()
+    {
+        Directory.CreateDirectory(DataDirectory);
+    }
+
+    public void EnsureOllamaLogCsvFileName()
+    {
+        if (string.IsNullOrWhiteSpace(ollamaLogCsvFileName))
+            ollamaLogCsvFileName = "ai_data_" + DateTime.UtcNow.ToString("yyyyMMdd_HHmmss") + ".csv";
+    }
+
+    private string OllamaLogCsvPath =>
+        Path.Combine(DataDirectory, ollamaLogCsvFileName);
+
+    void LogOllamaDiagnosticsToCsv(OllamaDiagnostics diagnostics)
+    {
+        if (diagnostics == null)
+            return;
+
+        EnsureOllamaLogCsvFileName();
+        EnsureDataDirectory();
+
+        string scriptsDir = Path.Combine(Application.dataPath, "Scripts");
+        string scriptPath = Path.Combine(scriptsDir, "logAIData.py");
+
+        if (!File.Exists(scriptPath))
+        {
+            Debug.LogError("[logAIData] Script not found: " + scriptPath);
+            return;
+        }
+
+        // Match append_test_results argument order (InvariantCulture keeps decimals as 1.23 not 1,23)
+        string arguments = string.Format(
+            System.Globalization.CultureInfo.InvariantCulture,
+            "\"{0}\" {1} {2} {3} \"{4}\" {5} {6} \"{7}\"",
+            scriptPath,
+            diagnostics.totalSeconds,
+            diagnostics.loadSeconds,
+            diagnostics.evalTokensPerSecond,
+            diagnostics.model ?? "",
+            diagnostics.promptEvalCount,
+            diagnostics.evalCount,
+            OllamaLogCsvPath
+        );
+
+        var startInfo = new System.Diagnostics.ProcessStartInfo
+        {
+            FileName = pythonExecutable,
+            Arguments = "-u " + arguments,
+            WorkingDirectory = scriptsDir,
+            UseShellExecute = false,
+            RedirectStandardOutput = true,
+            RedirectStandardError = true,
+            CreateNoWindow = true,
+        };
+
+        Debug.Log($"[logAIData] Running: {pythonExecutable} {startInfo.Arguments}");
+
+        try
+        {
+            using (System.Diagnostics.Process process = System.Diagnostics.Process.Start(startInfo))
+            {
+                if (process == null)
+                {
+                    Debug.LogError("[logAIData] Failed to start Python process (Process.Start returned null).");
+                    return;
+                }
+
+                string stdout = process.StandardOutput.ReadToEnd();
+                string stderr = process.StandardError.ReadToEnd();
+                process.WaitForExit();
+
+                if (!string.IsNullOrEmpty(stdout))
+                    Debug.Log("[logAIData] " + stdout.Trim());
+
+                if (process.ExitCode != 0)
+                {
+                    Debug.LogError(
+                        "[logAIData] Python failed (exit " + process.ExitCode + ").\n" +
+                        (string.IsNullOrEmpty(stderr) ? "(no stderr output)" : stderr.Trim()));
+                }
+                else if (!string.IsNullOrEmpty(stderr))
+                {
+                    Debug.LogWarning("[logAIData] stderr: " + stderr.Trim());
+                }
+            }
+        }
+        catch (System.Exception ex)
+        {
+            Debug.LogError("[logAIData] Failed to run Python: " + ex);
+        }
+    }
+    
+
 
 }
 

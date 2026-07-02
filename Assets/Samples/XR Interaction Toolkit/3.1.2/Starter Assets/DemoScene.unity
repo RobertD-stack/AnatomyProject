@@ -3615,7 +3615,7 @@ GameObject:
   - component: {fileID: 3127728408198131894}
   - component: {fileID: 3127728408198131892}
   m_Layer: 0
-  m_Name: EventSystem
+  m_Name: VREventSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

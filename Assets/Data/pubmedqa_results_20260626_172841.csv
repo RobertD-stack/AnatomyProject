@@ -1,0 +1,11 @@
+﻿pmid,gold,raw_prediction,parsed_prediction,correct,ollama_model,model,total_seconds,timestamp,accuracy_percent
+12377809,yes,"yes
+The anal sphincter becomes shorter or thicker during straining due to increased pressure on the muscle, while the puborectalis muscle also changes, becoming shorter and/or thicker.",yes,1,AnatomyTutorFast,anatomy-tutor-fast,1.943115,2026-06-26 17:28:43,100.0
+26163474,yes,"yes
+The study found an association between the presence of sublingual varices and hypertension, suggesting that individuals with these varices may be more likely to have high blood pressure. The researchers also noted that the severity of sublingual varices was linked to increased systolic and diastolic blood pressures.",yes,1,AnatomyTutorFast,anatomy-tutor-fast,2.950971,2026-06-26 17:28:46,100.0
+19100463,yes,"yes
+The affinity column-mediated immunoassay method is more accurate than the microparticle enzyme immunoassay method for measuring tacrolimus concentrations, especially in patients with low hematocrit levels. 
+This is because the ACMIA method uses antibodies to bind specifically to the drug, resulting in a more precise measurement of tacrolimus levels.
+The Bland-Altman plot shows that the differences between the two methods are not significantly affected by variations in hematocrit levels.",yes,1,AnatomyTutorFast,anatomy-tutor-fast,5.692682,2026-06-26 17:28:52,100.0
+18537964,yes,"yes
+The abstract suggests a significant influence of physician specialty on the depth and frequency of medication history in patients' case notes.",yes,1,AnatomyTutorFast,anatomy-tutor-fast,1.398231,2026-06-26 17:28:54,100.0

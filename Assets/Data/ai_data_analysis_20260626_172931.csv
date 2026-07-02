@@ -1,0 +1,101 @@
+prompt,gold,anatomy-tutor__totalRequestTime,anatomy-tutor__loadSeconds,anatomy-tutor__correct,anatomy-tutor-fast__totalRequestTime,anatomy-tutor-fast__loadSeconds,anatomy-tutor-fast__correct,ncatmedllama__totalRequestTime,ncatmedllama__loadSeconds,ncatmedllama__correct,meditron__totalRequestTime,meditron__loadSeconds,meditron__correct
+10158597 | Does a dedicated discharge coordinator improve the quality of hospital discharge,yes,10.83544,0.0283923,0,2.754831,0.155116,1,14.31503,0.028035,0,,,
+10331115 | Is amoxapine an atypical antipsychotic?,yes,16.57694,0.0258962,0,1.141869,0.1520581,1,25.11982,0.026035,0,,,
+10401824 | Is laparoscopic reoperation for failed antireflux surgery feasible?,yes,45.92854,0.0297183,0,4.557372,0.1413899,1,12.29072,0.0259072,1,,,
+10922093 | Does open access endoscopy close the door to an adequately informed patient?,yes,12.53729,0.0285711,0,2.828344,0.1606263,1,20.40476,0.0281043,0,,,
+11035130 | Do patients with rheumatoid arthritis established on methotrexate and folic acid,yes,16.17829,0.0291162,0,2.946406,0.1579244,1,14.39312,0.0284911,0,23.93638,0.0254187,1.0
+11079675 | Pulmonary valve replacement in adults late after repair of tetralogy of fallot: ,yes,13.37231,0.0294871,1,3.139006,0.1601537,1,20.0456,0.0322017,0,,,
+11146778 | Risk stratification in emergency surgical patients: is the APACHE II score a rel,yes,12.29762,0.0290829,0,5.06338,0.1514339,1,11.36696,0.0273146,0,71.07431,0.0269659,0.0
+11833948 | Does a delay in transfer to a rehabilitation unit for older people affect outcom,yes,10.59902,0.0248497,0,3.000758,0.1580448,1,16.69805,0.0253663,0,52.43649,0.0249963,0.0
+11943048 | Does receipt of hospice care in nursing homes improve the management of pain at ,yes,24.6247,0.0247161,0,4.714427,0.1571889,1,13.8097,0.0255257,0,,,
+11977907 | Subclavian steal syndrome: can the blood pressure difference between arms predic,yes,29.56728,0.0259748,0,4.397859,0.1645776,1,21.43735,0.0280555,0,,,
+12094116 | Is muscle power related to running speed with changes of direction?,yes,9.005352,0.0238415,0,1.311431,0.1517745,1,10.46145,0.0275218,0,,,
+12121321 | Do mossy fibers release GABA?,yes,8.028638,0.0246451,1,4.067937,0.1422935,1,6.321261,0.032102,1,,,
+12377809 | Is anorectal endosonography valuable in dyschesia?,yes,23.67318,5.781812,1,2.82886,0.1678726,1,18.74431,0.029562,1,64.06183,11.60985,0.0
+12765819 | Spinal subdural hematoma: a sequela of a ruptured intracranial aneurysm?,yes,17.76827,0.0286382,0,1.90465,0.1467889,1,9.690734,0.0243103,0,36.09173,0.0286882,1.0
+12846929 | Quality of life in lung cancer patients: does socioeconomic status matter?,yes,12.55122,0.0262876,0,2.556686,0.153929,1,8.844454,0.0320742,0,,,
+12913878 | Locoregional opening of the rodent blood-brain barrier for paclitaxel using Nd:Y,yes,16.29114,0.0263748,0,0.5024625,0.1614243,1,13.09923,0.0247784,1,52.35637,0.0258244,0.0
+15041506 | Is fear of anaphylactic shock discouraging surgeons from more widely adopting pe,yes,14.17511,0.0274775,0,1.042708,0.1570938,1,4.976208,0.0299647,0,13.09833,0.0289985,0.0
+15151701 | Profiling quality of care: Is there a role for peer review?,yes,20.12873,0.0258383,0,2.703424,0.1461422,1,20.97604,0.0226921,0,,,
+15208005 | The Omega-3 Index: a new risk factor for death from coronary heart disease?,yes,13.34294,0.030482,0,3.927086,0.143535,1,15.85266,0.026956,0,,,
+15489384 | Does reducing spasticity translate into functional benefit?,yes,9.922133,0.0234579,0,2.332831,0.1545039,1,19.86008,0.0253737,0,,,
+15528969 | Is expert breast pathology assessment necessary for the management of ductal car,yes,10.71469,0.0237762,0,1.491574,0.1517979,1,13.27562,0.0282596,0,,,
+15597845 | Is the combination with 2-methoxyestradiol able to reduce the dosages of chemoth,yes,12.52041,0.0284585,0,2.351207,0.1564937,1,12.24387,0.0263106,0,,,
+15918864 | Learning needs of postpartum women: does socioeconomic status matter?,yes,15.74743,0.0280097,0,4.500616,0.1577104,1,16.82227,0.0275938,0,15.66323,0.0269004,0.0
+15995461 | Do some U.S. states have higher/lower injury mortality rates than others?,yes,4.445411,0.0278236,0,0.9316986,0.1530588,1,4.399765,0.0279616,0,9.334123,0.0278831,0.0
+16147837 | Is grandmultiparity an independent risk factor for adverse perinatal outcomes?,yes,9.361771,0.0275709,1,5.745413,0.152849,1,15.48866,0.0274243,1,34.8427,0.0274468,0.0
+16266387 | Fast foods - are they a risk factor for asthma?,yes,7.258424,0.0263741,1,5.323549,0.1608168,1,7.108208,0.0264377,1,,,
+16713745 | Do cytokine concentrations in pancreatic juice predict the presence of pancreati,yes,15.4966,0.025397,0,4.020374,0.1579565,1,16.95183,0.0254218,0,,,
+16769333 | Preoperative tracheobronchoscopy in newborns with esophageal atresia: does it ma,yes,15.39262,0.0264351,0,5.922584,0.1499716,1,22.57295,0.0276656,0,,,
+16971978 | Are complex coronary lesions more frequent in patients with diabetes mellitus?,yes,7.304539,0.0236752,1,4.720303,0.1453848,1,7.181221,0.028516,1,,,
+17276182 | Stretch-sensitive KCNQ1 mutation A link between genetic and environmental factor,yes,20.38836,0.0264168,0,2.547234,0.149159,1,24.4421,0.0265886,0,,,
+17306983 | Is size-reducing ascending aortoplasty with external reinforcement an option in ,yes,21.15845,0.0267181,1,3.307997,0.1507617,1,24.56991,0.0236881,1,,,
+17355582 | Does ambulatory process of care predict health-related quality of life outcomes ,yes,14.94572,0.0263788,0,5.050527,0.1621729,1,14.11821,0.0274853,0,,,
+17682349 | Are there gender differences in the reasons why African Americans delay in seeki,yes,17.74287,0.0281531,0,2.901261,0.1682465,1,13.46192,0.0281197,0,10.55944,0.0263013,0.0
+18041059 | Do adjuvant aromatase inhibitors increase the cardiovascular risk in postmenopau,yes,8.932724,0.0260531,0,3.454377,0.1565225,1,13.02003,0.0263742,1,39.08001,0.0258856,0.0
+18239988 | Differentiation of nonalcoholic from alcoholic steatohepatitis: are routine labo,yes,16.5076,0.0273776,0,2.858056,0.1586646,1,23.30715,0.0295862,0,,,
+18537964 | Does a physician's specialty influence the recording of medication history in pa,yes,21.42779,0.0267817,0,4.989412,0.1468432,1,11.25797,0.0263708,0,24.61149,0.0257376,1.0
+18570208 | Is severe macrosomia manifested at 11-14 weeks of gestation?,yes,9.947908,0.0269847,0,3.044775,0.1528267,1,16.08515,0.0263706,0,,,
+18594195 | Do older patients who refuse to participate in a self-management intervention in,yes,17.19988,0.0258872,1,1.460165,0.1556497,1,5.216023,0.0296359,0,,,
+18783922 | Do cytokines have any role in epilepsy?,yes,29.17958,0.0254079,0,1.935206,0.1460562,1,12.64099,0.0268242,0,,,
+19027440 | Can we predict which head and neck cancer survivors develop fears of recurrence?,yes,15.6792,0.0274086,0,2.504013,0.1638765,1,17.69274,0.0309975,0,,,
+19100463 | Is the affinity column-mediated immunoassay method suitable as an alternative to,yes,13.35641,0.027452,0,3.077896,0.1519612,1,21.01822,0.0268421,0,42.87295,0.0280112,0.0
+"19106867 | The Main Gate Syndrome: a new format in mass-casualty victim ""surge"" management?",yes,4.359595,0.0269054,0,0.9142491,0.1448854,0,4.354781,0.033047,0,12.67565,0.0274654,0.0
+19130332 | Is the zeolite hemostatic agent beneficial in reducing blood loss during arteria,yes,14.16985,0.0286419,0,1.390224,0.1518139,1,9.150895,0.0301033,1,15.00758,0.030617,0.0
+19482903 | Treadmill testing of children who have spina bifida and are ambulatory: does pea,yes,24.37983,0.0303515,0,4.272003,0.150324,1,22.85798,0.0243857,0,,,
+20297950 | Proof of concept study: does fenofibrate have a role in sleep apnoea syndrome?,yes,24.86102,0.0299813,0,4.957551,0.1593488,1,15.66735,0.0326983,0,,,
+20571467 | Is it appropriate to implant kidneys from elderly donors in young recipients?,yes,7.531782,0.0261271,1,4.887083,0.1582301,1,20.77656,0.0266552,0,,,
+20577124 | Is leptin involved in phagocytic NADPH oxidase overactivity in obesity?,yes,14.29799,0.0269451,0,4.074265,0.1621262,1,17.83078,0.02642,0,,,
+20629769 | Is primary angioplasty an acceptable alternative to thrombolysis?,yes,12.37089,0.0249304,0,1.890595,0.153959,1,16.01425,0.0290528,0,13.84155,0.0285195,0.0
+21228436 | Can teaching medical students to investigate medication errors change their atti,yes,9.167724,0.0267101,0,1.143509,0.1592499,0,8.205629,0.0275492,1,46.91534,0.0284095,0.0
+21342862 | Is EQ-5D a valid quality of life instrument in patients with acute coronary synd,yes,13.60844,0.0295675,0,4.293918,0.1454078,1,10.4279,0.0279809,0,8.060411,0.0262483,0.0
+21481154 | Improvements in survival of gynaecological cancer in the Anglia region of Englan,yes,14.78392,0.0283278,0,2.964513,0.162824,1,7.181698,0.026866,0,14.90473,0.0270207,0.0
+21645374 | Do mitochondria play a role in remodelling lace plant leaves during programmed c,yes,21.11985,0.0284503,0,5.008418,0.1489381,1,22.9858,0.0285736,0,40.80547,0.0287533,0.0
+21689015 | Can dogs prime autistic children for therapy?,yes,18.32016,0.0243107,0,4.527055,0.152329,1,9.682453,0.0259634,0,,,
+21726930 | Is endometrial polyp formation associated with increased expression of vascular ,yes,19.69744,0.0270502,0,2.769713,0.158894,1,7.831969,0.0295877,1,19.33858,0.0258779,0.0
+21850494 | Hepatorenal syndrome: are we missing some prognostic factors?,yes,5.006504,0.026486,0,1.791404,0.1475103,1,4.969171,0.0300196,0,13.43486,0.0278473,0.0
+21864397 | Factors determining the survival of nasopharyngeal carcinoma with lung metastasi,yes,16.59827,0.0248754,0,3.612665,0.1433607,1,19.69219,0.0280694,0,,,
+22075911 | Is there a differential in the dental health of new recruits to the British Arme,yes,10.98076,0.0258798,0,3.01163,0.1486172,1,13.11342,0.0259134,1,60.88246,0.0305417,0.0
+22117569 | Is an advance care planning model feasible in community palliative care?,yes,8.441573,0.0269058,1,1.131157,0.1528383,1,4.856718,0.0249212,1,,,
+22266735 | Screening for gestational diabetes mellitus: are the criteria proposed by the in,yes,14.2961,0.026477,0,5.477033,0.1431773,1,14.23351,0.0284635,0,,,
+22453060 | Does a 4 diagram manual enable laypersons to operate the Laryngeal Mask Supreme®,yes,12.06977,0.0303034,1,4.175556,0.1519314,1,7.170041,0.0269898,1,,,
+22497340 | Is horizontal semicircular canal ocular reflex influenced by otolith organs inpu,yes,10.27364,0.0289762,0,0.9237003,0.1550444,1,8.134367,0.0284793,0,,,
+22540518 | Is micro-computed tomography reliable to determine the microstructure of the max,yes,19.2179,0.0280549,1,3.146289,0.148151,1,9.993221,0.0274694,0,11.95369,0.026463,0.0
+22680064 | Can third trimester ultrasound predict the presentation of the first twin at del,yes,19.50451,0.0275333,0,0.3072587,0.152143,1,8.987113,0.0244469,1,12.92066,0.0295583,0.0
+22694248 | Is there a model to teach and practice retroperitoneoscopic nephrectomy?,yes,9.79252,0.0246904,1,2.354695,0.1542891,1,19.56076,0.0263086,0,,,
+22902073 | Estimated fetal weight by ultrasound: a modifiable risk factor for cesarean deli,yes,9.746426,0.0265257,0,3.921656,0.1496235,1,8.831882,0.0285853,0,11.10332,0.0254588,0.0
+23347337 | Is intensive chemotherapy safe for rural cancer patients?,yes,12.27526,0.0274969,0,3.020069,0.1439679,1,14.13119,0.0274332,0,,,
+23359100 | Is etoricoxib effective in preventing heterotopic ossification after primary tot,yes,14.33308,0.0248026,0,1.46234,0.1493277,1,14.34346,0.0257607,0,,,
+23495128 | The colour of pain: can patients use colour to describe osteoarthritis pain?,yes,14.04989,0.0269654,0,2.556146,0.1576201,1,14.19403,0.0305764,0,,,
+23736032 | Multidisciplinary decisions in breast cancer: does the patient receive what the ,yes,6.08423,0.0295742,0,4.211804,0.1511659,1,6.566197,0.0304441,0,,,
+23810330 | Is intraoperative neuromonitoring associated with better functional outcome in p,yes,11.1132,0.0261024,0,5.299065,0.153537,1,7.557999,0.0253156,0,,,
+23992109 | Is the urinary biomarkers assessment a non-invasive approach to tubular lesions ,yes,7.96699,0.0295583,1,3.962586,0.1524309,1,17.72096,0.0279002,0,,,
+24318956 | Is digoxin use for cardiovascular disease associated with risk of prostate cance,yes,12.35419,0.0254094,0,4.677888,0.154221,1,15.995,0.028739,0,,,
+24340838 | Do ventricular arrhythmias in athletes subside over time?,yes,13.86985,0.0242707,0,1.513691,0.1498983,1,13.66575,0.0295775,0,,,
+24352924 | Is portable ultrasonography accurate in the evaluation of Schanz pin placement d,yes,14.00131,0.0270483,0,2.770014,0.1565131,1,13.09758,0.0259491,0,7.684869,0.0266695,1.0
+24481006 | Should cavitation in proximal surfaces be reported in cone beam computed tomogra,yes,11.03285,0.0291263,1,0.4689179,0.1483264,1,10.7374,0.0237361,1,54.84899,0.0324894,1.0
+24622801 | Does implant coating with antibacterial-loaded hydrogel reduce bacterial coloniz,yes,16.6747,0.0253016,1,1.535228,0.1662873,1,18.79987,0.0285874,0,,,
+25475395 | Is there a correlation between androgens and sexual desire in women?,yes,19.31847,0.0296504,0,2.676512,0.1587209,1,22.32471,0.0280844,0,16.32116,0.0278966,0.0
+25588461 | Can transcranial direct current stimulation be useful in differentiating unrespo,yes,11.61355,0.0263562,0,3.257108,0.1552136,1,10.3436,0.027664,0,,,
+25756710 | Can emergency physicians accurately and reliably assess acute vertigo in the eme,yes,8.231935,0.0270719,1,4.177938,0.1534295,1,7.973429,0.0264982,1,,,
+25810292 | Is minimally invasive mitral valve repair with artificial chords reproducible an,yes,15.12527,0.0268051,0,3.027055,0.1626343,1,6.58166,0.0284566,1,,,
+25887165 | Does Sensation Return to the Nasal Tip After Microfat Grafting?,yes,10.36971,0.0244853,0,5.298274,0.158538,1,10.15486,0.0274335,0,33.10066,0.026132,0.0
+26163474 | Is there a connection between sublingual varices and hypertension?,yes,23.01755,0.0258659,0,3.668463,0.1584898,1,10.77857,0.0305207,0,16.26555,0.041209,1.0
+26348845 | Pap smears with glandular cell abnormalities: Are they detected by rapid prescre,yes,17.05561,0.0250112,0,8.560998,0.1555414,1,16.70604,0.0273622,0,,,
+26370095 | Are financial incentives cost-effective to support smoking cessation during preg,yes,7.024746,0.0297194,1,6.555948,0.1474084,1,19.11897,0.0272865,0,81.98618,0.0256436,0.0
+26419377 | Are pelvic anatomical structures in danger during arthroscopic acetabular labral,yes,16.55171,0.0279013,0,4.176606,0.1495849,1,17.08204,0.0296514,0,,,
+26548832 | Assessing Patient Reported Outcomes Measures via Phone Interviews Versus Patient,yes,14.96972,0.0283811,0,8.726269,0.1545041,1,10.43656,0.0262934,1,,,
+26601554 | Do viral infections have a role in benign paroxysmal positional vertigo?,yes,19.53267,0.0305257,1,2.236057,0.1512464,1,11.08437,0.0258144,0,,,
+26879871 | Does depression diagnosis and antidepressant prescribing vary by location?,yes,21.2344,0.0263439,0,3.742265,0.1522276,1,18.71902,0.0300172,0,69.44846,0.024797,0.0
+27050489 | The Prevalence of Incidentally Detected Idiopathic Misty Mesentery on Multidetec,yes,15.74436,0.027867,0,3.919663,0.1578187,1,16.81702,0.0290494,0,,,
+27281318 | Can Flexible Instruments Create Adequate Femoral Tunnel Lengths at 90° of Knee F,yes,13.24833,0.0315711,1,4.585719,0.1553611,1,7.72273,0.0329531,0,18.81258,0.0265372,0.0
+27287237 | Assessment of appropriate antimicrobial prescribing: do experts agree?,yes,13.68017,0.0271282,0,2.690133,0.1605211,1,14.04011,0.0275296,0,,,
+27549226 | Impact of MPH programs: contributing to health system strengthening in low- and ,yes,17.14791,0.0254409,0,3.817414,0.1650777,1,7.825884,0.0270925,0,,,
+27818079 | Is the Retromandibular Transparotid Approach a Reliable Option for the Surgical ,yes,11.20251,0.0269349,0,1.404129,0.1584183,1,15.26647,0.025861,1,,,
+27858166 | Traumatic aortic injury: does the anatomy of the aortic arch influence aortic tr,yes,10.47007,0.0269059,0,2.996794,0.1621236,1,13.57947,0.0290275,0,,,
+28143468 | Are performance measurement systems useful?,yes,10.0488,0.0274239,0,1.124291,0.1542508,0,11.04695,0.0268319,0,,,
+28707539 | Visceral adipose tissue area measurement at a single level: can it represent vis,yes,9.644655,0.0260631,1,1.123888,0.1544128,1,12.32325,0.0257977,1,,,
+8165771 | Ultrasound in squamous cell carcinoma of the penis; a useful addition to clinica,yes,14.03916,0.024987,0,0.47293,0.1530571,1,17.34111,0.0244257,0,15.32501,0.0294477,0.0
+9427037 | Are endothelial cell patterns of astrocytomas indicative of grade?,yes,9.314415,0.0253697,0,0.39141,0.1495028,1,17.9264,0.0275016,0,22.31986,0.0264126,0.0
+"9465206 | ""Occult"" posttraumatic lesions of the knee: can magnetic resonance substitute fo",yes,25.94077,0.0275769,0,2.146713,0.1467458,1,19.86169,0.0268845,0,25.03345,0.0269358,0.0
+9722752 | Does bone anchor fixation improve the outcome of percutaneous bladder neck suspe,yes,12.23326,0.0271384,0,2.640939,0.1565872,1,18.21466,0.0254972,0,,,
