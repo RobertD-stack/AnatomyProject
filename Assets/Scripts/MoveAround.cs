@@ -6,7 +6,7 @@ using UnityEngine;
 public class MoveAround : MonoBehaviour
 {
     Rigidbody rb;
-    float speed = 20f;
+    public float speed = 200f;
 
     Vector3 initialPosition;
     public GameObject globalVariables;
@@ -29,21 +29,21 @@ public class MoveAround : MonoBehaviour
             if (Input.GetKey(KeyCode.A))
             {
                 rb.linearVelocity = Vector3.zero;
-                rb.AddForce(gameObject.transform.right * -speed, ForceMode.Impulse);
+                rb.AddForce(gameObject.transform.right * -speed * Time.deltaTime, ForceMode.Impulse);
                 
             }
             if (Input.GetKey(KeyCode.D))
             {
                 rb.linearVelocity = Vector3.zero;
 
-                rb.AddForce(gameObject.transform.right * speed, ForceMode.Impulse);
+                rb.AddForce(gameObject.transform.right * speed * Time.deltaTime, ForceMode.Impulse);
                 
             }
             if (Input.GetKey(KeyCode.W))
             {
                 rb.linearVelocity = Vector3.zero;
 
-                rb.AddForce(gameObject.transform.forward * speed, ForceMode.Impulse);
+                rb.AddForce(gameObject.transform.forward * speed * Time.deltaTime, ForceMode.Impulse);
                 
             }
             if (Input.GetKey(KeyCode.S))
@@ -51,7 +51,7 @@ public class MoveAround : MonoBehaviour
                 rb.linearVelocity = Vector3.zero;
 
 
-                rb.AddForce(gameObject.transform.forward * -speed, ForceMode.Impulse);
+                rb.AddForce(gameObject.transform.forward * -speed * Time.deltaTime, ForceMode.Impulse);
                 
 
             }

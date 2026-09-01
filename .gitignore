@@ -108,3 +108,6 @@ InitTestScene*.unity*
 # Vendored sample projects (not the game)
 whisper.unity-master/
 whisper.unity-master*.zip
+
+# Local secrets (created from Tools/templates by setup.ps1 / setup.sh)
+/Assets/Auth/auth.json

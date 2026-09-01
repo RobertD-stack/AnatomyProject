@@ -225,7 +225,7 @@ public class ManageMenuItems : MonoBehaviour
             // FilePath method loads from disk - no dictionary needed
             else if (imageLoadMethod == ImageLoadMethod.FilePath)
             {
-                string filepath = "C:/Users/rgdewitty/Documents/GitHub/AnatomyProject/Skeleton Puzzle/Assets/Resources/ObjectIcons/" + menuItemList[i].name.ToLower() + ".JPG"; // CASE SENSITIVE
+                string filepath = Path.Combine(Application.dataPath, "Resources", "ObjectIcons", menuItemList[i].name.ToLower() + ".JPG");
 
                 // New way of doing it is loading it from a filepath using the item name
                 if (File.Exists(filepath))

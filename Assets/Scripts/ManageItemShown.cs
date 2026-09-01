@@ -22,7 +22,7 @@ public class ManageItemShown : MonoBehaviour
 
     public int currentIndex = 0;
 
-    const string ObjectIconsPath = "C:/Users/rgdewitty/Documents/GitHub/AnatomyProject/Skeleton Puzzle/Assets/Resources/ObjectIcons/";
+    static string ObjectIconsPath => Path.Combine(Application.dataPath, "Resources", "ObjectIcons");
 
 
     public SpawnMenuItem smi;
@@ -145,7 +145,7 @@ public class ManageItemShown : MonoBehaviour
             return;
         }
 
-        string filepath = ObjectIconsPath + itemName.ToLower() + ".JPG";
+        string filepath = Path.Combine(ObjectIconsPath, itemName.ToLower() + ".JPG");
         if (!File.Exists(filepath))
         {
             Debug.Log("The image at " + filepath + " does not exist!");
