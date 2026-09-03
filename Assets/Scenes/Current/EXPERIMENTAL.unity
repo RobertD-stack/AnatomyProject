@@ -2164,19 +2164,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4505398086857864, guid: da0c6db533cae55479f471e2d6c5864c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.85578
+      value: -23.232
       objectReference: {fileID: 0}
     - target: {fileID: 4505398086857864, guid: da0c6db533cae55479f471e2d6c5864c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 14.14
       objectReference: {fileID: 0}
     - target: {fileID: 4505398086857864, guid: da0c6db533cae55479f471e2d6c5864c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.77658
+      value: -0.89
       objectReference: {fileID: 0}
     - target: {fileID: 4505398086857864, guid: da0c6db533cae55479f471e2d6c5864c, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071079
       objectReference: {fileID: 0}
     - target: {fileID: 4505398086857864, guid: da0c6db533cae55479f471e2d6c5864c, type: 3}
       propertyPath: m_LocalRotation.x
@@ -2184,7 +2184,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4505398086857864, guid: da0c6db533cae55479f471e2d6c5864c, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.7071057
       objectReference: {fileID: 0}
     - target: {fileID: 4505398086857864, guid: da0c6db533cae55479f471e2d6c5864c, type: 3}
       propertyPath: m_LocalRotation.z
@@ -8612,46 +8612,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 789404118}
   m_Mesh: {fileID: 7882127265460949990, guid: 05ff3bdfad212774cbea7acc37e4e948, type: 3}
---- !u!21 &809726446
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/RoundedCorners/RoundedCorners
-  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _WidthHeightRadius: {r: 100, g: 100, b: 56.54, a: 0}
-  m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!4 &812247800 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 92ea9f7a9691bbf41b09b4ae26c5b7b3, type: 3}
@@ -13910,6 +13870,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1255809859}
   m_Mesh: {fileID: -339599202239503422, guid: 05ff3bdfad212774cbea7acc37e4e948, type: 3}
+--- !u!21 &1256421040
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/RoundedCorners/RoundedCorners
+  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _WidthHeightRadius: {r: 100, g: 100, b: 56.54, a: 0}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!1 &1281795714
 GameObject:
   m_ObjectHideFlags: 0
@@ -19601,8 +19601,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1887394158}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 14.14, z: -19.11}
+  m_LocalRotation: {x: 0, y: 0.7071057, z: 0, w: 0.7071079}
+  m_LocalPosition: {x: -23.232, y: 14.14, z: -0.89}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -21909,7 +21909,7 @@ MonoBehaviour:
   - {fileID: 1887394158}
   - {fileID: 1986737437}
   genericPlayer: {fileID: 217296477}
-  mode: 2
+  mode: 1
 --- !u!114 &2075088121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40159,7 +40159,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6494421022819427519, guid: 92aa6609372d65f40b8efdf7d961fd86, type: 3}
       propertyPath: ollamaModel
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6494421022819427519, guid: 92aa6609372d65f40b8efdf7d961fd86, type: 3}
       propertyPath: sampleTestPrompt
@@ -40168,7 +40168,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6494421022819427519, guid: 92aa6609372d65f40b8efdf7d961fd86, type: 3}
       propertyPath: useMicrophoneInput
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7045470506236256236, guid: 92aa6609372d65f40b8efdf7d961fd86, type: 3}
       propertyPath: m_fontMaterial

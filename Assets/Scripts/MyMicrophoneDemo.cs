@@ -60,6 +60,15 @@ namespace Whisper.Samples
 
         public void OnButtonPressed()
         {
+            if (gemini == null)
+                gemini = FindObjectOfType<UnityAndGeminiV3>();
+
+            if (gemini != null && !gemini.useMicrophoneInput)
+            {
+                gemini.SubmitPrompt(gemini.sampleTestPrompt);
+                return;
+            }
+
             if (!microphoneRecord.IsRecording)
             {
                 microphoneRecord.StartRecord();
