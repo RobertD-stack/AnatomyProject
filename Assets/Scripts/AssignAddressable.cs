@@ -1,9 +1,11 @@
+using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
 using UnityEditor.AddressableAssets;
 using UnityEditor.AddressableAssets.Settings;
 using UnityEditor.AddressableAssets.Settings.GroupSchemas;
-using UnityEngine;
 using System.IO;
+#endif
 
 public enum ReassignAddressables
 {
@@ -11,19 +13,21 @@ public enum ReassignAddressables
     False
 }
 
-[InitializeOnLoad]
-public class AddressableAssignmentClass: MonoBehaviour
+public class AddressableAssignmentClass : MonoBehaviour
 {
     public ReassignAddressables reassignAddressables;
 
     void Awake()
     {
+#if UNITY_EDITOR
         if (reassignAddressables == ReassignAddressables.True)
         {
             MarkAssetsInFolderAddressable();
         }
+#endif
     }
 
+#if UNITY_EDITOR
     public static void MarkAssetsInFolderAddressable()
     {
         string folderPath = "Assets/Resources_moved/Edited Human Parts/Skeleton Combined/List"; // Change this to your folder
@@ -60,4 +64,5 @@ public class AddressableAssignmentClass: MonoBehaviour
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
     }
+#endif
 }
