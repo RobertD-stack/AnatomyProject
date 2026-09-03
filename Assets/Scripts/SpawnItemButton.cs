@@ -35,7 +35,7 @@ public class SpawnItemButton : MonoBehaviour
         // if (globalVariables != null)
         // {
         //     ToggleVR toggleVR = globalVariables.GetComponent<ToggleVR>();
-        //     if (toggleVR != null && toggleVR.VRToggle != VR.On)
+        //     if (toggleVR != null && toggleVR.mode != InputMode.VR)
         //         button.enabled = false;
         // }
     }

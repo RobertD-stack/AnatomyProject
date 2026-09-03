@@ -1,0 +1,74 @@
+{
+  "displayName": "getReal3D",
+  "name": "com.mechdyne.getreal3d",
+  "author": {
+    "url": "https://www.mechdyne.com",
+    "name": "Mechdyne Corporation",
+    "email": "support@mechdyne.com"
+  },
+  "documentationUrl": "https://www.mechdyne.com",
+  "changelogUrl": "https://www.mechdyne.com",
+  "licensesUrl": "https://www.mechdyne.com",
+  "unity": "2019.4",
+  "version": "4.5.0",
+  "unityRelease": "40f1",
+  "keywords": [],
+  "description": "getReal3D",
+  "samples": [
+    {
+      "displayName": "Chaperone Grid Example",
+      "description": "Chaperone Grid Example",
+      "path": "Samples~/Chaperone"
+    },
+    {
+      "displayName": "Custom RPC Example",
+      "description": "Custom RPC Example",
+      "path": "Samples~/CustomRPC"
+    },
+    {
+      "displayName": "Input System Example",
+      "description": "Input System Example",
+      "path": "Samples~/InputSystem"
+    },
+    {
+      "displayName": "Master Only UI Example",
+      "description": "Master Only UI Example",
+      "path": "Samples~/MasterOnlyUI"
+    },
+    {
+      "displayName": "Master RPC Example",
+      "description": "Master RPC Example",
+      "path": "Samples~/MasterRPC"
+    },
+    {
+      "displayName": "Multi Users Example",
+      "description": "Multi Users Example",
+      "path": "Samples~/MultiUsers"
+    },
+    {
+      "displayName": "Orbit Navigation Example",
+      "description": "Orbit Navigation Example",
+      "path": "Samples~/OrbitNavigation"
+    },
+    {
+      "displayName": "RPC Example",
+      "description": "RPC Example",
+      "path": "Samples~/RPC"
+    },
+    {
+      "displayName": "Screen Space Menu Example",
+      "description": "Screen Space Menu Example",
+      "path": "Samples~/ScreenSpaceMenu"
+    },
+    {
+      "displayName": "Show Inputs Example",
+      "description": "Show Inputs Example",
+      "path": "Samples~/ShowInputs"
+    },
+    {
+      "displayName": "Simple Example",
+      "description": "Simple Example",
+      "path": "Samples~/Simple"
+    }
+  ]
+}

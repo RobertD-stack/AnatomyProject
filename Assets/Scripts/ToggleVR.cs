@@ -1,29 +1,42 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.XR;
 using UnityEngine.XR.Management;
 
-public enum VR
+public enum InputMode
 {
-    On,
-    Off
+    VR,
+    MouseAndKeyboard,
+    GetReal3D
 }
 
 public class ToggleVR : MonoBehaviour
 {
-    [Header("VR Enabled")]
+    [Header("VR")]
     public GameObject[] vrEnabled;
 
-    [Header("VR Disabled")]
-    public GameObject[] vrDisabled;
+    [Header("Mouse And Keyboard")]
+    [FormerlySerializedAs("vrDisabled")]
+    public GameObject[] mouseAndKeyboardEnabled;
 
-    public VR VRToggle;
+    [Header("GetReal3D")]
+    public GameObject genericPlayer;
+
+    [Tooltip("Select what input/interaction mode you're using.")]
+    public InputMode mode = InputMode.VR;
 
     void Awake()
     {
-        bool vrOn = VRToggle == VR.On;
+        bool vrOn = mode == InputMode.VR;
+        bool mouseOn = mode == InputMode.MouseAndKeyboard;
+        bool getReal3DOn = mode == InputMode.GetReal3D;
+
         SetActiveForAll(vrEnabled, vrOn);
-        SetActiveForAll(vrDisabled, !vrOn);
+        SetActiveForAll(mouseAndKeyboardEnabled, mouseOn);
+
+        if (genericPlayer != null)
+            genericPlayer.SetActive(getReal3DOn);
 
         if (!vrOn)
             XRSettings.gameViewRenderMode = GameViewRenderMode.None;
@@ -31,7 +44,7 @@ public class ToggleVR : MonoBehaviour
 
     void Start()
     {
-        if (VRToggle != VR.On)
+        if (mode != InputMode.VR)
             StartCoroutine(StopXRAndUseDesktopCamera());
     }
 

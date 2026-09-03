@@ -1,0 +1,74 @@
+{
+    "name": "InputSystemExampleActions",
+    "maps": [
+        {
+            "name": "Gameplay",
+            "id": "bd3b9a06-2f47-40ca-8f30-1acf111bf14a",
+            "actions": [
+                {
+                    "name": "Clear Cubes",
+                    "type": "Button",
+                    "id": "7f364d44-1631-44bb-89a8-4f8b27d92dad",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Add Cubes",
+                    "type": "Button",
+                    "id": "2705394e-ca19-4c29-a73e-620c0fe56b80",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Change Cube Scale",
+                    "type": "Value",
+                    "id": "4c65962a-1dda-4dd5-9f8c-b9eea801a701",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "0b54bc61-70ad-40d1-a5c2-5551c6f112ca",
+                    "path": "<getReal3D Controller>/ChangeWand",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Clear Cubes",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7fa7f36f-3ab8-4f24-beff-0821424e89fc",
+                    "path": "<getReal3D Controller>/WandButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Add Cubes",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dff0ef6b-7eff-4848-ac88-e87729e8ac92",
+                    "path": "<getReal3D Controller>/Forward/axis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Change Cube Scale",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

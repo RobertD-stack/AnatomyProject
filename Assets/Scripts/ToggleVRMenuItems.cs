@@ -13,7 +13,7 @@ public class ToggleVRMenuItems : MonoBehaviour
     {
         if (globalGameObject.GetComponent<ToggleVR>() != null)
         {
-            if (globalGameObject.GetComponent<ToggleVR>().VRToggle == VR.On)
+            if (globalGameObject.GetComponent<ToggleVR>().mode == InputMode.VR)
             {
 
                 gameObject.GetComponent<Button>().enabled = true;

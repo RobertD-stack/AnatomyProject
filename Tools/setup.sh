@@ -113,27 +113,11 @@ else
   fi
 fi
 
-step "API key templates"
-AUTH_DEST="$REPO_ROOT/Assets/Auth/auth.json"
-if [ ! -f "$AUTH_DEST" ]; then
-  cp "$REPO_ROOT/Tools/templates/auth.json.example" "$AUTH_DEST"
-  warn "Created Assets/Auth/auth.json from template. Paste your key."
-else
-  ok "Assets/Auth/auth.json already exists (left unchanged)"
-fi
-GEMINI_DEST="$REPO_ROOT/Assets/GeminiManager/JSON_KEY_TEMPLATE.json"
-if [ ! -f "$GEMINI_DEST" ]; then
-  cp "$REPO_ROOT/Tools/templates/gemini-key.json.example" "$GEMINI_DEST"
-  warn "Created Gemini key file from template. Paste your key."
-else
-  ok "Gemini key asset already exists (left unchanged)"
-fi
-
 step "What Unity will not install for you"
 cat <<'EOF'
     Unity Editor: 6000.1.3f1 (Unity 6.1). Open this folder in Unity Hub.
     Restart Unity Hub after installing Git so Package Manager can see git.
-    Hugging Face key: paste into Assets/Resources/HuggingFaceAPIConfig if needed.
+    API keys: copy the templates yourself (see README.md).
     SendData.cs talks to http://localhost:3000 — optional, not in this repo.
     VR: install an OpenXR runtime separately (Quest Link, SteamVR, etc.).
     Default AI model is anatomy-tutor-fast via Ollama at localhost:11434.
